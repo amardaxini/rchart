@@ -1,17 +1,20 @@
 = rchart
 
-Description goes here.
+rchart is ruby port of the slick pChart charting library.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+This gem requires ruby-gd 0.8.0 dependency.
+* gem install ruby-gd
+# ruby-gd requires mainly following dependencies
+# libgd-ruby,libpng-dev,libgd-dev
+# On Ubuntu you can install
+* sudo apt-get install libgd-ruby
+* sudo apt-get install libpng-dev
+* sudo apt-get install libgd2-xpm-dev
 
+
+== TODO
+* Refactor code
+* Use gd2 library instead of gd
 == Copyright
 
 Copyright (c) 2010 amardaxini. See LICENSE for details.

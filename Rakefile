@@ -5,13 +5,16 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "rchart"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Ruby port of the slick pChart charting library }
+    gem.description = %Q{Ruby port of the slick pChart charting library}
     gem.email = "amardaxini@gmail.com"
     gem.homepage = "http://github.com/amardaxini/rchart"
     gem.authors = ["amardaxini"]
     gem.rubyforge_project = "rchart"
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+#    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_development_dependency "ruby-gd",">=0.8.0"
+    gem.files = [Dir['fonts/*'],Dir['examples/*'],".document", ".gitignore","LICENSE","README.rdoc","Rakefile","VERSION",  "lib/rchart.rb","lib/rdata.rb","lib/version.rb","test/helper.rb","test/test_rchart.rb"]
+    gem.requirements << "libgd-ruby, libpng-dev, libgd-dev package are required"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
