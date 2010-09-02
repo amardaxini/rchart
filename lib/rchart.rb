@@ -1,6 +1,6 @@
 require "GD"
 require 'rdata'
-require 'version'
+require 'ruby-debug'
 class Rchart
 	SCALE_NORMAL = 1
 	SCALE_ADDALL = 2
@@ -21,7 +21,7 @@ class Rchart
 	ALIGN_BOTTOM_LEFT = 7
 	ALIGN_BOTTOM_CENTER = 8
 	ALIGN_BOTTOM_RIGHT = 9
-	FONT_PATH = Version.font_path
+	FONT_PATH = File.expand_path(File.join(File.dirname(__FILE__),"..","fonts"))
 	attr_accessor :antialias_quality
 	# This function create a new chart object.
 	# This object will be used during all the steps of the graph creation.
@@ -903,7 +903,7 @@ class Rchart
 		max_height = 8
 		data_description["description"].each do |key,value|
 			position   = image_ftb_box(@font_size,0,@font_name,value)
-			text_width  = position[2]-position[0]
+			text_width  = position[2]-position[6].abs
 			text_height = position[1]-position[7]
 			max_width = text_width if ( text_width > max_width)
 			max_height = max_height + text_height + 4
@@ -914,13 +914,16 @@ class Rchart
 			rs = r-30
 			gs = g-30
 			bs = b-30
-		end
+    end
+
 		if ( border )
+			
 			self.draw_filled_rounded_rectangle(x_pos+1,y_pos+1,x_pos+max_width+1,y_pos+max_height+1,5,rs,gs,bs)
 			self.draw_filled_rounded_rectangle(x_pos,y_pos,x_pos+max_width,y_pos+max_height,5,r,g,b)
 		end
 		y_offset = 4 + @font_size
 		id = 0
+
 		data_description["description"].each do |key,value|
 			self.draw_filled_rounded_rectangle(x_pos+10,y_pos+y_offset-4 , x_pos+14, y_pos+y_offset-4, 2, @palette[id]["r"], @palette[id]["g"], @palette[id]["b"])
 			image_ttf_text(@picture, @font_size,0, x_pos+22, y_pos+y_offset, c_text_color, @font_name, value)
@@ -2692,9 +2695,12 @@ class Rchart
 			self.draw_antialias_pixel(xi2,yi2,r,g,b)
 			self.draw_antialias_pixel(xi3,yi3,r,g,b)
 			self.draw_antialias_pixel(xi4,yi4,r,g,b)
+           
 			i=i+step
-		end
+        end
+
 		image_filled_rectangle(@picture,x1,y1+radius,x2,y2-radius,r,g,b)
+
 		image_filled_rectangle(@picture,x1+radius,y1,x2-radius,y2,r,g,b)
 
 		x1=x1-0.2

@@ -9,7 +9,7 @@ p.add_all_series()
 p.set_abscise_label_serie
 p.set_serie_name("January","Serie1")
 p.set_serie_name("February","Serie2")
-
+puts "HELO"
 #Initialise the graph
 ch = Rchart.new(700,230)
 ch.set_fixed_scale(-2,8)
@@ -22,7 +22,7 @@ ch.draw_scale(p.get_data,p.get_data_description,Rchart::SCALE_NORMAL,150,150,150
 ch.draw_grid(4,true,230,230,230,50)
 
 #Draw the 0 line
-ch.set_font_properties("tahoma.ttf",6)
+#ch.set_font_properties("tahoma.ttf",6)
 ch.draw_treshold(0,143,55,72,true,true)
 
 #Draw the cubic curve graph
