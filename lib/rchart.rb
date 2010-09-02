@@ -1,6 +1,6 @@
 require "GD"
 require 'rdata'
-require 'ruby-debug'
+
 class Rchart
 	SCALE_NORMAL = 1
 	SCALE_ADDALL = 2
