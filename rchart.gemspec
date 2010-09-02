@@ -55,7 +55,6 @@ Gem::Specification.new do |s|
      "fonts/tahoma.ttf",
      "lib/rchart.rb",
      "lib/rdata.rb",
-     "lib/version.rb",
      "test/helper.rb",
      "test/test_rchart.rb"
   ]
