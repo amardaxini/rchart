@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="/stylesheets/reset.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/grid.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/syntax.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Rchart:- Line/Plot Chart Ruby chart Ruby Graph - Rchart</title>
+</head>
+<body>
+<div class="container_16 every-thing">
+    <div class="header">
+        <div class="grid_16">
+            <div class="login-bar-left"><h1>Rchart</h1></div>
+        </div>
+    </div>
+
+    <div class="main-nav">
+        <ul>
+            <li><a title="Home" href="/">Home</a></li>
+            <li><a title="Home" href="/rchart">Rchart</a></li>
+            <li><a title="Pie Chart" href="/rchart/pie_chart.html">Pie Chart</a></li>
+            <li><a title="Bar Chart" href="/rchart/bar_chart.html">Bar Chart</a></li>
+             <li><a title="Cubic Curve" href="/rchart/cubic_chart.html">Cubic Curve</a></li>
+            <li><a title="Line Plot" href="/rchart/line_plot_chart.html">Line/Plot</a></li>
+            <li><a title="Other" href="/rchart/other_chart.html">Advance Chart</a></li>
+        </ul>
+    </div>
+
+    <div id="wrapper">
+        <div id="content" class="grid_16">
+            <h1 class="page-title">Basic Line and Plot Chart Examples.</h1>
+
+<div class="highlight"><pre><span class="n">draw_line_graph</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_description</span><span class="p">,</span> <span class="n">serie_name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre>
+</div>
+<div class="project-description">
+    This function will draw a line graph using all the registered series.
+</div>
+<div class="highlight"><pre><span class="n">draw_plot_graph</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_description</span><span class="p">,</span> <span class="n">big_radius</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">small_radius</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">r2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">g2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">shadow</span> <span class="o">=</span> <span class="kp">false</span><span class="p">)</span>
+</pre>
+</div>
+<div class="project-description">
+    This function will draw a plot graph using all the registered series.
+    Giving only the data & data_description structure will draw the basic plot graph,
+    You can specify the radius ( external & internal ) of the plots.
+    You can also specify the color of the points ( will be unique in case of multiple series ).
+    Setting Shadow to true will draw a shadow under the plots.
+</div>
+<div class="highlight"><pre><span class="n">draw_xy_plot_graph</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_description</span><span class="p">,</span> <span class="n">y_serie_name</span><span class="p">,</span> <span class="n">x_serie_name</span><span class="p">,</span> <span class="n">palette_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">big_radius</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">small_radius</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">r2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">g2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">shadow</span> <span class="o">=</span> <span class="kp">true</span><span class="p">)</span>
+</pre>
+</div>
+<div class="project-description">
+  This function is very similar as the draw_plot_graph function.
+  You must specify the name of the two series that will be used as x and y coordinates and the color id to use. 
+</div>
+<div class="rchart-image">
+    <img class="size-full alignnone" title="Rchart :- Basic Line/Plot Chart " src="/images/rchart/basic-line-plot" alt="Rchart:- Basic Line/Plot Chart" />
+</div>
+<div>
+    <div class="toggle-link"> Show / Hide Source Code</div>
+    <div class="clear"></div>
+    <div  class="src_code">
+        <div class="highlight"><pre>        <span class="c1"># Showing how to use labels and Line/Plot Chart</span>
+        <span class="nb">require</span> <span class="s1">&#39;rubygems&#39;</span>
+        <span class="nb">require</span> <span class="s1">&#39;rchart&#39;</span>
+
+        <span class="nb">p</span> <span class="o">=</span> <span class="no">Rdata</span><span class="o">.</span><span class="n">new</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">70</span><span class="o">]</span><span class="p">,</span><span class="s2">&quot;Serie1&quot;</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">24</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">40</span><span class="o">.</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="o">]</span><span class="p">,</span><span class="s2">&quot;Serie2&quot;</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_all_series</span><span class="p">()</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">set_abscise_label_serie</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">set_serie_name</span><span class="p">(</span><span class="s2">&quot;January&quot;</span><span class="p">,</span><span class="s2">&quot;Serie1&quot;</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">set_serie_name</span><span class="p">(</span><span class="s2">&quot;February&quot;</span><span class="p">,</span><span class="s2">&quot;Serie2&quot;</span><span class="p">)</span>
+
+        <span class="n">ch</span> <span class="o">=</span> <span class="no">Rchart</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">700</span><span class="p">,</span><span class="mi">230</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="s2">&quot;../fonts/tahoma.ttf&quot;</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_graph_area</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">585</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_filled_rounded_rectangle</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">693</span><span class="p">,</span><span class="mi">223</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">240</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_rounded_rectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">695</span><span class="p">,</span><span class="mi">225</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_graph_area</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="kp">true</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_scale</span><span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">,</span><span class="no">Rchart</span><span class="o">::</span><span class="no">SCALE_NORMAL</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="kp">true</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_grid</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="kp">true</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="s2">&quot;../fonts/tahoma.ttf&quot;</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_treshold</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">143</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">72</span><span class="p">,</span><span class="kp">true</span><span class="p">,</span><span class="kp">true</span><span class="p">)</span>
+
+        <span class="c1">#draw line graph</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_line_graph</span><span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_plot_graph</span><span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data</span><span class="p">,</span> <span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+
+        <span class="c1"># Set labels</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="s2">&quot;../fonts/tahoma.ttf&quot;</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data</span><span class="p">,</span> <span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">,</span> <span class="s2">&quot;Serie1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="s2">&quot;Daily incomes&quot;</span><span class="p">,</span><span class="mi">221</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">174</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data</span><span class="p">,</span> <span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">,</span> <span class="s2">&quot;Serie2&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span><span class="p">,</span><span class="s2">&quot;Production break&quot;</span><span class="p">,</span><span class="mi">239</span><span class="p">,</span><span class="mi">233</span><span class="p">,</span><span class="mi">195</span><span class="p">)</span>
+
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="s2">&quot;../fonts/tahoma.ttf&quot;</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_legend</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="s2">&quot;../fonts/tahoma.ttf&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_title</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="s2">&quot;Example 5&quot;</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">585</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">render_png</span><span class="p">(</span><span class="s2">&quot;basic-line-plot&quot;</span><span class="p">)</span>
+        
+</pre>
+</div>
+    </div>
+</div>
+
+<h1 class="page-title">Basic Line and Plot Chart Examples.</h1>
+
+<div class="highlight"><pre><span class="n">draw_xy_graph</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_description</span><span class="p">,</span> <span class="n">y_serie_name</span><span class="p">,</span> <span class="n">x_serie_name</span><span class="p">,</span> <span class="n">palette_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</pre>
+</div>
+<div class="project-description">
+    This function will draw a scatter line graph.
+    You must specify the x and y series that will be used.
+    You can optionally set the color index in the current palette.
+</div>
+
+<div class="rchart-image">
+    <img class="size-full align none" title="Rchart :- XY Chart " src="/images/rchart/xy-chart" alt="Rchart:- XY Chart" />
+</div>
+<div>
+    <div class="toggle-link"> Show / Hide Source Code</div>
+    <div class="clear"></div>
+    <div  class="src_code">
+        <div class="highlight"><pre>        <span class="c1">#X versus Y char</span>
+        <span class="nb">require</span> <span class="s1">&#39;rubygems&#39;</span>
+        <span class="nb">require</span> <span class="s1">&#39;rchart&#39;</span>
+        <span class="c1">#Compute the points</span>
+        <span class="nb">p</span> <span class="o">=</span> <span class="no">Rdata</span><span class="o">.</span><span class="n">new</span>
+        <span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">360</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="no">Math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="no">Math</span><span class="o">::</span><span class="no">PI</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span><span class="o">*</span><span class="mi">80</span><span class="o">+</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;Serie1&quot;</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="no">Math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="no">Math</span><span class="o">::</span><span class="no">PI</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span><span class="o">*</span><span class="mi">80</span><span class="o">+</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot;Serie2&quot;</span><span class="p">)</span>
+        <span class="n">i</span><span class="o">+=</span><span class="mi">10</span>
+
+        <span class="k">end</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">set_serie_name</span><span class="p">(</span><span class="s2">&quot;Trigonometric function&quot;</span><span class="p">,</span><span class="s2">&quot;Serie1&quot;</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_serie</span><span class="p">(</span><span class="s2">&quot;Serie1&quot;</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_serie</span><span class="p">(</span><span class="s2">&quot;Serie2&quot;</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">set_x_axis_name</span><span class="p">(</span><span class="s2">&quot;X Axis&quot;</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">set_y_axis_name</span><span class="p">(</span><span class="s2">&quot;Y Axis&quot;</span><span class="p">)</span>
+        <span class="n">ch</span> <span class="o">=</span> <span class="no">Rchart</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_graph_area_gradient</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="no">Rchart</span><span class="o">::</span><span class="no">TARGET_BACKGROUND</span><span class="p">);</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="s2">&quot;tahoma.ttf&quot;</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_graph_area</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">270</span><span class="p">,</span><span class="mi">230</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_xy_scale</span><span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">,</span><span class="s2">&quot;Serie1&quot;</span><span class="p">,</span><span class="s2">&quot;Serie2&quot;</span><span class="p">,</span><span class="mi">213</span><span class="p">,</span><span class="mi">217</span><span class="p">,</span><span class="mi">221</span><span class="p">,</span><span class="kp">true</span><span class="p">,</span><span class="mi">45</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_graph_area</span><span class="p">(</span><span class="mi">213</span><span class="p">,</span><span class="mi">217</span><span class="p">,</span><span class="mi">221</span><span class="p">,</span><span class="kp">false</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_graph_area_gradient</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="o">-</span><span class="mi">50</span><span class="p">);</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_grid</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="kp">true</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_shadow_properties</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+
+        <span class="c1"># Draw XY Chart</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_xy_graph</span><span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">,</span><span class="s2">&quot;Serie1&quot;</span><span class="p">,</span><span class="s2">&quot;Serie2&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">clear_shadow</span>
+
+        <span class="n">title</span><span class="o">=</span> <span class="s2">&quot;Drawing X versus Y charts trigonometric functions  &quot;</span><span class="p">;</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_text_box</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">280</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">title</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="no">Rchart</span><span class="o">::</span><span class="no">ALIGN_RIGHT</span><span class="p">,</span><span class="kp">true</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="s2">&quot;pf_arma_five.ttf&quot;</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">remove_serie</span><span class="p">(</span><span class="s2">&quot;Serie2&quot;</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_legend</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="kp">false</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">render_png</span><span class="p">(</span><span class="s2">&quot;xy-chart&quot;</span><span class="p">)</span>
+        
+</pre>
+</div>
+    </div>
+</div>
+
+        </div>
+
+        <div class="clear"></div>
+        <div class="push"></div>
+
+        <div class="clear"></div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div  class="container_16">
+    <div id="footer">
+        <script type="text/javascript" src="/javascripts/jquery.js"></script>
+        <script type="text/javascript" src="/javascripts/application.js"></script>
+        <p class="copytight">&copy; 2010 <a href="http://raistech.com">Amar Daxini</a></p>
+    </div>
+</div>
+</body>
+</html>
