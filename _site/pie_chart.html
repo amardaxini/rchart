@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="/stylesheets/reset.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/grid.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/syntax.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Amar Daxini Pie Chart Rchart - Rchart</title>
+</head>
+<body>
+<div class="container_16 every-thing">
+    <div class="header">
+        <div class="grid_16">
+            <div class="login-bar-left"><h1>Rchart</h1></div>
+        </div>
+    </div>
+
+    <div class="main-nav">
+        <ul>
+            <li><a title="Home" href="/">Home</a></li>
+            <li><a title="Pie Chart" href="/pie_chart.html">Pie Chart</a></li>
+        </ul>
+    </div>
+
+    <div id="wrapper">
+        <div id="content" class="grid_16">
+            <h1 class="page-title">Basic Pie Chart Examples.</h1>
+
+<div class="highlight"><pre><span class="n">draw_basic_pie_graph</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_description</span><span class="p">,</span> <span class="n">x_pos</span><span class="p">,</span> <span class="n">y_pos</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+<span class="n">draw_labels</span> <span class="o">=</span> <span class="no">PIE_NOLABEL</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">255</span><span class="p">,</span> <span class="n">g</span> <span class="o">=</span> <span class="mi">255</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">255</span><span class="p">,</span> <span class="n">decimals</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</pre>
+</div>
+draw_labels contain one of the following paramter
+<ul>
+    <li> Rchart:: PIE_NOLABEL No labels displayed </li>
+    <li> Rchart:: PIE_PERCENTAGE Percentages are displayed</li>
+    <li> Rchart:: PIE_LABELS Series labels displayed</li>
+    <li> Rchart:: PIE_PERCENTAGE_LABEL Series labels & percentage displayed</li>
+</ul>
+<div class="rchart-image">
+    <img class="size-full alignnone" title="Rchart :- Basic Pie Chart " src="/images/basic-pie" alt="Rchart:- Basic Pie Chart" />
+
+</div>
+<div>
+    <div class="toggle-link"> Show / Hide Source Code</div>
+    <div class="clear"></div>
+    <div  class="src_code">
+        <div class="highlight"><pre>        <span class="c1"># A smooth flat pie graph</span>
+        <span class="nb">require</span> <span class="s1">&#39;rubygems&#39;</span>
+        <span class="nb">require</span> <span class="s1">&#39;rchart&#39;</span>
+
+        <span class="nb">p</span> <span class="o">=</span> <span class="no">Rdata</span><span class="o">.</span><span class="n">new</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="o">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="o">]</span><span class="p">,</span><span class="s2">&quot;Serie1&quot;</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="o">[</span><span class="s2">&quot;Jan&quot;</span><span class="p">,</span><span class="s2">&quot;Feb&quot;</span><span class="p">,</span><span class="s2">&quot;Mar&quot;</span><span class="p">,</span><span class="s2">&quot;Apr&quot;</span><span class="p">,</span><span class="s2">&quot;May&quot;</span><span class="o">]</span><span class="p">,</span><span class="s2">&quot;Serie2&quot;</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_all_series</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">set_abscise_label_serie</span><span class="p">(</span><span class="s2">&quot;Serie2&quot;</span><span class="p">)</span>
+
+        <span class="n">ch</span> <span class="o">=</span> <span class="no">Rchart</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_filled_rounded_rectangle</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">293</span><span class="p">,</span><span class="mi">193</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">240</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_rounded_rectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">295</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">)</span>
+
+        <span class="c1"># Load palette from array [[r,g,b],[r1,g1,b1]]</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">load_color_palette</span><span class="p">(</span><span class="o">[[</span><span class="mi">168</span><span class="p">,</span><span class="mi">188</span><span class="p">,</span><span class="mi">56</span><span class="o">]</span><span class="p">,</span><span class="o">[</span><span class="mi">188</span><span class="p">,</span><span class="mi">208</span><span class="p">,</span><span class="mi">76</span><span class="o">]</span><span class="p">,</span><span class="o">[</span><span class="mi">208</span><span class="p">,</span><span class="mi">228</span><span class="p">,</span><span class="mi">96</span><span class="o">]</span><span class="p">,</span><span class="o">[</span><span class="mi">228</span><span class="p">,</span><span class="mi">245</span><span class="p">,</span><span class="mi">116</span><span class="o">]</span><span class="p">,</span><span class="o">[</span><span class="mi">248</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">136</span><span class="o">]]</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_filled_circle</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="s2">&quot;tahoma.ttf&quot;</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+
+        <span class="c1"># Draw Basic Pie Graph</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_basic_pie_graph</span><span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="no">Rchart</span><span class="o">::</span><span class="no">PIE_PERCENTAGE</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">218</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_pie_legend</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+
+        <span class="n">ch</span><span class="o">.</span><span class="n">render_png</span><span class="p">(</span><span class="s2">&quot;basic-pie&quot;</span><span class="p">)</span>
+        
+</pre>
+</div>
+    </div>
+</div>
+<h1 class="page-title">3D Pie Chart Examples.</h1>
+
+<div class="highlight"><pre><span class="n">draw_pie_graph</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_description</span><span class="p">,</span> <span class="n">x_pos</span><span class="p">,</span> <span class="n">y_pos</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">draw_labels</span> <span class="o">=</span> <span class="no">PIE_NOLABEL</span><span class="p">,</span>
+<span class="n">enhance_colors</span> <span class="o">=</span> <span class="kp">true</span><span class="p">,</span> <span class="n">skew</span> <span class="o">=</span> <span class="mi">60</span><span class="p">,</span> <span class="n">splice_height</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">splice_distance</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">decimals</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</pre>
+</div>
+<div class="rchart-image">
+    <img class="size-full alignnone" title="Rchart:- 3D Pie Chart" src="/images/3D-pie" alt="Rchart:- 3D Pie Chart" />
+</div>
+<div>
+    <div class="toggle-link"> Show / Hide Source Code</div>
+    <div class="clear"></div>
+    <div  class="src_code">
+        <div class="highlight"><pre>        <span class="nb">require</span> <span class="s1">&#39;rubygems&#39;</span>
+        <span class="nb">require</span> <span class="s1">&#39;rchart&#39;</span>
+
+        <span class="nb">p</span> <span class="o">=</span> <span class="no">Rdata</span><span class="o">.</span><span class="n">new</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="o">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="o">]</span><span class="p">,</span><span class="s2">&quot;Serie1&quot;</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="o">[</span><span class="s2">&quot;January&quot;</span><span class="p">,</span><span class="s2">&quot;February&quot;</span><span class="p">,</span><span class="s2">&quot;March&quot;</span><span class="p">,</span><span class="s2">&quot;April&quot;</span><span class="p">,</span><span class="s2">&quot;May&quot;</span><span class="o">]</span><span class="p">,</span><span class="s2">&quot;Serie2&quot;</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_all_series</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">set_abscise_label_serie</span><span class="p">(</span><span class="s2">&quot;Serie2&quot;</span><span class="p">)</span>
+
+        <span class="n">ch</span> <span class="o">=</span> <span class="no">Rchart</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">420</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_filled_rounded_rectangle</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">413</span><span class="p">,</span><span class="mi">243</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">240</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_rounded_rectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">415</span><span class="p">,</span><span class="mi">245</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">create_color_gradient_palette</span><span class="p">(</span><span class="mi">195</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">223</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="s2">&quot;tahoma.ttf&quot;</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">antialias_quality</span><span class="o">=</span><span class="mi">0</span>
+
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_pie_graph</span><span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">130</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="no">Rchart</span><span class="o">::</span><span class="no">PIE_PERCENTAGE_LABEL</span><span class="p">,</span><span class="kp">false</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_pie_legend</span><span class="p">(</span><span class="mi">330</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+
+        <span class="c1">#Write the title</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="s2">&quot;MankSans.ttf&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_title</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s2">&quot;Sales per month&quot;</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">render_png</span><span class="p">(</span><span class="s2">&quot;3D-pie&quot;</span><span class="p">)</span>
+        
+</pre>
+</div>
+    </div>
+</div>
+<h1 class="page-title">Flat Pie Chart With Shadow Examples.</h1>
+
+<div class="highlight"><pre><span class="n">draw_flat_pie_graph_with_shadow</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_description</span><span class="p">,</span> <span class="n">x_pos</span><span class="p">,</span> <span class="n">y_pos</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+<span class="n">draw_labels</span> <span class="o">=</span> <span class="no">PIE_NOLABEL</span><span class="p">,</span> <span class="n">splice_distance</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">decimals</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</pre>
+</div>
+<div class="rchart-image">
+    <img class="size-full alignnone" title="Rchart:- Shadow Pie Chart" src="/images/flat-pie-chart" alt="Rchart:- Shadow Pie Chart" />
+</div>
+<div>
+    <div class="toggle-link"> Show / Hide Source Code</div>
+    <div class="clear"></div>
+    <div  class="src_code">
+        <div class="highlight"><pre>        <span class="c1">#A 2D exploded pie graph</span>
+        <span class="nb">require</span> <span class="s1">&#39;rubygems&#39;</span>
+        <span class="nb">require</span> <span class="s1">&#39;rchart&#39;</span>
+
+        <span class="nb">p</span> <span class="o">=</span> <span class="no">Rdata</span><span class="o">.</span><span class="n">new</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="o">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="o">]</span><span class="p">,</span><span class="s2">&quot;Serie1&quot;</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_point</span><span class="p">(</span><span class="o">[</span><span class="s2">&quot;Jan&quot;</span><span class="p">,</span><span class="s2">&quot;Feb&quot;</span><span class="p">,</span><span class="s2">&quot;Mar&quot;</span><span class="p">,</span><span class="s2">&quot;Apr&quot;</span><span class="p">,</span><span class="s2">&quot;May&quot;</span><span class="o">]</span><span class="p">,</span><span class="s2">&quot;Serie2&quot;</span><span class="p">)</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">add_all_series</span>
+        <span class="nb">p</span><span class="o">.</span><span class="n">set_abscise_label_serie</span><span class="p">(</span><span class="s2">&quot;Serie2&quot;</span><span class="p">)</span>
+
+        <span class="n">ch</span> <span class="o">=</span> <span class="no">Rchart</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="s2">&quot;tahoma.ttf&quot;</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_filled_rounded_rectangle</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">293</span><span class="p">,</span><span class="mi">193</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span><span class="mi">240</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_rounded_rectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">295</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">,</span><span class="mi">230</span><span class="p">)</span>
+
+        <span class="c1"># Draw the pie chart</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">antialias_quality</span><span class="o">=</span><span class="mi">0</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">set_shadow_properties</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_flat_pie_graph_with_shadow</span><span class="p">(</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="no">Rchart</span><span class="o">::</span><span class="no">PIE_PERCENTAGE</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">clear_shadow</span>
+        <span class="n">ch</span><span class="o">.</span><span class="n">draw_pie_legend</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data</span><span class="p">,</span><span class="nb">p</span><span class="o">.</span><span class="n">get_data_description</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">250</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+
+        <span class="n">ch</span><span class="o">.</span><span class="n">render_png</span><span class="p">(</span><span class="s2">&quot;flat-pie-chart&quot;</span><span class="p">)</span>
+        
+</pre>
+</div>
+    </div>
+</div>
+
+        </div>
+
+        <div class="clear"></div>
+        <div class="push"></div>
+
+        <div class="clear"></div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div  class="container_16">
+    <div id="footer">
+        <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+        <script type="text/javascript" src="/javascripts/application.js"></script>
+        <p class="copytight">&copy; 2010 <a href="http://raistech.com">Amar Daxini</a></p>
+    </div>
+</div>
+</body>
+</html>
