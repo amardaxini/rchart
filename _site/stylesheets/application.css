@@ -237,7 +237,15 @@ div#content form.data-form input[type=submit]:active {
     text-decoration:none;
     color:#000;
     font-size:17px;
-
+    text-transform:capitalize;
+    background-color:#ccc;
+    margin:10px 0;
+    padding:10px;
+}
+.rchart-title{
+    text-decoration:none;
+    color:#000;
+    font-size:17px;
     background-color:#ccc;
     margin:10px 0;
     padding:10px;

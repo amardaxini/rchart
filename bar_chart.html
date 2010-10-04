@@ -1,0 +1,176 @@
+---
+layout: default
+title: Rchart:- Bar Chart  Ruby chart Ruby Graph
+---
+<h1 class="page-title">Basic Bar Chart Examples.</h1>
+
+{% highlight ruby %}
+draw_bar_graph(data, data_description, shadow = false, alpha = 100)
+
+{% endhighlight %}
+<div class="project-description">
+    This function will draw a bar graph using all the registered series. When creating a bar graph, don't forget to set the with_margin parameter of the draw_scale function to true.
+    Setting shadow to true will draw a shadow behind each series.
+</div>
+
+<div class="rchart-image">
+    <img class="size-full alignnone" title="Rchart :- Basic Bar Chart " src="/images/rchart/bar-chart" alt="Rchart:- Basic Bar Chart" />
+</div>
+<div>
+    <div class="toggle-link"> Show / Hide Source Code</div>
+    <div class="clear"></div>
+    <div  class="src_code">
+        {% highlight ruby %}
+        # Bar graph
+        require 'rubygems'
+        require 'rchart'
+
+        p = Rdata.new
+        p.add_point([1,4,-3,2,-3,3,2,1,0,7,4],"Serie1")
+        p.add_point([3,3,-4,1,-2,2,1,0,-1,6,3],"Serie2")
+        p.add_point([4,1,2,-1,-4,-2,3,2,1,2,2],"Serie3")
+        p.add_all_series()
+        p.set_abscise_label_serie
+        p.set_serie_name("January","Serie1")
+        p.set_serie_name("February","Serie2")
+        p.set_serie_name("March","Serie3")
+        ch = Rchart.new(700,230)
+
+        ch.set_font_properties("tahoma.ttf",8)
+        ch.set_graph_area(50,30,680,200)
+        ch.draw_filled_rounded_rectangle(7,7,693,223,5,240,240,240)
+        ch.draw_rounded_rectangle(5,5,695,225,5,230,230,230)
+        ch.draw_graph_area(255,255,255,true)
+        ch.draw_scale(p.get_data,p.get_data_description,Rchart::SCALE_NORMAL,150,150,150,true,0,2,true)
+        ch.draw_grid(4,true,230,230,230,50)
+        ch.set_font_properties("tahoma.ttf",6)
+        ch.draw_treshold(0,143,55,72,true,true)
+
+        #Bar Graph
+        ch.draw_bar_graph(p.get_data,p.get_data_description)
+
+        ch.set_font_properties("tahoma.ttf",8)
+        ch.draw_legend(596,150,p.get_data_description,255,255,255)
+        ch.set_font_properties("tahoma.ttf",10)
+        ch.draw_title(50,22,"Example 9",50,50,50,585)
+        ch.render_png("bar-chart")
+        {% endhighlight %}
+    </div>
+</div>
+<h1 class="page-title">Overlay Bar Chart Examples.</h1>
+{% highlight ruby %}
+draw_overlay_bar_graph(data, data_description, alpha = 50)
+
+{% endhighlight %}
+<div class="project-description">
+    This function will draw a superposed bar graph using all the registered series.
+    You can provide the alpha value used when merging all series layers.
+</div>
+
+<div class="rchart-image">
+    <img class="size-full alignnone" title="Rchart :- Overlay Bar Chart " src="/images/rchart/overlay-barchart" alt="Rchart:- Overlay Bar Chart" />
+</div>
+<div>
+    <div class="toggle-link"> Show / Hide Source Code</div>
+    <div class="clear"></div>
+    <div  class="src_code">
+        {% highlight ruby %}
+        # An overlayed bar graph
+        require 'rubygems'
+        require 'rchart'
+        #Dataset definition
+
+        p = Rdata.new
+        p.add_point([1,4,-3,2,-3,3,2,1,0,7,4,-3,2,-3,3,5,1,0,7],"Serie1")
+        p.add_point([0,3,-4,1,-2,2,1,0,-1,6,3,-4,1,-4,2,4,0,-1,6],"Serie2")
+        p.add_all_series()
+        p.set_abscise_label_serie
+        p.set_serie_name("January","Serie1")
+        p.set_serie_name("February","Serie2")
+
+        #Initialise the graph
+        ch = Rchart.new(700,230)
+        ch.set_font_properties("tahoma.ttf",8)
+        ch.set_graph_area(50,30,585,200)
+        ch.draw_filled_rounded_rectangle(7,7,693,223,5,240,240,240)
+        ch.draw_rounded_rectangle(5,5,695,225,5,230,230,230)
+        ch.draw_graph_area(255,255,255,true)
+        ch.draw_scale(p.get_data,p.get_data_description,Rchart::SCALE_NORMAL,150,150,150,true,0,2,true)
+        ch.draw_grid(4,true,230,230,230,50)
+
+        #Draw the 0 line
+        ch.set_font_properties("tahoma.ttf",6)
+        ch.draw_treshold(0,143,55,72,true,true)
+
+        #Draw the bar graph
+        ch.draw_overlay_bar_graph(p.get_data,p.get_data_description)
+
+        #Finish the graph
+        ch.set_font_properties("tahoma.ttf",8)
+        ch.draw_legend(600,30,p.get_data_description,255,255,255)
+        ch.set_font_properties("tahoma.ttf",10)
+        ch.draw_title(50,22,"Example 2",50,50,50,585)
+        ch.render("example2")
+        ch.render_png("overlay-barchart")
+        {% endhighlight %}
+    </div>
+</div>
+<h1 class="page-title">Stacked Bar Chart Examples.</h1>
+{% highlight ruby %}
+draw_stacked_bar_graph(data, data_description, alpha = 50, contiguous = false)
+
+{% endhighlight %}
+<div class="project-description">
+    This function will draw a stacked bar graph using all the registered series. When creating a bar graph, don't forget to set the with_margin parameter of the draw_scale function to true.
+    Don't forget to change the automatic scaling to Rchart::SCALE_ADDALL to have an accurate scaling mode. You can specify the transparency and if the bars must be contiguous or with space (default)
+</div>
+
+<div class="rchart-image">
+    <img class="size-full alignnone" title="Rchart :-Stacked Bar Chart " src="/images/rchart/stacked-barchart" alt="Rchart:-Stacked  Bar Chart" />
+</div>
+<div>
+    <div class="toggle-link"> Show / Hide Source Code</div>
+    <div class="clear"></div>
+    <div  class="src_code">
+        {% highlight ruby %}
+        #Playing with background and stacked Bar Chart
+
+        require 'rubygems'
+        require 'rchart'
+        p = Rdata.new
+        p.add_point([9,9,9,10,10,11,12,14,16,17,18,18,19,19,18,15,12,10,9],"Serie1");
+        p.add_point([10,11,11,12,12,13,14,15,17,19,22,24,23,23,22,20,18,16,14],"Serie2");
+        p.add_point([4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],"Serie3");
+        p.add_all_series()
+        p.remove_serie("Serie3")
+        p.set_abscise_label_serie("Serie3")
+        p.set_serie_name("January","Serie1");
+        p.set_serie_name("February","Serie2");
+        p.set_y_axis_name("Temperature");
+        p.set_y_axis_unit("°C");
+        p.set_x_axis_unit("h");
+
+        ch = Rchart.new(700,230)
+        ch.draw_graph_area_gradient(132,173,131,50,Rchart::TARGET_BACKGROUND);
+        ch.set_font_properties("tahoma.ttf",8)
+        ch.set_graph_area(120,20,675,190)
+        ch.draw_graph_area(213,217,221,false)
+        ch.draw_scale(p.get_data,p.get_data_description,Rchart::SCALE_ADDALL,213,217,221,true,0,2,true)
+        ch.draw_graph_area_gradient(163,203,167,50);
+        ch.draw_grid(4,true,230,230,230,20)
+
+        ch.draw_stacked_bar_graph(p.get_data,p.get_data_description,70)
+
+        # Draw the title
+        title= " Average Temperatures during\r\n  the first months of 2008  "
+        ch.draw_text_box(0,0,50,230,"#{title}",90,255,255,255,Rchart::ALIGN_BOTTOM_CENTER,true,0,0,0,30)
+
+        # Draw the legend
+        ch.set_font_properties("tahoma.ttf",8)
+        ch.draw_legend(610,10,p.get_data_description,236,238,240,52,58,82)
+
+        ch.add_border(2)
+        ch.render_png("stacked-barchart")
+        {% endhighlight %}
+    </div>
+</div>
