@@ -11,7 +11,6 @@ p.set_abscise_label_serie("Serie2")
 ch = Rchart.new(300,200)
 ch.draw_filled_rounded_rectangle(7,7,293,193,5,240,240,240)
 ch.draw_rounded_rectangle(5,5,295,195,5,230,230,230)
-#ch.load_color_palette_from_file("softtones.txt") #OR
 ch.load_color_palette([[168,188,56],[188,208,76],[208,228,96],[228,245,116],[248,255,136]])
 ch.draw_filled_circle(122,102,70,200,200,200)
 ch.set_font_properties("tahoma.ttf",8)

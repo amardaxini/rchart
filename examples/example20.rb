@@ -25,7 +25,6 @@ ch.draw_scale(p.get_data,p.get_data_description,Rchart::SCALE_NORMAL,213,217,221
 ch.draw_graph_area_gradient(40,40,40,-50)
 ch.draw_grid(4,true,230,230,230,10)
 
- # Draw the line chart
 ch.set_shadow_properties(3,3,0,0,0,30,4)
 ch.draw_cubic_curve(p.get_data,p.get_data_description)
 ch.clear_shadow

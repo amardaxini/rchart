@@ -9,7 +9,6 @@ p.add_all_series()
 p.set_abscise_label_serie
 p.set_serie_name("January","Serie1")
 p.set_serie_name("February","Serie2")
-puts "HELO"
 #Initialise the graph
 ch = Rchart.new(700,230)
 ch.set_fixed_scale(-2,8)

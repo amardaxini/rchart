@@ -25,7 +25,7 @@ ch.draw_grid(4,true,230,230,230,50)
 ch.set_font_properties("tahoma.ttf",6)
 ch.draw_treshold(0,143,55,72,true,true)
 
-#draw line graph
+#draw filled line graph
 p.remove_serie("Serie2")
 ch.draw_filled_line_graph(p.get_data,p.get_data_description,60,true)
 

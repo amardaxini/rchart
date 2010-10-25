@@ -1,4 +1,4 @@
-#Playing with background bis
+#Playing with background and stacked Bar Chart
 
 require 'rubygems'
 require 'rchart'

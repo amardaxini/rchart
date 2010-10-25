@@ -22,7 +22,7 @@ class Rchart
 	ALIGN_BOTTOM_CENTER = 8
 	ALIGN_BOTTOM_RIGHT = 9
 	FONT_PATH = File.expand_path(File.join(File.dirname(__FILE__),"..","fonts"))
-	attr_accessor :antialias_quality
+	attr_accessor :antialias_quality,:picture
 	# This function create a new chart object.
 	# This object will be used during all the steps of the graph creation.
 	# This object will embed all the pChart functions.
@@ -3140,8 +3140,17 @@ class Rchart
 		file = File.new(file_name,"wb")
 		@picture.jpeg(file,quality)
 		file.close
-	end
-	# resize image on passing png,jpeg,or gd image
+    end
+
+#Outputs the image in PNG format as String object.
+#This method will be especially useful when you want to transmit an image directly to an user(i.e, without first writing it to a file)
+
+  def render_png_str(img=self.picture)
+    img.pngStr
+  end
+
+  
+  # resize image on passing png,jpeg,or gd image
 	# pass file_name/gd image,new_file_name,percentage,or resize width,resize height
 	def resize_image(file_name,resize_file_name="test",percentage=0,resized_width=0,resized_height=0)
 		image = GD::Image.new_from_png(file_name) rescue ""

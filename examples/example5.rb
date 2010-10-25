@@ -1,4 +1,4 @@
-# Showing how to use labels
+# Showing how to use labels and Line/Plot Chart
 require 'rubygems'
 require 'rchart'
 
