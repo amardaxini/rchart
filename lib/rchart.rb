@@ -586,7 +586,7 @@ class Rchart
 				while(!scale_ok)
 					scale1 = ( @vmax - @vmin )*1.0 / factor
 					scale2 = ( @vmax - @vmin )*1.0 /factor / 2
-					scale4 = ( @vmax - @vmin )*1.0 / factor / 4
+				#	scale4 = ( @vmax - @vmin )*1.0 / factor / 4
 
 					if ( scale1 > 1 && scale1 <= max_divs && !scale_ok)
 						scale_ok = true
@@ -681,7 +681,7 @@ class Rchart
 			end
 
 			data_range = @vmax - @vmin
-			data_range = 0.1 if (data_range == 0 )
+			data_range = 0.1 if (data_range.to_f == 0.0)
 
 			# Compute automatic scaling 
 			scale_ok = false
@@ -720,7 +720,7 @@ class Rchart
 
 				if ( (@v_x_max*1.0 / scale / factor).floor != @v_x_max / scale / factor)
 					grid_id     =  ( @v_x_max*1.0 / scale / factor).floor + 1
-					@v_x_max = grid_id * scale * factor;
+					@v_x_max = grid_id * scale * factor
 					x_divisions+=1
 				end
 
@@ -788,10 +788,10 @@ class Rchart
 			i=i+1
 			xpos = xpos + @division_width
 		end
-		#Write the Y Axis caption if set 
+		# Write the Y Axis caption if set
 		if ((!data_description["axis"].nil? && !data_description["axis"]["y"].nil?) )
 			position   = image_ftb_box(@font_size,90,@font_name,data_description["axis"]["y"])
-			text_height  = (position[1]).abs+(position[3]).abs
+		#	text_height  = (position[1]).abs+(position[3]).abs
 			text_top   = ((@g_area_y2 - @g_area_y1) / 2) + @g_area_y1 + (text_width/2)
 			image_ttf_text(@picture,@font_size,90,xmin-@font_size,text_top,c_text_color,@font_name,data_description["axis"]["y"].to_s)
 		end
@@ -1802,7 +1802,7 @@ class Rchart
 			a_points << layer_height;
 
 			if ( around_zero == false )
-				c_graph = allocate_color(@layers[0],@palette[color_id]["r"],@palette[color_id]["g"],@palette[color_id]["b"])
+			#	c_graph = allocate_color(@layers[0],@palette[color_id]["r"],@palette[color_id]["g"],@palette[color_id]["b"])
 				image_filled_polygon(@layers[0],a_points,@palette[color_id]["r"],@palette[color_id]["g"],@palette[color_id]["b"],points_count);
 			end
 
@@ -2124,8 +2124,8 @@ class Rchart
 		poly_plots.each_with_index do |value,key|
 			image_filled_polygon(@picture, poly_plots[key], @palette[key]["r"],@palette[key]["g"],@palette[key]["b"])
 		end
-		self.	draw_circle(x_pos-0.5,y_pos-0.5,radius,r,g,b)
-		self.	draw_circle(x_pos-0.5,y_pos-0.5,radius+0.5,r,g,b)
+		self.draw_circle(x_pos-0.5,y_pos-0.5,radius,r,g,b)
+		self.draw_circle(x_pos-0.5,y_pos-0.5,radius+0.5,r,g,b)
 		# Draw Top polygons 
 		top_plots.each_with_index do  |value,key|
 			j = 0
@@ -2286,7 +2286,7 @@ class Rchart
 
 		# Draw Bottom polygons 
 		i_values.each_with_index do |val,key|
-			c_graph_lo = allocate_color(@picture,@palette[key]["r"]-20,@palette[key]["g"]-20,@palette[key]["b"]-20)
+			#c_graph_lo = allocate_color(@picture,@palette[key]["r"]-20,@palette[key]["g"]-20,@palette[key]["b"]-20)
 			image_filled_polygon(@picture,bot_plots[key],@palette[key]["r"]-20,@palette[key]["g"]-20,@palette[key]["b"]-20)
 			if (enhance_colors)
 				en = -10
@@ -2309,7 +2309,7 @@ class Rchart
 		i = splice_height-1
 		while(i>=1)
 			i_values.each_with_index do |val,key|
-				c_graph_lo = allocate_color(@picture,@palette[key]["r"]-10,@palette[key]["g"]-10,@palette[key]["b"]-10)
+			#	c_graph_lo = allocate_color(@picture,@palette[key]["r"]-10,@palette[key]["g"]-10,@palette[key]["b"]-10)
 				plots =[]
 				plot = 0
 				top_plots[key].each_with_index do |value2,key2|
@@ -2337,7 +2337,7 @@ class Rchart
 		#Draw Top polygons
 		key = i_values.length-1
 		while(key>=0)
-			c_graph_lo = allocate_color(@picture,@palette[key]["r"],@palette[key]["g"],@palette[key]["b"])
+		#	c_graph_lo = allocate_color(@picture,@palette[key]["r"],@palette[key]["g"],@palette[key]["b"])
 			image_filled_polygon(@picture,top_plots[key],@palette[key]["r"],@palette[key]["g"],@palette[key]["b"])
 
 			if ( enhance_colors )
@@ -2493,7 +2493,7 @@ class Rchart
 		# Draw Top polygons 
 		poly_plots.each_with_index do  |value,key|
 			if ( !all_black )
-				image_filled_polygon(@picture,poly_plots[key],@palette[key]["r"],@palette[key]["g"],@palette[key]["b"]);
+				image_filled_polygon(@picture,poly_plots[key],@palette[key]["r"],@palette[key]["g"],@palette[key]["b"])
 			else
 				image_filled_polygon(@picture,poly_plots[key],@shadow_r_color,@shadow_g_color,@shadow_b_color)
 			end
@@ -2633,7 +2633,7 @@ class Rchart
 	def draw_rounded_rectangle(x1, y1, x2, y2, radius,r, g, b)
 		b, g, r = validate_color(b, g, r)
 
-		c_rectangle = allocate_color(@picture,r,g,b)
+		#c_rectangle = allocate_color(@picture,r,g,b)
 
 		step = 90 / ((3.1418 * radius)/2)
 		i=0
@@ -2720,8 +2720,6 @@ class Rchart
 	def draw_circle(xc,yc,height,r,g,b,width=0)
 		width = height if ( width == 0 )
 		b, g, r = validate_color(b, g, r)
-
-		c_circle = allocate_color(@picture,r,g,b);
 		step     = 360 / (2 * 3.1418 * [width,height].max)
 		i =0
 		while(i<=360)
@@ -2912,13 +2910,13 @@ class Rchart
 	def add_border(size=3,r=0,g=0,b=0)
 		width  = @x_size+2*size
 		height = @y_size+2*size
-		resampled    = image_create_true_color(width,height);
+		resampled    = image_create_true_color(width,height)
 		image_filled_rectangle(resampled,0,0,width,height, r, g, b)
 		image_copy(@picture,resampled,size,size,0,0,@x_size,@y_size)
 		image_destroy(@picture)
-		@x_size = width;
-		@y_size = height;
-		@picture = image_create_true_color(@x_size,@y_size);
+		@x_size = width
+		@y_size = height
+		@picture = image_create_true_color(@x_size,@y_size)
 		image_filled_rectangle(@picture,0,0,@x_size,@y_size,255,255,255)
 		image_color_transparent(@picture,255,255,255)
 		image_copy(resampled,@picture,0,0,0,0,@x_size,@y_size)
@@ -2971,7 +2969,7 @@ class Rchart
 	def validate_data_description(function_name,data_description,description_required=true)
 		if (data_description["position"].nil?)
 			@errors  << "[Warning] #{function_name} - Y Labels are not set."
-			data_description["position"] = "name";
+			data_description["position"] = "name"
 		end
 
 		if (description_required)
@@ -3125,7 +3123,7 @@ class Rchart
 			ypos        = @y_size - (18 + ((@errors.count)-1) * (@error_font_size + 4))
 			@errors.each do |value|
 				image_ttf_text(@picture,@error_font_size,0,@x_size-(max_width+15),ypos,c_text_color,@error_font_name,value)
-				ypos = ypos + (@error_font_size + 4);
+				ypos = ypos + (@error_font_size + 4)
 			end
 		end
 	end
