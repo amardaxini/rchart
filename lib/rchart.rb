@@ -2209,6 +2209,7 @@ class Rchart
 		atop_plots = []
 		abot_plots = []
 		i_values.each_with_index do |value,key|
+
 			x_cent_pos = Math.cos((angle-c_dev+(value*splice_ratio+splice_distance_ratio)/2) * 3.1418 / 180 ) * splice_distance + x_pos
 			y_cent_pos = Math.sin((angle-c_dev+(value*splice_ratio+splice_distance_ratio)/2) * 3.1418 / 180 ) * splice_distance + y_pos
 			x_cent_pos2 = Math.cos((angle+c_dev+(value*splice_ratio+splice_distance_ratio)/2) * 3.1418 / 180 ) * splice_distance + x_pos
@@ -2411,11 +2412,12 @@ class Rchart
 		splice_ratio   = 360.0 / pie_sum
 		splice_percent = 100.0 / pie_sum
 		# Calculate all polygons 
-		angle = 0;
+		angle = 0
 		top_plots = []
 		i_values.each_with_index do |value,key|
-			x_offset = Math.cos((angle+(value/2*splice_ratio)) * Math::PI / 180 ) * splice_distance
-			y_offset = Math.sin((angle+(value/2*splice_ratio)) * Math::PI / 180 ) * splice_distance
+
+			x_offset = Math.cos((angle+(value*1.0/2*splice_ratio)) * Math::PI / 180 ) * splice_distance
+			y_offset = Math.sin((angle+(value*1.0/2*splice_ratio)) * Math::PI / 180 ) * splice_distance
 
 			top_plots[key] = [(x_pos + x_offset).round]
 			top_plots[key] << (y_pos + y_offset).round
