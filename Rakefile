@@ -11,7 +11,6 @@ begin
     gem.homepage = "http://github.com/amardaxini/rchart"
     gem.authors = ["amardaxini"]
     gem.rubyforge_project = "rchart"
-#    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
   #  gem.add_development_dependency "ruby-gd",">=0.8.0"
     gem.add_development_dependency "rgd2-ffij"
     gem.files = [Dir['fonts/*'],Dir['examples/*'],Dir['lib/*.rb'],".document", ".gitignore","LICENSE","README.rdoc","Rakefile","VERSION", "test/helper.rb","test/test_rchart.rb"]
