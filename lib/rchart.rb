@@ -25,7 +25,7 @@ class Rchart
 	ALIGN_BOTTOM_LEFT = 7
 	ALIGN_BOTTOM_CENTER = 8
 	ALIGN_BOTTOM_RIGHT = 9
-	FONT_PATH =  File.expand_path(File.join(File.dirname(__FILE__),"fonts"))
+	FONT_PATH =  File.expand_path(File.join(File.dirname(__FILE__),"..","fonts"))
 	attr_accessor :antialias_quality,:picture
 	# This function create a new chart object.
 	# This object will be used during all the steps of the graph creation.

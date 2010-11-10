@@ -246,7 +246,15 @@ module RchartHelper
 		file = File.new(file_name,"wb")
 		file.write @picture.png
 		file.close
-	end
+  end
+#Outputs the image in PNG format as String object.
+#This method will be especially useful when you want to transmit an image directly to an user(i.e, without first writing it to a file)
+
+  def render_png_str(img=self.picture)
+    img.png
+    
+  end
+  
 	# render Graph as jpeg format
 	def render_jpeg(file_name,quality=0)
 		print_errors(@error_interface) if ( @error_reporting )
