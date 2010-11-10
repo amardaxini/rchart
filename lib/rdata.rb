@@ -1,7 +1,9 @@
+require 'rubygems'
+
 class Rdata
 # This function create a new Rdata object.
 # This object will be used during all the steps of the data population.
-# Data will be extracted from this object using get_data and get_data_description 
+# Data will be extracted from this object using get_data and get_data_description
 	def initialize
 		@data                          = []
 		@data_description              = {}
@@ -36,7 +38,7 @@ class Rdata
 				@data[id]= @data[id].merge(serie => value)
 			end
 			if description != ""
-				@data[id]["name"] = description;
+				@data[id]["name"] = description
 			elsif @data[id]["name"].nil?
 				@data[id]["name"] = id
 			end
@@ -85,9 +87,9 @@ class Rdata
 	# Generate some data...
 	# * chart_data.add_point([2,4,9,5,1,0],"Serie1")
 	# * chart_data.add_point([(1,1,2,2,3,3],"Serie2")
-	# This will mark both Serie1 & Serie2 as "graphable"  
+	# This will mark both Serie1 & Serie2 as "graphable"
 	# * chart_data.add_all_series
-	
+
 	def add_all_series
 		@data_description["values"] = []
 		if(!@data[0].nil?)
@@ -108,10 +110,10 @@ class Rdata
 	# * chart_data.add_all_series
 	# This will remove the "graphable" status of Serie2
 	# * chart_data.remove_serie("Serie2")
-	
+
 	def remove_serie(serie_name="Serie1")
 		if (!@data_description["values"].nil?)
-			found = false;
+			found = false
 			@data_description["values"].each do |v|
 				@data_description["values"].delete(v)  if (v == serie_name )
 			end
@@ -126,7 +128,7 @@ class Rdata
 	# * chart_data.add_serie("Serie2")
 	# * chart_data.add_serie("Serie3")
 	# Set Serie as abcisse label
-	# * chart_data.set_abscise_label_serie("Serie1")  
+	# * chart_data.set_abscise_label_serie("Serie1")
 	def set_abscise_label_serie(serie_name = "name")
 		@data_description["position"] = serie_name
 	end
@@ -139,7 +141,7 @@ class Rdata
  # * chart_data.set_serie_name("January")
  # This will set the name of Serie2 to "February"
  # * chart_data.set_serie_name("February","Serie2")
-	
+
 	def set_serie_name(name,serie_name="Serie1")
 		if @data_description["description"].nil?
 			@data_description["description"]={serie_name => name}
@@ -158,7 +160,7 @@ class Rdata
 		end
 	end
 	# This will give a name to the Y axis, writting it horizontally behind the chart
-	# * chart_data.set_y_axis_name("Temperature") 
+	# * chart_data.set_y_axis_name("Temperature")
 	def set_y_axis_name(name="Y Axis")
 		if @data_description["axis"].nil?
 			@data_description["axis"]= {"y" => name}
@@ -187,11 +189,11 @@ class Rdata
 	def set_x_axis_unit(unit="")
 		@data_description["unit"]["x"] = unit
 	end
-	
+
 # Set the axis unit. This will be appended to the axis value
 # Give the "m/s" unit to the Y axis
 # * chart_data.set_x_axis_unit("m/s")
-	
+
 	def set_y_axis_unit(unit="")
 		@data_description["unit"]["y"] = unit
 	end
@@ -219,7 +221,7 @@ class Rdata
 	# This function can be used to remove the description of a serie.
 	# This description will be written on the graph when calling the drawLegend function.
 	# Removing it's name using this function can be usefull to hide previously used series
-	
+
 	def remove_all_series
 		@data_description["values"].each do |v|
 			@data_description["values"] = []
@@ -230,10 +232,9 @@ class Rdata
 	def get_data
 		@data
 	end
-	# This function is used everytime you want to retrieve the Data description stored in the Rdata structure 
+	# This function is used everytime you want to retrieve the Data description stored in the Rdata structure
 	def get_data_description
 		@data_description
 	end
 
 end
-
