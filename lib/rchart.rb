@@ -1,8 +1,7 @@
 require 'rubygems'
-require "gd2-ffij"
 require "gd2_helper"
 require "graph"
-
+require "gd2-ffij"
 class Rchart
   include   GD2
   include Graph
