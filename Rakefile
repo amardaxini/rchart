@@ -12,8 +12,9 @@ begin
     gem.authors = ["amardaxini"]
     gem.rubyforge_project = "rchart"
 #    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    gem.add_development_dependency "ruby-gd",">=0.8.0"
-    gem.files = [Dir['fonts/*'],Dir['examples/*'],".document", ".gitignore","LICENSE","README.rdoc","Rakefile","VERSION",  "lib/rchart.rb","lib/rdata.rb","lib/version.rb","test/helper.rb","test/test_rchart.rb"]
+  #  gem.add_development_dependency "ruby-gd",">=0.8.0"
+    gem.add_development_dependency "rgd2-ffij"
+    gem.files = [Dir['fonts/*'],Dir['examples/*'],Dir['lib/*.rb'],".document", ".gitignore","LICENSE","README.rdoc","Rakefile","VERSION", "test/helper.rb","test/test_rchart.rb"]
     gem.requirements << "libgd-ruby, libpng-dev, libgd-dev package are required"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
