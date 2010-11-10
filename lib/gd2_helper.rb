@@ -73,9 +73,7 @@ module GD2
   end
 
   def image_destroy(image)
-   # GD2.gdImageDestroy(image.image_ptr)
-    #GD2::FFIStruct::ImagePtr.release(image.ptr)
-   GD2FFI.gdImageDestroy(image.image_ptr)
+    GD2FFI.gdImageDestroy(image.image_ptr)
   end
 
   def image_create_from_png(file_name)
@@ -112,5 +110,52 @@ module GD2
   def rgb_color(picture,pixel)
     color = picture.pixel2color(pixel)
     [color.r,color.g,color.b]
+  end
+  # render Graph as png format
+  def render_png(file_name,level=9)
+    print_errors(@error_interface) if ( @error_reporting )
+    file = File.new(file_name,"wb")
+    file.write @picture.png(level)
+    file.close
+  end
+
+  def export_image(file_name,options={})
+    @picture.export(file_name,options)
+  end
+
+#Outputs the image in PNG format as String object.
+#This method will be especially useful when you want to transmit an image directly to an user(i.e, without first writing it to a file)
+
+  def render_png_str(level=9,img=self.picture)
+    img.png(level)
+  end
+
+  def render_jepeg_str(level=9,img=self.picture)
+    img.png(level)
+  end
+  def render_gif_str(img=self.picture)
+    img.gif
+  end
+
+  def render_wbmp_str(fgcolor,img=self.picture)
+    img.wbmp(fgcolor)
+  end
+
+  def render_gd_str(img=self.picture)
+    img.gd(fgcolor)
+  end
+  # Format flags for Image#gd2
+  # GD2::FMT_RAW
+  # GD2::FMT_COMPRESSED
+  def gd2(fmt= GD2::FMT_RAW,img=self.picture)
+    img.gd2(fmt)
+  end
+
+  # render Graph as jpeg format
+  def render_jpeg(file_name,quality=0)
+    print_errors(@error_interface) if ( @error_reporting )
+    file = File.new(file_name,"wb")
+    file.write @picture.jpeg(quality)
+    file.close
   end
 end

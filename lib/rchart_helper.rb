@@ -91,35 +91,35 @@ module RchartHelper
     end
   end
 
-  
+
 # Validate data contained in the description array  Internal function
-	def validate_data_description(function_name,data_description,description_required=true)
-		if (data_description["position"].nil?)
-			@errors  << "[Warning] #{function_name} - Y Labels are not set."
-			data_description["position"] = "name"
-		end
+  def validate_data_description(function_name,data_description,description_required=true)
+    if (data_description["position"].nil?)
+      @errors  << "[Warning] #{function_name} - Y Labels are not set."
+      data_description["position"] = "name"
+    end
 
-		if (description_required)
-			if ((data_description["description"].nil?))
-				@errors  << "[Warning] #{function_name} - Series descriptions are not set."
-				data_description["values"].each do |value|
-					if data_description["description"].nil?
-						data_description["description"]={value=> value}
-					else
-						data_description["description"]=data_description["description"].merge(value=>value)
-					end
-				end
-			end
+    if (description_required)
+      if ((data_description["description"].nil?))
+        @errors  << "[Warning] #{function_name} - Series descriptions are not set."
+        data_description["values"].each do |value|
+          if data_description["description"].nil?
+            data_description["description"]={value=> value}
+          else
+            data_description["description"]=data_description["description"].merge(value=>value)
+          end
+        end
+      end
 
-			data_desc_count = data_description["values"].is_a?(Array) ? data_description["values"].count : 1
-			if ((data_description["description"].count) < data_desc_count)
-				@errors << "[Warning] #{function_name} - Some series descriptions are not set."
-				data_description["values"].each do |value|
-					data_description["description"][value] = value  if ( data_description["description"][value].nil?)
-				end
-			end
-		end
-		return data_description
+      data_desc_count = data_description["values"].is_a?(Array) ? data_description["values"].count : 1
+      if ((data_description["description"].count) < data_desc_count)
+        @errors << "[Warning] #{function_name} - Some series descriptions are not set."
+        data_description["values"].each do |value|
+          data_description["description"][value] = value  if ( data_description["description"][value].nil?)
+        end
+      end
+    end
+    return data_description
   end
   #Validate data contained in the data array Internal function
   def validate_data(function_name,data)
@@ -144,143 +144,122 @@ module RchartHelper
     end
     return data
   end
-  	#Convert seconds to a time format string
-	def to_time(value)
-		hour   = (value/3600).floor
-		minute = ((value - hour*3600)/60).floor
-		second =(value - hour*3600 - minute*60).floor
+  #Convert seconds to a time format string
+  def to_time(value)
+    hour   = (value/3600).floor
+    minute = ((value - hour*3600)/60).floor
+    second =(value - hour*3600 - minute*60).floor
 
-		hour = "0.#{Hour}"  if (hour.length == 1 )
-		minute = "0.#{minute}"    if (minute.length == 1 )
-		second = "0.#{second}"  if (second.length == 1 )
+    hour = "0.#{Hour}"  if (hour.length == 1 )
+    minute = "0.#{minute}"    if (minute.length == 1 )
+    second = "0.#{second}"  if (second.length == 1 )
 
-		return ("#{hour}.:.#{minute}}.:.#{second}")
-	end
+    return ("#{hour}.:.#{minute}}.:.#{second}")
+  end
 
-	# Convert to metric system */
-	def to_metric(value)
-		go = (value/1000000000).floor
-		mo = ((value - go*1000000000)/1000000).floor
-		ko = ((value - go*1000000000 - mo*1000000)/1000).floor
-		o  = (value - go*1000000000 - mo*1000000 - ko*1000).floor
+  # Convert to metric system */
+  def to_metric(value)
+    go = (value/1000000000).floor
+    mo = ((value - go*1000000000)/1000000).floor
+    ko = ((value - go*1000000000 - mo*1000000)/1000).floor
+    o  = (value - go*1000000000 - mo*1000000 - ko*1000).floor
 
-		return("#{go}..#{mo}.g")   if (go != 0)
-		return("#{mo}...#{ko}.m")   if (mo != 0)
-		return("#{ko}...#{o}).k")   if (ko != 0)
-		return o
-	end
+    return("#{go}..#{mo}.g")   if (go != 0)
+    return("#{mo}...#{ko}.m")   if (mo != 0)
+    return("#{ko}...#{o}).k")   if (ko != 0)
+    return o
+  end
 
 # Convert to curency
-	def to_currency(value)
-		go = (value/1000000000).floor
-		mo = ((value - go*1000000000)/1000000).floor
-		ko = ((value - go*1000000000 - mo*1000000)/1000).floor
-		o  = (value - go*1000000000 - mo*1000000 - ko*1000).floor
+  def to_currency(value)
+    go = (value/1000000000).floor
+    mo = ((value - go*1000000000)/1000000).floor
+    ko = ((value - go*1000000000 - mo*1000000)/1000).floor
+    o  = (value - go*1000000000 - mo*1000000 - ko*1000).floor
 
-		o = "00.#{o}"  if ( (o.length) == 1 )
-		o = "0.#{o}"   if ( (o.length) == 2 )
+    o = "00.#{o}"  if ( (o.length) == 1 )
+    o = "0.#{o}"   if ( (o.length) == 2 )
 
-		result_string = o
-		result_string = "#{ko}...#{result_string}"   if ( ko != 0 )
-		result_string = "#{mo}...#{result_string}"   if ( mo != 0 )
-		result_string = "#{go}...#{result_string}"   if ( go != 0 )
+    result_string = o
+    result_string = "#{ko}...#{result_string}"   if ( ko != 0 )
+    result_string = "#{mo}...#{result_string}"   if ( mo != 0 )
+    result_string = "#{go}...#{result_string}"   if ( go != 0 )
 
-		result_string = @currency.result_string
-		result_string
-	end
-	# Set date format for axis labels TODO
-	def set_date_format(format)
-		@date_format = format
-	end
-
-	def to_date(value)
-		#return(Time.parse(value))
-	end
-	#	Check if a number is a full integer (for scaling)
-	def is_real_int(value)
-		value.ceil == value.floor
-	end
-	# round of particular decimal
-	def round_of(no,n=0)
-		(no * (10.0 ** n)).round * (10.0 ** (-n))
-	end
-
-	#convert degree to radian
-	def deg2rad(deg)
-		deg*Math::PI/180
-	end
-
-	def raise_fatal(message)
-		puts "[FATAL] "+message
-		return -1
-	end
-	# Print all error messages on the CLI or graphically
-	def print_errors(mode="cli")
-		return(0) if (@errors.count == 0)
-
-		if mode == "cli"
-			@errors.each do |value|
-				puts value
-			end
-		elsif ( mode == "gd" )
-			set_line_style(width=1)
-			max_width = 0
-			@errors.each do |value|
-				position  = image_ftb_box(@error_font_size,0,@error_font_name,value)
-				text_width = position[2]-position[0]
-				max_width = text_width if ( text_width > max_width )
-			end
-			draw_filled_rounded_rectangle(@x_size-(max_width+20),@y_size-(20+((@error_font_size+4)*(@errors.count))),@x_size-10,@y_size-10,6,233,185,185)
-			draw_rounded_rectangle(@x_size-(max_width+20),@y_size-(20+((@error_font_size+4)*(@errors.count))),@x_size-10,@y_size-10,6,193,145,145)
-			c_text_color = allocate_color(@picture,133,85,85)
-			ypos        = @y_size - (18 + ((@errors.count)-1) * (@error_font_size + 4))
-			@errors.each do |value|
-				image_ttf_text(@picture,@error_font_size,0,@x_size-(max_width+15),ypos,c_text_color,@error_font_name,value)
-				ypos = ypos + (@error_font_size + 4)
-			end
-		end
-	end
-	# render Graph as png format
-	def render_png(file_name)
-		print_errors(@error_interface) if ( @error_reporting )
-		file = File.new(file_name,"wb")
-		file.write @picture.png
-		file.close
+    result_string = @currency.result_string
+    result_string
   end
-#Outputs the image in PNG format as String object.
-#This method will be especially useful when you want to transmit an image directly to an user(i.e, without first writing it to a file)
+  # Set date format for axis labels TODO
+  def set_date_format(format)
+    @date_format = format
+  end
 
-  def render_png_str(img=self.picture)
-    img.png
-    
+  def to_date(value)
+    #return(Time.parse(value))
+  end
+  #	Check if a number is a full integer (for scaling)
+  def is_real_int(value)
+    value.ceil == value.floor
+  end
+  # round of particular decimal
+  def round_of(no,n=0)
+    (no * (10.0 ** n)).round * (10.0 ** (-n))
+  end
+
+  #convert degree to radian
+  def deg2rad(deg)
+    deg*Math::PI/180
+  end
+
+  def raise_fatal(message)
+    puts "[FATAL] "+message
+    return -1
+  end
+  # Print all error messages on the CLI or graphically
+  def print_errors(mode="cli")
+    return(0) if (@errors.count == 0)
+
+    if mode == "cli"
+      @errors.each do |value|
+        puts value
+      end
+    elsif ( mode == "gd" )
+      set_line_style(width=1)
+      max_width = 0
+      @errors.each do |value|
+        position  = image_ftb_box(@error_font_size,0,@error_font_name,value)
+        text_width = position[2]-position[0]
+        max_width = text_width if ( text_width > max_width )
+      end
+      draw_filled_rounded_rectangle(@x_size-(max_width+20),@y_size-(20+((@error_font_size+4)*(@errors.count))),@x_size-10,@y_size-10,6,233,185,185)
+      draw_rounded_rectangle(@x_size-(max_width+20),@y_size-(20+((@error_font_size+4)*(@errors.count))),@x_size-10,@y_size-10,6,193,145,145)
+      c_text_color = allocate_color(@picture,133,85,85)
+      ypos        = @y_size - (18 + ((@errors.count)-1) * (@error_font_size + 4))
+      @errors.each do |value|
+        image_ttf_text(@picture,@error_font_size,0,@x_size-(max_width+15),ypos,c_text_color,@error_font_name,value)
+        ypos = ypos + (@error_font_size + 4)
+      end
+    end
   end
   
-	# render Graph as jpeg format
-	def render_jpeg(file_name,quality=0)
-		print_errors(@error_interface) if ( @error_reporting )
-		file = File.new(file_name,"wb")
-		file.write @picture.jpeg(quality)
-		file.close
-	end
-	# resize image on passing png,jpeg,or gd image
-	# pass file_name/gd image,new_file_name,percentage,or resize width,resize height
-	def resize_image(file_name,resize_file_name="test",resized_width=0,resized_height=0,render_file_as="png")
-		image = Image.import(file_name)
-		resize_image = image.resize(resized_width, resized_height,true)
+  # resize image on passing png,jpeg,or gd image
+  # pass file_name/gd image,new_file_name,percentage,or resize width,resize height
+  def resize_image(file_name,resize_file_name="test",resized_width=0,resized_height=0,render_file_as="png")
+    image = Image.import(file_name)
+    resize_image = image.resize(resized_width, resized_height,true)
 
-		file=File.new(resize_file_name,"wb")
-		if render_file_as == "png"
-			file.write resize_image.png
-		elsif	 render_file_as == "jpeg"
-			file.write resize_image.jpeg
-		elsif	 render_file_as == "gd"
-			file.write resize_image.gd
-		elsif	 render_file_as == "gd2"
-			file.write resize_image.gd2
-		else
-			puts "Provide proper image"
-		end
-		file.close
+    file=File.new(resize_file_name,"wb")
+    if render_file_as == "png"
+      file.write resize_image.png
+    elsif	 render_file_as == "jpeg"
+      file.write resize_image.jpeg
+    elsif	 render_file_as == "gd"
+      file.write resize_image.gd
+    elsif	 render_file_as == "gd2"
+      file.write resize_image.gd2
+    else
+      puts "Provide proper image"
+    end
+    file.close
   end
-  
+
 end
