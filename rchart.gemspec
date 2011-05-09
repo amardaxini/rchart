@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["amardaxini"]
-  s.date = %q{2010-10-26}
+  s.date = %q{2011-05-09}
   s.description = %q{Ruby port of the slick pChart charting library}
   s.email = %q{amardaxini@gmail.com}
   s.extra_rdoc_files = [
@@ -36,16 +36,13 @@ Gem::Specification.new do |s|
      "examples/example17.rb",
      "examples/example18.rb",
      "examples/example19.rb",
-     "examples/example2",
      "examples/example2.rb",
      "examples/example20.rb",
      "examples/example21.rb",
-     "examples/example3",
      "examples/example3.rb",
      "examples/example4.rb",
      "examples/example5.rb",
      "examples/example6.rb",
-     "examples/example7",
      "examples/example7.rb",
      "examples/example8.rb",
      "examples/example9.rb",
