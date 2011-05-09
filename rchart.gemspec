@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rchart}
-  s.version = "2.0.0"
+  s.version = "2.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["amardaxini"]
-  s.date = %q{2010-11-10}
+  s.date = %q{2011-05-09}
   s.description = %q{Ruby port of the slick pChart charting library}
   s.email = %q{amardaxini@gmail.com}
   s.extra_rdoc_files = [
@@ -53,8 +53,21 @@ Gem::Specification.new do |s|
      "fonts/Silkscreen.ttf",
      "fonts/pf_arma_five.ttf",
      "fonts/tahoma.ttf",
+     "lib/bar_chart.rb",
+     "lib/color_palette.rb",
+     "lib/cubic_chart.rb",
+     "lib/gd2_helper.rb",
+     "lib/graph.rb",
+     "lib/graph_helper.rb",
+     "lib/layout.rb",
+     "lib/legend.rb",
+     "lib/line_chart.rb",
+     "lib/pie_chart.rb",
+     "lib/plot_chart.rb",
      "lib/rchart.rb",
+     "lib/rchart_helper.rb",
      "lib/rdata.rb",
+     "lib/scale.rb",
      "test/helper.rb",
      "test/test_rchart.rb"
   ]
