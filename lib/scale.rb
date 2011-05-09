@@ -456,7 +456,7 @@ module Scale
         end
 
         if ( (@v_x_min*1.0 / scale / factor).floor != @v_x_min / scale / factor)
-          grid_id     = floor( @v_x_min / scale / factor)
+          grid_id     = ( @v_x_min / scale / factor).floor
           @v_x_min = grid_id * scale * factor
           x_divisions+=1
         end
