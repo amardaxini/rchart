@@ -4,9 +4,7 @@ module ColorPalette
   # You must provide an rgb color.
   def set_color_palette(id,r,g,b)
     b,g,r=validate_color(b, g, r)
-    @palette[id]["r"] = r
-    @palette[id]["g"] = g
-    @palette[id]["b"] = b
+    set_palette(id, r, g, b)
   end
 
   # Create a color palette shading from one color to another
@@ -17,12 +15,11 @@ module ColorPalette
     b_factor = (b2-b1)/shades
     i= 0
     while(i<= shades-1)
-      @palette[i]["r"] = r1+r_factor*i
-      @palette[i]["g"] = g1+g_factor*i
-      @palette[i]["b"] = b1+b_factor*i
+      set_palette(i, r1+r_factor*i, g1+g_factor*i, b1+b_factor*i)
       i = i+1
     end
   end
+
   # This function will load the color scheme from a text file.
   # This file must be formatted with three values per line ( r,g,b ).
   # By default the delimiter is a coma but you can specify it.
@@ -32,9 +29,7 @@ module ColorPalette
       while (line = infile.gets)
         values = line.split(",")
         if ( values.length == 3 )
-          @palette[color_id]["r"] = values[0].to_i
-          @palette[color_id]["g"] = values[1].to_i
-          @palette[color_id]["b"] = values[2].to_i
+          set_palette(color_id, values[0].to_i, values[1].to_i, values[2].to_i)
           color_id+=1
         end
       end
@@ -46,11 +41,17 @@ module ColorPalette
     color_id = 0
     color_palette.each do |palette|
       if palette.length == 3
-        @palette[color_id]["r"] = palette[0].to_i
-        @palette[color_id]["g"] = palette[1].to_i
-        @palette[color_id]["b"] = palette[2].to_i
+        set_palette(
+            color_id, palette[0].to_i, palette[1].to_i, palette[2].to_i)
         color_id+=1
       end
     end
   end
+
+  private
+
+  def set_palette(id,r,g,b)
+    @palette[id] = { "r" => r, "g" => g, "b" => b }
+  end
+
 end

@@ -149,10 +149,10 @@ module LineChart
     x_last = -1
     data.each do |key|
       if ( !key[y_serie_name].nil? && !key[x_serie_name].nil? )
-        x= key[x_serie_name]
+        x = key[x_serie_name]
         y = key[y_serie_name]
         y = @g_area_y2 - ((y-@vmin) * @division_ratio)
-        x=  @g_area_x1 + ((x-@v_x_min) * @x_division_ratio)
+        x = @g_area_x1 + ((x-@v_x_min) * @x_division_ratio)
         if (x_last != -1 && y_last != -1)
           draw_line(x_last,y_last,x,y,@palette[palette_id]["r"],@palette[palette_id]["g"],@palette[palette_id]["b"],true)
         end
