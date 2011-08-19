@@ -14,14 +14,14 @@ module Scale
   # Allow you to fix the scale, use this to bypass the automatic scaling
   # You can use this function to skip the automatic scaling.
   # vmin and vmax will be used to render the graph.
-  def set_fixed_scale(v_min,v_max,divisions=5,v_x_min=0,v_x_max=0,x_divisions=5)
+  def set_fixed_scale(v_min,v_max,divisions=5,v_x_min=nil,v_x_max=nil,x_divisions=5)
     @vmin      = v_min.to_f
     @vmax      = v_max.to_f
     @divisions = divisions.to_f
 
-    if (!v_x_min == 0 )
+    if (!v_x_min.nil?)
       @v_x_min      = v_x_min.to_f
-      @v_x_max      = v_x_max.to_f
+      @v_x_max      = v_x_max.nil? ? 0.0 : v_x_max.to_f
       @x_divisions = x_divisions.to_f
     end
   end
@@ -330,8 +330,8 @@ module Scale
             scale = 2
           end
           if (!scale_ok)
-            factor = factor * 10  if ( scale2 > 1 )
-            factor = factor / 10  if ( scale2 < 1 )
+            factor = factor * 10.0  if ( scale2 > 1 )
+            factor = factor / 10.0  if ( scale2 < 1 )
           end
         end
         if ((((@vmax*1.0 / scale) / factor)).floor != ((@vmax*1.0 / scale) / factor))
@@ -358,7 +358,7 @@ module Scale
         divisions+=1
       end
     else
-      divisions =@divisions
+      divisions = @divisions
     end
     @division_count = divisions
 
@@ -373,8 +373,8 @@ module Scale
     while(i<= divisions+1)
       self.draw_line(@g_area_x1,ypos,@g_area_x1-5,ypos,r,g,b)
       value     = @vmin*1.0 + (i-1) * (( @vmax - @vmin ) / divisions)
-      value     = (round_of(value * (10**decimals),2)) / (10**decimals)
-      value= value.round if value.floor == value.ceil
+      value = value.round(decimals)
+      value = value.round if value.floor == value.ceil
       value = "#{value} #{data_description['unit']['y']}"  if ( data_description["format"]["y"]== "number")
       value = self.to_time(value)                  if ( data_description["format"]["y"] == "time" )
       value = self.to_date(value)                  if ( data_description["format"]["y"] == "date" )
@@ -489,10 +489,10 @@ module Scale
 
     while(i<= x_divisions+1)
       self.draw_line(xpos,@g_area_y2,xpos,@g_area_y2+5,r,g,b)
-      value     = @v_x_min + (i-1) * (( @v_x_max - @v_x_min ) / x_divisions)
-      value     = (round_of(value * (10**decimals),2)) / (10**decimals)
-      value= value.round if value.floor == value.ceil
-      value = "#{value}#{data_description['unit']['y']}"  if ( data_description["format"]["y"]== "number")
+      value = @v_x_min + (i-1) * (( @v_x_max - @v_x_min ) / x_divisions)
+      value = value.round(decimals)
+      value = value.round if value.floor == value.ceil
+      value = "#{value}#{data_description['unit']['y']}"  if ( data_description["format"]["y"] == "number")
       value = self.to_time(value)                  if ( data_description["format"]["y"] == "time" )
       value = self.to_date(value)                  if ( data_description["format"]["y"] == "date" )
       value = self.to_metric(value)                if ( data_description["format"]["Y"] == "metric" )
