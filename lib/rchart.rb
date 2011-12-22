@@ -1252,49 +1252,49 @@ class Rchart
 	# You must specify the name of the two series that will be used as x and y coordinates and the color id to use. 
 
 	def draw_xy_plot_graph(data,data_description,y_serie_name,x_serie_name,palette_id=0,big_radius=5,small_radius=2,r2=-1,g2=-1,b2=-1,shadow=true)
-		r = @palette[palette_id]["r"];
-		g = @palette[palette_id]["g"];
-		b = @palette[palette_id]["b"];
-		r3 = -1
-		g3 = -1
-		b3 = -1
+		r = @palette[palette_id]["r"]
+    g = @palette[palette_id]["g"]
+    b = @palette[palette_id]["b"]
+    r3 = -1
+    g3 = -1
+    b3 = -1
 
-		y_last = -1
-		x_last = -1
-		data.each do |key|
-			if (!key[y_serie_name].nil? && !key[x_serie_name])
-				x = key[x_serie_name]
-				y = key[y_serie_name]
-				y = @g_area_y2 - ((y-@vmin) * @division_ratio)
-				x = @g_area_x1 + ((x-@v_x_min) * @x_division_ratio)
-				if ( shadow )
-					if ( r3 !=-1 && g3 !=-1 && b3 !=-1 )
-						self.draw_filled_circle(x+2,y+2,big_radius,r3,g3,b3)
-					else
-						r3 = @palette[palette_id]["r"]-20
-						r = 0 if ( r < 0 )
-						g3 = @palette[palette_id]["g"]-20
-						g = 0 if ( g < 0 )
-						b3 = @palette[palette_id]["b"]-20
-						b = 0  if ( b < 0 )
-						self.draw_filled_circle(x+2,y+2,big_radius,r3,g3,b3)
-					end
-				end
-				self.draw_filled_circle(x+1,y+1,big_radius,r,g,b);
+    y_last = -1
+    x_last = -1
+    data.each do |key|
+      next if (key[y_serie_name].nil? or key[x_serie_name].nil?)
 
-				if ( r2 !=-1 && g2 !=-1 && b2 !=-1 )
-					self.draw_filled_circle(x+1,y+1,small_radius,r2,g2,b2)
-				else
-					r2 = @palette[palette_id]["r"]+20
-					r = 255 if ( r > 255 )
-					g2 = @palette[palette_id]["g"]+20
-					g = 255 if ( g > 255 )
-					b2 = @palette[palette_id]["b"]+20
-					b = 255 if ( b > 255 )
-					self.draw_filled_circle(x+1,y+1,small_radius,r2,g2,b2);
-				end
-			end
-		end
+      x = key[x_serie_name]
+      y = key[y_serie_name]
+      y = @g_area_y2 - ((y-@vmin) * @division_ratio)
+      x = @g_area_x1 + ((x-@v_x_min) * @x_division_ratio)
+      if ( shadow )
+        if ( r3 !=-1 && g3 !=-1 && b3 !=-1 )
+          self.draw_filled_circle(x+2,y+2,big_radius,r3,g3,b3)
+        else
+          r3 = @palette[palette_id]["r"]-20
+          r = 0 if ( r < 0 )
+          g3 = @palette[palette_id]["g"]-20
+          g = 0 if ( g < 0 )
+          b3 = @palette[palette_id]["b"]-20
+          b = 0  if ( b < 0 )
+          draw_filled_circle(x+2,y+2,big_radius,r3,g3,b3)
+        end
+      end
+      draw_filled_circle(x+1,y+1,big_radius,r,g,b)
+
+      if ( r2 !=-1 && g2 !=-1 && b2 !=-1 )
+        draw_filled_circle(x+1,y+1,small_radius,r2,g2,b2)
+      else
+        r2 = @palette[palette_id]["r"]+20
+        r = 255 if ( r > 255 )
+        g2 = @palette[palette_id]["g"]+20
+        g = 255 if ( g > 255 )
+        b2 = @palette[palette_id]["b"]+20
+        b = 255 if ( b > 255 )
+        draw_filled_circle(x+1,y+1,small_radius,r2,g2,b2)
+      end
+    end
 	end
 
 	#	This function will draw an area between two data series.
