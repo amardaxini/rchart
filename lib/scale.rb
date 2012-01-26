@@ -482,7 +482,7 @@ module Scale
     x_data_range = 0.1   if ( x_data_range == 0 )
 
     @division_width   = ( @g_area_x2 - @g_area_x1 ) / x_divisions
-    @x_division_ratio  = ( @g_area_x2 - @g_area_x1 ) / x_data_range
+    @x_division_ratio  = ( @g_area_x2.to_f - @g_area_x1.to_f ) / x_data_range.to_f
     xpos = @g_area_x1
     ymax =nil
     i=1
