@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Legend - rchart 2.0.4</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/legend.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-draw_legend">#draw_legend</a>
+    
+    <li><a href="#method-i-draw_pie_legend">#draw_pie_legend</a>
+    
+    <li><a href="#method-i-draw_text_box">#draw_text_box</a>
+    
+    <li><a href="#method-i-draw_title">#draw_title</a>
+    
+    <li><a href="#method-i-get_legend_box_size">#get_legend_box_size</a>
+    
+    <li><a href="#method-i-set_label">#set_label</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./BarChart.html">BarChart</a>
+  
+    <li><a href="./ColorPalette.html">ColorPalette</a>
+  
+    <li><a href="./CubicChart.html">CubicChart</a>
+  
+    <li><a href="./GD2.html">GD2</a>
+  
+    <li><a href="./Graph.html">Graph</a>
+  
+    <li><a href="./GraphHelper.html">GraphHelper</a>
+  
+    <li><a href="./Layout.html">Layout</a>
+  
+    <li><a href="./Legend.html">Legend</a>
+  
+    <li><a href="./LineChart.html">LineChart</a>
+  
+    <li><a href="./PieChart.html">PieChart</a>
+  
+    <li><a href="./PlotChart.html">PlotChart</a>
+  
+    <li><a href="./Rchart.html">Rchart</a>
+  
+    <li><a href="./RchartHelper.html">RchartHelper</a>
+  
+    <li><a href="./Rdata.html">Rdata</a>
+  
+    <li><a href="./Scale.html">Scale</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Legend</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-draw_legend" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_legend</span><span
+            class="method-args">(x_pos,y_pos,data_description,r,g,b,rs=-1,gs=-1,bs=-1,rt=0,gt=0,bt=0,border=true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function will draw the legend of the graph ( serie color &amp; serie
+name ) at the specified position. The r,g,bparameters are used to set the
+background color. You can optionally provide the shadow color using the
+rs,gs,bs parameters. You can also customize the text color using the
+rt,gt,bt. Setting Border to false remove the surrounding box.</p>
+          
+
+          
+          <div class="method-source-code" id="draw_legend-source">
+            <pre><span class="ruby-comment"># File lib/legend.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_legend</span>(<span class="ruby-identifier">x_pos</span>,<span class="ruby-identifier">y_pos</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>,<span class="ruby-identifier">rs</span>=<span class="ruby-value">-1</span>,<span class="ruby-identifier">gs</span>=<span class="ruby-value">-1</span>,<span class="ruby-identifier">bs</span>=<span class="ruby-value">-1</span>,<span class="ruby-identifier">rt</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">gt</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">bt</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">border</span>=<span class="ruby-keyword">true</span>)
+  <span class="ruby-comment">#Validate the Data and data_description array</span>
+  <span class="ruby-identifier">data_description</span> = <span class="ruby-identifier">validate_data_description</span>(<span class="ruby-string">&quot;draw_legend&quot;</span>,<span class="ruby-identifier">data_description</span>)
+  <span class="ruby-keyword">return</span>(<span class="ruby-value">-1</span>) <span class="ruby-keyword">if</span> (<span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;description&quot;</span>].<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">c_text_color</span> = <span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>, <span class="ruby-identifier">rt</span>, <span class="ruby-identifier">gt</span>, <span class="ruby-identifier">bt</span>)
+  <span class="ruby-comment"># &lt;-10-&gt;[8]&lt;-4-&gt;Text&lt;-10-&gt;</span>
+  <span class="ruby-identifier">max_width</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">max_height</span> = <span class="ruby-value">8</span>
+  <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;description&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>,<span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">position</span>   = <span class="ruby-identifier">image_ftb_box</span>(<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">text_width</span>  = <span class="ruby-identifier">position</span>[<span class="ruby-value">2</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-identifier">text_height</span> = <span class="ruby-identifier">position</span>[<span class="ruby-value">1</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">7</span>]
+    <span class="ruby-identifier">max_width</span> = <span class="ruby-identifier">text_width</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">text_width</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">max_width</span>)
+    <span class="ruby-identifier">max_height</span> = <span class="ruby-identifier">max_height</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text_height</span> <span class="ruby-operator">+</span> <span class="ruby-value">4</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">max_height</span> = <span class="ruby-identifier">max_height</span> <span class="ruby-operator">-</span> <span class="ruby-value">5</span>
+  <span class="ruby-identifier">max_width</span>  = <span class="ruby-identifier">max_width</span> <span class="ruby-operator">+</span> <span class="ruby-value">32</span>
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">rs</span> <span class="ruby-operator">==</span> <span class="ruby-value">-1</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">gs</span> <span class="ruby-operator">==</span> <span class="ruby-value">-1</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">bs</span> <span class="ruby-operator">==</span> <span class="ruby-value">-1</span> )
+    <span class="ruby-identifier">rs</span> = <span class="ruby-identifier">r</span><span class="ruby-operator">-</span><span class="ruby-value">30</span>
+    <span class="ruby-identifier">gs</span> = <span class="ruby-identifier">g</span><span class="ruby-operator">-</span><span class="ruby-value">30</span>
+    <span class="ruby-identifier">bs</span> = <span class="ruby-identifier">b</span><span class="ruby-operator">-</span><span class="ruby-value">30</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">border</span> )
+    <span class="ruby-identifier">draw_filled_rounded_rectangle</span>(<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">max_width</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">max_height</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-value">5</span>,<span class="ruby-identifier">rs</span>,<span class="ruby-identifier">gs</span>,<span class="ruby-identifier">bs</span>)
+    <span class="ruby-identifier">draw_filled_rounded_rectangle</span>(<span class="ruby-identifier">x_pos</span>,<span class="ruby-identifier">y_pos</span>,<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">max_width</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">max_height</span>,<span class="ruby-value">5</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">y_offset</span> = <span class="ruby-value">4</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@font_size</span>
+  <span class="ruby-identifier">id</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;description&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>,<span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">draw_filled_rounded_rectangle</span>(<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-value">10</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">y_offset</span><span class="ruby-operator">-</span><span class="ruby-value">4</span> , <span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-value">14</span>, <span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">y_offset</span><span class="ruby-operator">-</span><span class="ruby-value">4</span>, <span class="ruby-value">2</span>, <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">id</span>][<span class="ruby-string">&quot;r&quot;</span>], <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">id</span>][<span class="ruby-string">&quot;g&quot;</span>], <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">id</span>][<span class="ruby-string">&quot;b&quot;</span>])
+    <span class="ruby-identifier">image_ttf_text</span>(<span class="ruby-ivar">@picture</span>, <span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>, <span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-value">22</span>, <span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">y_offset</span>, <span class="ruby-identifier">c_text_color</span>, <span class="ruby-ivar">@font_name</span>, <span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">position</span>   = <span class="ruby-identifier">image_ftb_box</span>(<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">text_height</span> = <span class="ruby-identifier">position</span>[<span class="ruby-value">1</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">7</span>]
+    <span class="ruby-identifier">y_offset</span> = <span class="ruby-identifier">y_offset</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text_height</span> <span class="ruby-operator">+</span> <span class="ruby-value">4</span>
+    <span class="ruby-identifier">id</span>=<span class="ruby-identifier">id</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_legend-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_legend-method -->
+
+    
+      <div id="method-i-draw_pie_legend" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_pie_legend</span><span
+            class="method-args">(x_pos,y_pos,data,data_description,r,g,b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function will draw the legend of a pie graph ( serie color &amp; value
+name ). Be carrefull, dataset used for pie chart are not the same than for
+other line / curve / plot graphs. You can specify the position of the
+legend box and the background color.</p>
+          
+
+          
+          <div class="method-source-code" id="draw_pie_legend-source">
+            <pre><span class="ruby-comment"># File lib/legend.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_pie_legend</span>(<span class="ruby-identifier">x_pos</span>,<span class="ruby-identifier">y_pos</span>,<span class="ruby-identifier">data</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">data_description</span> = <span class="ruby-identifier">validate_data_description</span>(<span class="ruby-string">&quot;draw_pie_legend&quot;</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">validate_data</span>(<span class="ruby-string">&quot;draw_pie_legend&quot;</span>,<span class="ruby-identifier">data</span>)
+  <span class="ruby-keyword">return</span>(<span class="ruby-value">-1</span>) <span class="ruby-keyword">if</span> (<span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;position&quot;</span>].<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">c_text_color</span> = <span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>)
+
+  <span class="ruby-comment"># &lt;-10-&gt;[8]&lt;-4-&gt;Text&lt;-10-&gt; */</span>
+  <span class="ruby-identifier">max_width</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">max_height</span> = <span class="ruby-value">8</span>
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">value</span> = <span class="ruby-identifier">key</span>[<span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;position&quot;</span>]]
+    <span class="ruby-identifier">position</span>  = <span class="ruby-identifier">image_ftb_box</span>(<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">text_width</span> = <span class="ruby-identifier">position</span>[<span class="ruby-value">2</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-identifier">text_height</span> = <span class="ruby-identifier">position</span>[<span class="ruby-value">1</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">7</span>]
+    <span class="ruby-identifier">max_width</span> = <span class="ruby-identifier">text_width</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">text_width</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">max_width</span>)
+    <span class="ruby-identifier">max_height</span> = <span class="ruby-identifier">max_height</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text_height</span> <span class="ruby-operator">+</span> <span class="ruby-value">4</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">max_height</span> = <span class="ruby-identifier">max_height</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>
+  <span class="ruby-identifier">max_width</span>  = <span class="ruby-identifier">max_width</span> <span class="ruby-operator">+</span> <span class="ruby-value">32</span>
+  <span class="ruby-identifier">draw_filled_rounded_rectangle</span>(<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">max_width</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">max_height</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-value">5</span>,<span class="ruby-identifier">r</span><span class="ruby-operator">-</span><span class="ruby-value">30</span>,<span class="ruby-identifier">g</span><span class="ruby-operator">-</span><span class="ruby-value">30</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">-</span><span class="ruby-value">30</span>)
+  <span class="ruby-identifier">draw_filled_rounded_rectangle</span>(<span class="ruby-identifier">x_pos</span>,<span class="ruby-identifier">y_pos</span>,<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">max_width</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">max_height</span>,<span class="ruby-value">5</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">y_offset</span> = <span class="ruby-value">4</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@font_size</span>
+  <span class="ruby-identifier">id</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">value</span>     = <span class="ruby-identifier">key</span>[<span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;position&quot;</span>]]
+    <span class="ruby-identifier">position</span>   = <span class="ruby-identifier">image_ftb_box</span>(<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">text_height</span> = <span class="ruby-identifier">position</span>[<span class="ruby-value">1</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">7</span>]
+    <span class="ruby-identifier">draw_filled_rectangle</span>(<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-value">10</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">y_offset</span><span class="ruby-operator">-</span><span class="ruby-value">6</span>,<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-value">14</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">y_offset</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">id</span>][<span class="ruby-string">&quot;r&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">id</span>][<span class="ruby-string">&quot;g&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">id</span>][<span class="ruby-string">&quot;b&quot;</span>])
+    <span class="ruby-identifier">image_ttf_text</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-value">22</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">y_offset</span>,<span class="ruby-identifier">c_text_color</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">y_offset</span> = <span class="ruby-identifier">y_offset</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text_height</span> <span class="ruby-operator">+</span> <span class="ruby-value">4</span>
+    <span class="ruby-identifier">id</span>= <span class="ruby-identifier">id</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_pie_legend-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_pie_legend-method -->
+
+    
+      <div id="method-i-draw_text_box" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_text_box</span><span
+            class="method-args">(x1,y1,x2,y2,text,angle=0,r=255,g=255,b=255,align=Rchart::ALIGN_LEFT,shadow=true,bgr=-1,bgg=-1,bgb=-1,alpha=100)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Use this function to write text over the picture. You must specify the
+coordinate of the box where the text will be written using the
+(x1,y1)-(x2,y2) parameters, the text angle and the text color with the
+r,g,b parameters. You can choose how the text will be aligned with the
+align parameter :</p>
+<ul><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>ALIGN_TOP_LEFT Use the box top left corner.</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>ALIGN_TOP_CENTER Use the box top center corner.</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>ALIGN_TOP_RIGHT Use the box top right corner.</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>ALIGN_LEFT Use the center left.</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>ALIGN_CENTER Use the center.</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>ALIGN_RIGHT Use the center right.</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>ALIGN_BOTTOM_LEFT Use the box bottom left corner.</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>ALIGN_BOTTOM_CENTER Use the box bottom center corner.</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>ALIGN_BOTTOM_RIGHT Use the box bottom right corner.</p>
+</dd></dl>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="draw_text_box-source">
+            <pre><span class="ruby-comment"># File lib/legend.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_text_box</span>(<span class="ruby-identifier">x1</span>,<span class="ruby-identifier">y1</span>,<span class="ruby-identifier">x2</span>,<span class="ruby-identifier">y2</span>,<span class="ruby-identifier">text</span>,<span class="ruby-identifier">angle</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">r</span>=<span class="ruby-value">255</span>,<span class="ruby-identifier">g</span>=<span class="ruby-value">255</span>,<span class="ruby-identifier">b</span>=<span class="ruby-value">255</span>,<span class="ruby-identifier">align</span>=<span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">ALIGN_LEFT</span>,<span class="ruby-identifier">shadow</span>=<span class="ruby-keyword">true</span>,<span class="ruby-identifier">bgr</span>=<span class="ruby-value">-1</span>,<span class="ruby-identifier">bgg</span>=<span class="ruby-value">-1</span>,<span class="ruby-identifier">bgb</span>=<span class="ruby-value">-1</span>,<span class="ruby-identifier">alpha</span>=<span class="ruby-value">100</span>)
+  <span class="ruby-identifier">position</span>   = <span class="ruby-identifier">image_ftb_box</span>(<span class="ruby-ivar">@font_size</span>,<span class="ruby-identifier">angle</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">text_width</span>  = <span class="ruby-identifier">position</span>[<span class="ruby-value">2</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-identifier">text_height</span> = <span class="ruby-identifier">position</span>[<span class="ruby-value">5</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">3</span>]
+  <span class="ruby-identifier">area_width</span>  = <span class="ruby-identifier">x2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">x1</span>
+  <span class="ruby-identifier">area_height</span> = <span class="ruby-identifier">y2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">y1</span>
+  <span class="ruby-identifier">x</span> =<span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">y</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">bgr</span> <span class="ruby-operator">!=</span> <span class="ruby-value">-1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">bgg</span> <span class="ruby-operator">!=</span> <span class="ruby-value">-1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">bgb</span> <span class="ruby-operator">!=</span> <span class="ruby-value">-1</span> )
+    <span class="ruby-identifier">draw_filled_rectangle</span>(<span class="ruby-identifier">x1</span>,<span class="ruby-identifier">y1</span>,<span class="ruby-identifier">x2</span>,<span class="ruby-identifier">y2</span>,<span class="ruby-identifier">bgr</span>,<span class="ruby-identifier">bgg</span>,<span class="ruby-identifier">bgb</span>,<span class="ruby-keyword">false</span>,<span class="ruby-identifier">alpha</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">align</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">ALIGN_TOP_LEFT</span> )
+    <span class="ruby-identifier">x</span> = <span class="ruby-identifier">x1</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+    <span class="ruby-identifier">y</span> = <span class="ruby-identifier">y1</span><span class="ruby-operator">+</span><span class="ruby-ivar">@font_size</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">align</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">ALIGN_TOP_CENTER</span> )
+    <span class="ruby-identifier">x</span> = <span class="ruby-identifier">x1</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">area_width</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)<span class="ruby-operator">-</span>(<span class="ruby-identifier">text_width</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)
+    <span class="ruby-identifier">y</span> = <span class="ruby-identifier">y1</span><span class="ruby-operator">+</span><span class="ruby-ivar">@font_size</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">align</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">ALIGN_TOP_RIGHT</span> )
+    <span class="ruby-identifier">x</span> = <span class="ruby-identifier">x2</span><span class="ruby-operator">-</span><span class="ruby-identifier">text_width</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+    <span class="ruby-identifier">y</span> = <span class="ruby-identifier">y1</span><span class="ruby-operator">+</span><span class="ruby-ivar">@font_size</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">align</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">ALIGN_LEFT</span> )
+    <span class="ruby-identifier">x</span> = <span class="ruby-identifier">x1</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+    <span class="ruby-identifier">y</span> = <span class="ruby-identifier">y1</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">area_height</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)<span class="ruby-operator">-</span>(<span class="ruby-identifier">text_height</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">align</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">ALIGN_CENTER</span> )
+    <span class="ruby-identifier">x</span> = <span class="ruby-identifier">x1</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">area_width</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)<span class="ruby-operator">-</span>(<span class="ruby-identifier">text_width</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)
+    <span class="ruby-identifier">y</span> = <span class="ruby-identifier">y1</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">area_height</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)<span class="ruby-operator">-</span>(<span class="ruby-identifier">text_height</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">align</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">ALIGN_RIGHT</span> )
+    <span class="ruby-identifier">x</span> = <span class="ruby-identifier">x2</span><span class="ruby-operator">-</span><span class="ruby-identifier">text_width</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+    <span class="ruby-identifier">y</span> = <span class="ruby-identifier">y1</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">area_height</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)<span class="ruby-operator">-</span>(<span class="ruby-identifier">text_height</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">align</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">ALIGN_BOTTOM_LEFT</span> )
+    <span class="ruby-identifier">x</span> = <span class="ruby-identifier">x1</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+    <span class="ruby-identifier">y</span> = <span class="ruby-identifier">y2</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">align</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">ALIGN_BOTTOM_CENTER</span> )
+    <span class="ruby-identifier">x</span> = <span class="ruby-identifier">x1</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">area_width</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)<span class="ruby-operator">-</span>(<span class="ruby-identifier">text_width</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)
+    <span class="ruby-identifier">y</span> = <span class="ruby-identifier">y2</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">align</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">ALIGN_BOTTOM_RIGHT</span> )
+    <span class="ruby-identifier">x</span> = <span class="ruby-identifier">x2</span><span class="ruby-operator">-</span><span class="ruby-identifier">text_width</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+    <span class="ruby-identifier">y</span> = <span class="ruby-identifier">y2</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">c_text_color</span>   =<span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">c_shadow_color</span> =<span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>)
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">shadow</span> )
+    <span class="ruby-identifier">image_ttf_text</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@font_size</span>,<span class="ruby-identifier">angle</span>,<span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">y</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">c_shadow_color</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">text</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">image_ttf_text</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@font_size</span>,<span class="ruby-identifier">angle</span>,<span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>,<span class="ruby-identifier">c_text_color</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">text</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_text_box-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_text_box-method -->
+
+    
+      <div id="method-i-draw_title" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_title</span><span
+            class="method-args">(x_pos,y_pos,value,r,g,b,x_pos2=-1,y_pos2=-1,shadow=false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function is used to write the graph title. Used with default
+parameters you must specify the bottom left position of the text. if you
+are specifying x2 and y2 the text will be centered horizontaly and
+verticaly in the box of coordinates (x1,y1)-(x2,y2). value correspond to
+the text that will be written on the graph. r, g and b are used to set the
+text color. Setting shadow to true will makes a shadow behind the text.</p>
+          
+
+          
+          <div class="method-source-code" id="draw_title-source">
+            <pre><span class="ruby-comment"># File lib/legend.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_title</span>(<span class="ruby-identifier">x_pos</span>,<span class="ruby-identifier">y_pos</span>,<span class="ruby-identifier">value</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>,<span class="ruby-identifier">x_pos2</span>=<span class="ruby-value">-1</span>,<span class="ruby-identifier">y_pos2</span>=<span class="ruby-value">-1</span>,<span class="ruby-identifier">shadow</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">c_text_color</span> =   <span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>)
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">x_pos2</span> <span class="ruby-operator">!=</span> <span class="ruby-value">-1</span> )
+    <span class="ruby-identifier">position</span>  = <span class="ruby-identifier">image_ftb_box</span>(<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">text_width</span> = <span class="ruby-identifier">position</span>[<span class="ruby-value">2</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-identifier">x_pos</span>      =(( <span class="ruby-identifier">x_pos2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">x_pos</span> <span class="ruby-operator">-</span><span class="ruby-identifier">text_width</span> ) <span class="ruby-operator">/</span> <span class="ruby-value">2</span> ).<span class="ruby-identifier">floor</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x_pos</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">y_pos2</span> <span class="ruby-operator">!=</span> <span class="ruby-value">-1</span> )
+    <span class="ruby-identifier">position</span>   = <span class="ruby-identifier">image_ftb_box</span>(<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">text_height</span> = <span class="ruby-identifier">position</span>[<span class="ruby-value">5</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">3</span>]
+    <span class="ruby-identifier">y_pos</span>       =(( <span class="ruby-identifier">y_pos2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">y_pos</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">text_height</span> ) <span class="ruby-operator">/</span> <span class="ruby-value">2</span> ).<span class="ruby-identifier">floor</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y_pos</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">shadow</span> )
+    <span class="ruby-identifier">c_shadow_color</span> = <span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@shadow_r_color</span>,<span class="ruby-ivar">@shadow_g_color</span>,<span class="ruby-ivar">@shadow_b_color</span>)
+    <span class="ruby-identifier">image_ttf_text</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-ivar">@shadow_x_distance</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-ivar">@shadow_y_distance</span>, <span class="ruby-identifier">c_shadow_color</span> ,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">image_ttf_text</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">x_pos</span>,<span class="ruby-identifier">y_pos</span>,<span class="ruby-identifier">c_text_color</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_title-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_title-method -->
+
+    
+      <div id="method-i-get_legend_box_size" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_legend_box_size</span><span
+            class="method-args">(data_description)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function evaluate the width and height of the box generated by the
+draw_legend. This will help you to calculate dynamicaly the position where
+you want to print it (eg top-right). You must provide the data_description
+array as only parameter. This function will return and array containing in
+the first row the width of the box and in the second row the height of the
+box.</p>
+          
+
+          
+          <div class="method-source-code" id="get_legend_box_size-source">
+            <pre><span class="ruby-comment"># File lib/legend.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_legend_box_size</span>(<span class="ruby-identifier">data_description</span>)
+  <span class="ruby-keyword">return</span>(<span class="ruby-value">-1</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;description&quot;</span>].<span class="ruby-identifier">nil?</span>
+  <span class="ruby-comment"># &lt;-10-&gt;[8]&lt;-4-&gt;Text&lt;-10-&gt;</span>
+  <span class="ruby-identifier">max_width</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">max_height</span> = <span class="ruby-value">8</span>
+  <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;description&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>,<span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">position</span>   = <span class="ruby-identifier">image_ftb_box</span>(<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">text_width</span>  = <span class="ruby-identifier">position</span>[<span class="ruby-value">2</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-identifier">text_height</span> = <span class="ruby-identifier">position</span>[<span class="ruby-value">1</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">7</span>]
+    <span class="ruby-identifier">max_width</span> = <span class="ruby-identifier">text_width</span> <span class="ruby-keyword">if</span> (<span class="ruby-identifier">text_width</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">max_width</span>)
+    <span class="ruby-identifier">max_height</span> = <span class="ruby-identifier">max_height</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text_height</span> <span class="ruby-operator">+</span> <span class="ruby-value">4</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">max_height</span> = <span class="ruby-identifier">max_height</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>
+  <span class="ruby-identifier">max_width</span>  = <span class="ruby-identifier">max_width</span> <span class="ruby-operator">+</span> <span class="ruby-value">32</span>
+
+  [<span class="ruby-identifier">max_width</span>,<span class="ruby-identifier">max_height</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_legend_box_size-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_legend_box_size-method -->
+
+    
+      <div id="method-i-set_label" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_label</span><span
+            class="method-args">(data,data_description,serie_name,value_name,caption,r=210,g=210,b=210)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function will draw a label over the graph. You must specify the data
+&amp; data_description structures, the serie name ( “Serie1” by default if
+only one ), the x position of the value in the data array (will be numeric
+starting at 0 if no abscise_label are defined or the value of the selected
+abscise serie if specified), the caption that will displayed and optionally
+the color of the label</p>
+          
+
+          
+          <div class="method-source-code" id="set_label-source">
+            <pre><span class="ruby-comment"># File lib/legend.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_label</span>(<span class="ruby-identifier">data</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-identifier">serie_name</span>,<span class="ruby-identifier">value_name</span>,<span class="ruby-identifier">caption</span>,<span class="ruby-identifier">r</span>=<span class="ruby-value">210</span>,<span class="ruby-identifier">g</span>=<span class="ruby-value">210</span>,<span class="ruby-identifier">b</span>=<span class="ruby-value">210</span>)
+  <span class="ruby-identifier">data_description</span> = <span class="ruby-identifier">validate_data_description</span>(<span class="ruby-string">&quot;set_label&quot;</span>,<span class="ruby-identifier">data_description</span>)
+  <span class="ruby-identifier">validate_data</span>(<span class="ruby-string">&quot;set_label&quot;</span>,<span class="ruby-identifier">data</span>)
+  <span class="ruby-identifier">shadow_factor</span> = <span class="ruby-value">100</span>
+  <span class="ruby-identifier">c_label</span>   =<span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">c_shadow</span>     =<span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">r</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>,<span class="ruby-identifier">g</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>)
+  <span class="ruby-identifier">c_text_color</span>   =<span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>)
+  <span class="ruby-identifier">cp</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">found</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">numerical_value</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;position&quot;</span>]].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">value_name</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-identifier">numerical_value</span> = <span class="ruby-identifier">key</span>[<span class="ruby-identifier">serie_name</span>]
+      <span class="ruby-identifier">found</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">cp</span> <span class="ruby-operator">+=</span><span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">found</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">xpos</span> = <span class="ruby-ivar">@g_area_x1</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@g_area_x_offset</span> <span class="ruby-operator">+</span> ( <span class="ruby-ivar">@division_width</span> * <span class="ruby-identifier">cp</span> ) <span class="ruby-operator">+</span> <span class="ruby-value">2</span>
+  <span class="ruby-identifier">ypos</span> = <span class="ruby-ivar">@g_area_y2</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">numerical_value</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@vmin</span>) *<span class="ruby-ivar">@division_ratio</span>
+  <span class="ruby-identifier">position</span>  = <span class="ruby-identifier">image_ftb_box</span>(<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">caption</span>)
+  <span class="ruby-identifier">text_height</span> = <span class="ruby-identifier">position</span>[<span class="ruby-value">3</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">position</span>[<span class="ruby-value">5</span>]
+  <span class="ruby-identifier">text_width</span>  = <span class="ruby-identifier">position</span>[<span class="ruby-value">2</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">+</span> <span class="ruby-value">2</span>
+  <span class="ruby-identifier">text_offset</span> = (<span class="ruby-identifier">text_height</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>).<span class="ruby-identifier">floor</span>
+  <span class="ruby-comment"># Shadow</span>
+  <span class="ruby-identifier">poly</span> = [<span class="ruby-identifier">xpos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">ypos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-value">9</span>,<span class="ruby-identifier">ypos</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">text_offset</span>,<span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-value">8</span>,<span class="ruby-identifier">ypos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text_offset</span> <span class="ruby-operator">+</span> <span class="ruby-value">2</span>]
+  <span class="ruby-identifier">image_filled_polygon</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">poly</span>,<span class="ruby-identifier">r</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>,<span class="ruby-identifier">g</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>,<span class="ruby-value">3</span>)
+  <span class="ruby-identifier">draw_line</span>(<span class="ruby-identifier">xpos</span>,<span class="ruby-identifier">ypos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-value">9</span>,<span class="ruby-identifier">ypos</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">text_offset</span> <span class="ruby-operator">-</span> <span class="ruby-value">0.2</span>,<span class="ruby-identifier">r</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>,<span class="ruby-identifier">g</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>)
+  <span class="ruby-identifier">draw_line</span>(<span class="ruby-identifier">xpos</span>,<span class="ruby-identifier">ypos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-value">9</span>,<span class="ruby-identifier">ypos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text_offset</span> <span class="ruby-operator">+</span> <span class="ruby-value">2.2</span>,<span class="ruby-identifier">r</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>,<span class="ruby-identifier">g</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>)
+  <span class="ruby-identifier">draw_filled_rectangle</span>(<span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-value">9</span>,<span class="ruby-identifier">ypos</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">text_offset</span><span class="ruby-operator">-</span><span class="ruby-value">0.2</span>,<span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-value">13</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text_width</span>,<span class="ruby-identifier">ypos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text_offset</span> <span class="ruby-operator">+</span> <span class="ruby-value">2.2</span>,<span class="ruby-identifier">r</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>,<span class="ruby-identifier">g</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">-</span><span class="ruby-identifier">shadow_factor</span>)
+
+  <span class="ruby-comment">#Label background</span>
+  <span class="ruby-identifier">poly</span> = [<span class="ruby-identifier">xpos</span>,<span class="ruby-identifier">ypos</span>,<span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-value">8</span>,<span class="ruby-identifier">ypos</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">text_offset</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>,<span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-value">8</span>,<span class="ruby-identifier">ypos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text_offset</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>]
+  <span class="ruby-identifier">image_filled_polygon</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">poly</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>,<span class="ruby-value">3</span>)
+  <span class="ruby-identifier">draw_line</span>(<span class="ruby-identifier">xpos</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>,<span class="ruby-identifier">ypos</span>,<span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-value">8</span>,<span class="ruby-identifier">ypos</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">text_offset</span> <span class="ruby-operator">-</span> <span class="ruby-value">1.2</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">draw_line</span>(<span class="ruby-identifier">xpos</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>,<span class="ruby-identifier">ypos</span>,<span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-value">8</span>,<span class="ruby-identifier">ypos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text_offset</span> <span class="ruby-operator">+</span> <span class="ruby-value">1.2</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">draw_filled_rectangle</span>(<span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-value">8</span>,<span class="ruby-identifier">ypos</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">text_offset</span> <span class="ruby-operator">-</span> <span class="ruby-value">1.2</span>,<span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-value">12</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text_width</span>,<span class="ruby-identifier">ypos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text_offset</span> <span class="ruby-operator">+</span> <span class="ruby-value">1.2</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+
+  <span class="ruby-identifier">image_ttf_text</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-value">10</span>,<span class="ruby-identifier">ypos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">text_offset</span>,<span class="ruby-identifier">c_text_color</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">caption</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_label-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_label-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

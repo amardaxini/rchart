@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module PlotChart - rchart 2.0.4</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/plot_chart.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-draw_limits_graph">#draw_limits_graph</a>
+    
+    <li><a href="#method-i-draw_plot_graph">#draw_plot_graph</a>
+    
+    <li><a href="#method-i-draw_xy_plot_graph">#draw_xy_plot_graph</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./BarChart.html">BarChart</a>
+  
+    <li><a href="./ColorPalette.html">ColorPalette</a>
+  
+    <li><a href="./CubicChart.html">CubicChart</a>
+  
+    <li><a href="./GD2.html">GD2</a>
+  
+    <li><a href="./Graph.html">Graph</a>
+  
+    <li><a href="./GraphHelper.html">GraphHelper</a>
+  
+    <li><a href="./Layout.html">Layout</a>
+  
+    <li><a href="./Legend.html">Legend</a>
+  
+    <li><a href="./LineChart.html">LineChart</a>
+  
+    <li><a href="./PieChart.html">PieChart</a>
+  
+    <li><a href="./PlotChart.html">PlotChart</a>
+  
+    <li><a href="./Rchart.html">Rchart</a>
+  
+    <li><a href="./RchartHelper.html">RchartHelper</a>
+  
+    <li><a href="./Rdata.html">Rdata</a>
+  
+    <li><a href="./Scale.html">Scale</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module PlotChart</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-draw_limits_graph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_limits_graph</span><span
+            class="method-args">(data,data_description,r=0,g=0,b=0)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="draw_limits_graph-source">
+            <pre><span class="ruby-comment"># File lib/plot_chart.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_limits_graph</span>(<span class="ruby-identifier">data</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-identifier">r</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">g</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">b</span>=<span class="ruby-value">0</span>)
+  <span class="ruby-identifier">data_description</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">validate_data_description</span>(<span class="ruby-string">&quot;draw_limits_graph&quot;</span>,<span class="ruby-identifier">data_description</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">validate_data</span>(<span class="ruby-string">&quot;draw_limits_graph&quot;</span>,<span class="ruby-identifier">data</span>)
+  <span class="ruby-identifier">x_width</span> = <span class="ruby-ivar">@division_width</span> <span class="ruby-operator">/</span> <span class="ruby-value">4</span>
+  <span class="ruby-identifier">xpos</span>   = <span class="ruby-ivar">@g_area_x1</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@g_area_x_offset</span>
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span>         <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">min</span>     = <span class="ruby-identifier">key</span>[<span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;values&quot;</span>][<span class="ruby-value">0</span>]]
+    <span class="ruby-identifier">max</span>     = <span class="ruby-identifier">key</span>[<span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;values&quot;</span>][<span class="ruby-value">0</span>]]
+    <span class="ruby-identifier">graph_id</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">max_id</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">min_id</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;values&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">col_name</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>].<span class="ruby-identifier">nil?</span>)
+        <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">max</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>))
+          <span class="ruby-identifier">max</span> = <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>]
+          <span class="ruby-identifier">max_id</span> = <span class="ruby-identifier">graph_id</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> ( <span class="ruby-operator">!</span><span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>))
+        <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>] <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">min</span> )
+          <span class="ruby-identifier">min</span> = <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>]
+          <span class="ruby-identifier">min_id</span> = <span class="ruby-identifier">graph_id</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">graph_id</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">ypos</span> = <span class="ruby-ivar">@g_area_y2</span> <span class="ruby-operator">-</span> ((<span class="ruby-identifier">max</span><span class="ruby-operator">-</span><span class="ruby-ivar">@vmin</span>) * <span class="ruby-ivar">@division_ratio</span>)
+    <span class="ruby-identifier">x1</span> = (<span class="ruby-identifier">xpos</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">x_width</span>).<span class="ruby-identifier">floor</span>
+    <span class="ruby-identifier">y1</span> = (<span class="ruby-identifier">ypos</span>).<span class="ruby-identifier">floor</span> <span class="ruby-operator">-</span> <span class="ruby-value">0.2</span>
+    <span class="ruby-identifier">x2</span> = (<span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x_width</span>).<span class="ruby-identifier">floor</span>
+    <span class="ruby-identifier">x1</span> = <span class="ruby-ivar">@g_area_x1</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">x1</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-ivar">@g_area_x1</span> )
+    <span class="ruby-identifier">x2</span> = <span class="ruby-ivar">@g_area_x2</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">x2</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-ivar">@g_area_x2</span> )
+    <span class="ruby-identifier">ypos</span> = <span class="ruby-ivar">@g_area_y2</span> <span class="ruby-operator">-</span> ((<span class="ruby-identifier">min</span><span class="ruby-operator">-</span><span class="ruby-ivar">@vmin</span>) * <span class="ruby-ivar">@division_ratio</span>)
+    <span class="ruby-identifier">y2</span> = <span class="ruby-identifier">ypos</span>.<span class="ruby-identifier">floor</span> <span class="ruby-operator">+</span> <span class="ruby-value">0.2</span>
+    <span class="ruby-identifier">draw_line</span>(<span class="ruby-identifier">xpos</span>.<span class="ruby-identifier">floor</span><span class="ruby-operator">-</span><span class="ruby-value">0.2</span>,<span class="ruby-identifier">y1</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">xpos</span>.<span class="ruby-identifier">floor</span><span class="ruby-operator">-</span><span class="ruby-value">0.2</span>,<span class="ruby-identifier">y2</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>,<span class="ruby-keyword">true</span>)
+    <span class="ruby-identifier">draw_line</span>(<span class="ruby-identifier">xpos</span>.<span class="ruby-identifier">floor</span><span class="ruby-operator">+</span><span class="ruby-value">0.2</span>,<span class="ruby-identifier">y1</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">xpos</span>.<span class="ruby-identifier">floor</span><span class="ruby-operator">+</span><span class="ruby-value">0.2</span>,<span class="ruby-identifier">y2</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>,<span class="ruby-keyword">true</span>)
+    <span class="ruby-identifier">draw_line</span>(<span class="ruby-identifier">x1</span>,<span class="ruby-identifier">y1</span>,<span class="ruby-identifier">x2</span>,<span class="ruby-identifier">y1</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">max_id</span>][<span class="ruby-string">&quot;r&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">max_id</span>][<span class="ruby-string">&quot;g&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">max_id</span>][<span class="ruby-string">&quot;b&quot;</span>],<span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">draw_line</span>(<span class="ruby-identifier">x1</span>,<span class="ruby-identifier">y2</span>,<span class="ruby-identifier">x2</span>,<span class="ruby-identifier">y2</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">min_id</span>][<span class="ruby-string">&quot;r&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">min_id</span>][<span class="ruby-string">&quot;g&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">min_id</span>][<span class="ruby-string">&quot;b&quot;</span>],<span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">xpos</span> = <span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@division_width</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_limits_graph-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_limits_graph-method -->
+
+    
+      <div id="method-i-draw_plot_graph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_plot_graph</span><span
+            class="method-args">(data,data_description,big_radius=5,small_radius=2,r2=-1,g2=-1,b2=-1,shadow=false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function will draw a plot graph using all the registered series.
+Giving only the data &amp; data_description structure will draw the basic
+plot graph, You can specify the radius ( external &amp; internal ) of the
+plots. You can also specify the color of the points ( will be unique in
+case of multiple series ). Setting Shadow to true will draw a shadow under
+the plots.</p>
+          
+
+          
+          <div class="method-source-code" id="draw_plot_graph-source">
+            <pre><span class="ruby-comment"># File lib/plot_chart.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_plot_graph</span>(<span class="ruby-identifier">data</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-identifier">big_radius</span>=<span class="ruby-value">5</span>,<span class="ruby-identifier">small_radius</span>=<span class="ruby-value">2</span>,<span class="ruby-identifier">r2</span>=<span class="ruby-value">-1</span>,<span class="ruby-identifier">g2</span>=<span class="ruby-value">-1</span>,<span class="ruby-identifier">b2</span>=<span class="ruby-value">-1</span>,<span class="ruby-identifier">shadow</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-comment">#/* Validate the Data and data_description array */</span>
+  <span class="ruby-identifier">data_description</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">validate_data_description</span>(<span class="ruby-string">&quot;draw_plot_graph&quot;</span>,<span class="ruby-identifier">data_description</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">validate_data</span>(<span class="ruby-string">&quot;draw_plot_graph&quot;</span>,<span class="ruby-identifier">data</span>)
+  <span class="ruby-identifier">graph_id</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">ro</span> = <span class="ruby-identifier">r2</span>
+  <span class="ruby-identifier">go</span> = <span class="ruby-identifier">g2</span>
+  <span class="ruby-identifier">bo</span> = <span class="ruby-identifier">b2</span>
+  <span class="ruby-identifier">id</span> =<span class="ruby-value">0</span>
+  <span class="ruby-identifier">color_id</span> =<span class="ruby-value">0</span>
+  <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;values&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">col_name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;description&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key_i</span>,<span class="ruby-identifier">value_i</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">key_i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">col_name</span> )
+        <span class="ruby-identifier">color_id</span> = <span class="ruby-identifier">id</span>
+        <span class="ruby-identifier">id</span> = <span class="ruby-identifier">id</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">r</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">color_id</span>][<span class="ruby-string">&quot;r&quot;</span>]
+    <span class="ruby-identifier">g</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">color_id</span>][<span class="ruby-string">&quot;g&quot;</span>]
+    <span class="ruby-identifier">b</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">color_id</span>][<span class="ruby-string">&quot;b&quot;</span>]
+    <span class="ruby-identifier">r2</span> = <span class="ruby-identifier">ro</span>
+    <span class="ruby-identifier">g2</span> = <span class="ruby-identifier">go</span>
+    <span class="ruby-identifier">b2</span> = <span class="ruby-identifier">bo</span>
+    <span class="ruby-comment">#TODO convert this function</span>
+    <span class="ruby-identifier">im_symbol</span> =<span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-keyword">if</span> ( <span class="ruby-operator">!</span><span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;symbol&quot;</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;symbol&quot;</span>][<span class="ruby-identifier">col_name</span>].<span class="ruby-identifier">nil?</span>)
+      <span class="ruby-identifier">is_alpha</span> = <span class="ruby-keyword">false</span> <span class="ruby-comment"># ((ord ( file_get_contents (data_description[&quot;symbol&quot;][col_name], false, NULL, 25, 1)) &amp; 6) &amp; 4) == 4</span>
+      <span class="ruby-identifier">im_symbol</span>      = <span class="ruby-identifier">image_create_from_png</span>(<span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;symbol&quot;</span>][<span class="ruby-identifier">col_name</span>])
+      <span class="ruby-identifier">infos</span>       = <span class="ruby-identifier">get_image_size</span>(<span class="ruby-identifier">im_symbol</span>)
+      <span class="ruby-identifier">image_width</span>  = <span class="ruby-identifier">infos</span>[<span class="ruby-value">0</span>]
+      <span class="ruby-identifier">image_height</span> = <span class="ruby-identifier">infos</span>[<span class="ruby-value">1</span>]
+      <span class="ruby-comment">#</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">x_pos</span>  = <span class="ruby-ivar">@g_area_x1</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@g_area_x_offset</span>
+    <span class="ruby-identifier">h_size</span> = (<span class="ruby-identifier">big_radius</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>).<span class="ruby-identifier">round</span>
+    <span class="ruby-identifier">r3</span> = <span class="ruby-value">-1</span>
+    <span class="ruby-identifier">g3</span> = <span class="ruby-value">-1</span>
+    <span class="ruby-identifier">b3</span> = <span class="ruby-value">-1</span>
+    <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">value</span>= <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>]
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>)
+        <span class="ruby-identifier">y_pos</span>  = <span class="ruby-ivar">@g_area_y2</span> <span class="ruby-operator">-</span> ((<span class="ruby-identifier">value</span><span class="ruby-operator">-</span><span class="ruby-ivar">@vmin</span>) * <span class="ruby-ivar">@division_ratio</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">y_pos</span>  = <span class="ruby-ivar">@g_area_y2</span> <span class="ruby-operator">-</span> ((<span class="ruby-value">0</span><span class="ruby-operator">-</span><span class="ruby-ivar">@vmin</span>) * <span class="ruby-ivar">@division_ratio</span>)
+      <span class="ruby-keyword">end</span>
+
+
+      <span class="ruby-comment">#  Save point into the image map if option activated</span>
+      <span class="ruby-keyword">if</span> ( <span class="ruby-ivar">@build_map</span> )
+        <span class="ruby-comment">#add_to_image_map(x_pos-h_size,y_pos-h_size,x_pos+1+h_size,y_pos+h_size+1,data_description[&quot;description&quot;][col_name],key[col_name].data_description[&quot;unit&quot;][&quot;y&quot;],&quot;Plot&quot;)</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">if</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>))
+        <span class="ruby-comment">#MY Hack</span>
+        <span class="ruby-keyword">if</span> (<span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;symbol&quot;</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;symbol&quot;</span>][<span class="ruby-identifier">col_name</span>].<span class="ruby-identifier">nil?</span> )
+          <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">shadow</span> )
+            <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">r3</span> <span class="ruby-operator">!=</span><span class="ruby-value">-1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">g3</span> <span class="ruby-operator">!=</span><span class="ruby-value">-1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">b3</span> <span class="ruby-operator">!=</span><span class="ruby-value">-1</span> )
+              <span class="ruby-keyword">self</span>.<span class="ruby-identifier">draw_filled_circle</span>(<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>,<span class="ruby-identifier">big_radius</span>,<span class="ruby-identifier">r3</span>,<span class="ruby-identifier">g3</span>,<span class="ruby-identifier">b3</span>)
+            <span class="ruby-keyword">else</span>
+              <span class="ruby-identifier">r3</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">color_id</span>][<span class="ruby-string">&quot;r&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">20</span>
+              <span class="ruby-identifier">r3</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">r3</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> )
+              <span class="ruby-identifier">g3</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">color_id</span>][<span class="ruby-string">&quot;g&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">20</span>
+              <span class="ruby-identifier">g3</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">g3</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> )
+              <span class="ruby-identifier">b3</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">color_id</span>][<span class="ruby-string">&quot;b&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">20</span>
+              <span class="ruby-identifier">b3</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">b3</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> )
+              <span class="ruby-keyword">self</span>.<span class="ruby-identifier">draw_filled_circle</span>(<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>,<span class="ruby-identifier">big_radius</span>,<span class="ruby-identifier">r3</span>,<span class="ruby-identifier">g3</span>,<span class="ruby-identifier">b3</span>)
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">self</span>.<span class="ruby-identifier">draw_filled_circle</span>(<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">big_radius</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+          <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">small_radius</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> )
+            <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">r2</span> <span class="ruby-operator">!=</span><span class="ruby-value">-1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">g2</span> <span class="ruby-operator">!=</span><span class="ruby-value">-1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">b2</span> <span class="ruby-operator">!=</span><span class="ruby-value">-1</span> )
+              <span class="ruby-keyword">self</span>.<span class="ruby-identifier">draw_filled_circle</span>(<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">small_radius</span>,<span class="ruby-identifier">r2</span>,<span class="ruby-identifier">g2</span>,<span class="ruby-identifier">b2</span>)
+            <span class="ruby-keyword">else</span>
+              <span class="ruby-identifier">r2</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">color_id</span>][<span class="ruby-string">&quot;r&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">15</span>
+              <span class="ruby-identifier">r2</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">r2</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> )
+              <span class="ruby-identifier">g2</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">color_id</span>][<span class="ruby-string">&quot;g&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">15</span>
+              <span class="ruby-identifier">g2</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">g2</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> )
+              <span class="ruby-identifier">b2</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">color_id</span>][<span class="ruby-string">&quot;b&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">15</span>
+              <span class="ruby-identifier">b2</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">b2</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> )
+              <span class="ruby-keyword">self</span>.<span class="ruby-identifier">draw_filled_circle</span>(<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">small_radius</span>,<span class="ruby-identifier">r2</span>,<span class="ruby-identifier">g2</span>,<span class="ruby-identifier">b2</span>)
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">image_copy_merge</span>(<span class="ruby-identifier">im_symbol</span>,<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span><span class="ruby-operator">-</span><span class="ruby-identifier">image_width</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-value">1</span><span class="ruby-operator">-</span><span class="ruby-identifier">image_height</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">image_width</span>,<span class="ruby-identifier">image_height</span>,<span class="ruby-value">100</span>)
+
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">x_pos</span> = <span class="ruby-identifier">x_pos</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@division_width</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">graph_id</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_plot_graph-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_plot_graph-method -->
+
+    
+      <div id="method-i-draw_xy_plot_graph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_xy_plot_graph</span><span
+            class="method-args">(data,data_description,y_serie_name,x_serie_name,palette_id=0,big_radius=5,small_radius=2,r2=-1,g2=-1,b2=-1,shadow=true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function is very similar as the <a
+href="PlotChart.html#method-i-draw_plot_graph">#draw_plot_graph</a>
+function. You must specify the name of the two series that will be used as
+x and y coordinates and the color id to use.</p>
+          
+
+          
+          <div class="method-source-code" id="draw_xy_plot_graph-source">
+            <pre><span class="ruby-comment"># File lib/plot_chart.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_xy_plot_graph</span>(<span class="ruby-identifier">data</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-identifier">y_serie_name</span>,<span class="ruby-identifier">x_serie_name</span>,<span class="ruby-identifier">palette_id</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">big_radius</span>=<span class="ruby-value">5</span>,<span class="ruby-identifier">small_radius</span>=<span class="ruby-value">2</span>,<span class="ruby-identifier">r2</span>=<span class="ruby-value">-1</span>,<span class="ruby-identifier">g2</span>=<span class="ruby-value">-1</span>,<span class="ruby-identifier">b2</span>=<span class="ruby-value">-1</span>,<span class="ruby-identifier">shadow</span>=<span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">r</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">palette_id</span>][<span class="ruby-string">&quot;r&quot;</span>]
+  <span class="ruby-identifier">g</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">palette_id</span>][<span class="ruby-string">&quot;g&quot;</span>]
+  <span class="ruby-identifier">b</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">palette_id</span>][<span class="ruby-string">&quot;b&quot;</span>]
+  <span class="ruby-identifier">r3</span> = <span class="ruby-value">-1</span>
+  <span class="ruby-identifier">g3</span> = <span class="ruby-value">-1</span>
+  <span class="ruby-identifier">b3</span> = <span class="ruby-value">-1</span>
+
+  <span class="ruby-identifier">y_last</span> = <span class="ruby-value">-1</span>
+  <span class="ruby-identifier">x_last</span> = <span class="ruby-value">-1</span>
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> (<span class="ruby-identifier">key</span>[<span class="ruby-identifier">y_serie_name</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">x_serie_name</span>].<span class="ruby-identifier">nil?</span>)
+
+    <span class="ruby-identifier">x</span> = <span class="ruby-identifier">key</span>[<span class="ruby-identifier">x_serie_name</span>]
+    <span class="ruby-identifier">y</span> = <span class="ruby-identifier">key</span>[<span class="ruby-identifier">y_serie_name</span>]
+    <span class="ruby-identifier">y</span> = <span class="ruby-ivar">@g_area_y2</span> <span class="ruby-operator">-</span> ((<span class="ruby-identifier">y</span><span class="ruby-operator">-</span><span class="ruby-ivar">@vmin</span>) * <span class="ruby-ivar">@division_ratio</span>)
+    <span class="ruby-identifier">x</span> = <span class="ruby-ivar">@g_area_x1</span> <span class="ruby-operator">+</span> ((<span class="ruby-identifier">x</span><span class="ruby-operator">-</span><span class="ruby-ivar">@v_x_min</span>) * <span class="ruby-ivar">@x_division_ratio</span>)
+    <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">shadow</span> )
+      <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">r3</span> <span class="ruby-operator">!=</span><span class="ruby-value">-1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">g3</span> <span class="ruby-operator">!=</span><span class="ruby-value">-1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">b3</span> <span class="ruby-operator">!=</span><span class="ruby-value">-1</span> )
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">draw_filled_circle</span>(<span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>,<span class="ruby-identifier">y</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>,<span class="ruby-identifier">big_radius</span>,<span class="ruby-identifier">r3</span>,<span class="ruby-identifier">g3</span>,<span class="ruby-identifier">b3</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">r3</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">palette_id</span>][<span class="ruby-string">&quot;r&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">20</span>
+        <span class="ruby-identifier">r</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">r</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> )
+        <span class="ruby-identifier">g3</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">palette_id</span>][<span class="ruby-string">&quot;g&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">20</span>
+        <span class="ruby-identifier">g</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">g</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> )
+        <span class="ruby-identifier">b3</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">palette_id</span>][<span class="ruby-string">&quot;b&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">20</span>
+        <span class="ruby-identifier">b</span> = <span class="ruby-value">0</span>  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">b</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> )
+        <span class="ruby-identifier">draw_filled_circle</span>(<span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>,<span class="ruby-identifier">y</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>,<span class="ruby-identifier">big_radius</span>,<span class="ruby-identifier">r3</span>,<span class="ruby-identifier">g3</span>,<span class="ruby-identifier">b3</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">draw_filled_circle</span>(<span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">y</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">big_radius</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+
+    <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">r2</span> <span class="ruby-operator">!=</span><span class="ruby-value">-1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">g2</span> <span class="ruby-operator">!=</span><span class="ruby-value">-1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">b2</span> <span class="ruby-operator">!=</span><span class="ruby-value">-1</span> )
+      <span class="ruby-identifier">draw_filled_circle</span>(<span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">y</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">small_radius</span>,<span class="ruby-identifier">r2</span>,<span class="ruby-identifier">g2</span>,<span class="ruby-identifier">b2</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">r2</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">palette_id</span>][<span class="ruby-string">&quot;r&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-value">20</span>
+      <span class="ruby-identifier">r</span> = <span class="ruby-value">255</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">r</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">255</span> )
+      <span class="ruby-identifier">g2</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">palette_id</span>][<span class="ruby-string">&quot;g&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-value">20</span>
+      <span class="ruby-identifier">g</span> = <span class="ruby-value">255</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">g</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">255</span> )
+      <span class="ruby-identifier">b2</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">palette_id</span>][<span class="ruby-string">&quot;b&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-value">20</span>
+      <span class="ruby-identifier">b</span> = <span class="ruby-value">255</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">b</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">255</span> )
+      <span class="ruby-identifier">draw_filled_circle</span>(<span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">y</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">small_radius</span>,<span class="ruby-identifier">r2</span>,<span class="ruby-identifier">g2</span>,<span class="ruby-identifier">b2</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_xy_plot_graph-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_xy_plot_graph-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

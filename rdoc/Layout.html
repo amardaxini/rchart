@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Layout - rchart 2.0.4</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/layout.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-add_border">#add_border</a>
+    
+    <li><a href="#method-i-draw_area">#draw_area</a>
+    
+    <li><a href="#method-i-draw_graph_area">#draw_graph_area</a>
+    
+    <li><a href="#method-i-draw_grid">#draw_grid</a>
+    
+    <li><a href="#method-i-draw_treshold">#draw_treshold</a>
+    
+    <li><a href="#method-i-report_warnings">#report_warnings</a>
+    
+    <li><a href="#method-i-set_graph_area">#set_graph_area</a>
+    
+    <li><a href="#method-i-write_values">#write_values</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./BarChart.html">BarChart</a>
+  
+    <li><a href="./ColorPalette.html">ColorPalette</a>
+  
+    <li><a href="./CubicChart.html">CubicChart</a>
+  
+    <li><a href="./GD2.html">GD2</a>
+  
+    <li><a href="./Graph.html">Graph</a>
+  
+    <li><a href="./GraphHelper.html">GraphHelper</a>
+  
+    <li><a href="./Layout.html">Layout</a>
+  
+    <li><a href="./Legend.html">Legend</a>
+  
+    <li><a href="./LineChart.html">LineChart</a>
+  
+    <li><a href="./PieChart.html">PieChart</a>
+  
+    <li><a href="./PlotChart.html">PlotChart</a>
+  
+    <li><a href="./Rchart.html">Rchart</a>
+  
+    <li><a href="./RchartHelper.html">RchartHelper</a>
+  
+    <li><a href="./Rdata.html">Rdata</a>
+  
+    <li><a href="./Scale.html">Scale</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Layout</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_border" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_border</span><span
+            class="method-args">(size=3,r=0,g=0,b=0)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Use this function to add a border to your picture. Be carefull, drawing a
+border will change all the chart components positions, thus this call must
+be the last one before one of the rendering methods!!! You can specify the
+size of the border and its color. The width and height of the picture will
+be modified by 2x the size value.</p>
+          
+
+          
+          <div class="method-source-code" id="add_border-source">
+            <pre><span class="ruby-comment"># File lib/layout.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_border</span>(<span class="ruby-identifier">size</span>=<span class="ruby-value">3</span>,<span class="ruby-identifier">r</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">g</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">b</span>=<span class="ruby-value">0</span>)
+  <span class="ruby-identifier">width</span>  = <span class="ruby-ivar">@x_size</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>*<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">height</span> = <span class="ruby-ivar">@y_size</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>*<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">resampled</span>    = <span class="ruby-identifier">image_create_true_color</span>(<span class="ruby-identifier">width</span>,<span class="ruby-identifier">height</span>)
+  <span class="ruby-identifier">image_filled_rectangle</span>(<span class="ruby-identifier">resampled</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">width</span>,<span class="ruby-identifier">height</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">image_copy</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">resampled</span>,<span class="ruby-identifier">size</span>,<span class="ruby-identifier">size</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@x_size</span>,<span class="ruby-ivar">@y_size</span>)
+  <span class="ruby-identifier">image_destroy</span>(<span class="ruby-ivar">@picture</span>)
+  <span class="ruby-ivar">@x_size</span> = <span class="ruby-identifier">width</span>
+  <span class="ruby-ivar">@y_size</span> = <span class="ruby-identifier">height</span>
+  <span class="ruby-ivar">@picture</span> = <span class="ruby-identifier">image_create_true_color</span>(<span class="ruby-ivar">@x_size</span>,<span class="ruby-ivar">@y_size</span>)
+  <span class="ruby-identifier">image_filled_rectangle</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@x_size</span>,<span class="ruby-ivar">@y_size</span>,<span class="ruby-value">255</span>,<span class="ruby-value">255</span>,<span class="ruby-value">255</span>)
+  <span class="ruby-identifier">image_color_transparent</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-value">255</span>,<span class="ruby-value">255</span>,<span class="ruby-value">255</span>)
+  <span class="ruby-identifier">image_copy</span>(<span class="ruby-identifier">resampled</span>,<span class="ruby-ivar">@picture</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@x_size</span>,<span class="ruby-ivar">@y_size</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_border-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_border-method -->
+
+    
+      <div id="method-i-draw_area" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_area</span><span
+            class="method-args">(data,serie1,serie2,r,g,b,alpha = 50)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <pre>This function will draw an area between two data series.</pre>
+
+<p>extracting the minimum and maximum value for each X positions. You must
+specify the two series name and the area color. You can specify the
+transparency which is set to 50% by default.</p>
+          
+
+          
+          <div class="method-source-code" id="draw_area-source">
+            <pre><span class="ruby-comment"># File lib/layout.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_area</span>(<span class="ruby-identifier">data</span>,<span class="ruby-identifier">serie1</span>,<span class="ruby-identifier">serie2</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>,<span class="ruby-identifier">alpha</span> = <span class="ruby-value">50</span>)
+  <span class="ruby-identifier">validate_data</span>(<span class="ruby-string">&quot;draw_area&quot;</span>,<span class="ruby-identifier">data</span>)
+  <span class="ruby-identifier">layer_width</span> = <span class="ruby-ivar">@g_area_x2</span><span class="ruby-operator">-</span><span class="ruby-ivar">@g_area_x1</span>
+  <span class="ruby-identifier">layer_height</span> = <span class="ruby-ivar">@g_area_y2</span><span class="ruby-operator">-</span><span class="ruby-ivar">@g_area_y1</span>
+
+  <span class="ruby-ivar">@layers</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">image_create_true_color</span>(<span class="ruby-identifier">layer_width</span>,<span class="ruby-identifier">layer_height</span>)
+  <span class="ruby-identifier">image_filled_rectangle</span>(<span class="ruby-ivar">@layers</span>[<span class="ruby-value">0</span>],<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">layer_width</span>,<span class="ruby-identifier">layer_height</span>,<span class="ruby-value">255</span>,<span class="ruby-value">255</span>,<span class="ruby-value">255</span>)
+  <span class="ruby-identifier">image_color_transparent</span>(<span class="ruby-ivar">@layers</span>[<span class="ruby-value">0</span>],<span class="ruby-value">255</span>,<span class="ruby-value">255</span>,<span class="ruby-value">255</span>)
+
+  <span class="ruby-identifier">x_pos</span>    = <span class="ruby-ivar">@g_area_x_offset</span>
+  <span class="ruby-identifier">last_x_pos</span> = <span class="ruby-value">-1</span>
+  <span class="ruby-identifier">last_y_pos1</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">last_y_pos2</span>= <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">value1</span> = <span class="ruby-identifier">key</span>[<span class="ruby-identifier">serie1</span>]
+    <span class="ruby-identifier">value2</span> = <span class="ruby-identifier">key</span>[<span class="ruby-identifier">serie2</span>]
+    <span class="ruby-identifier">y_pos1</span>  = <span class="ruby-identifier">layer_height</span> <span class="ruby-operator">-</span> ((<span class="ruby-identifier">value1</span><span class="ruby-operator">-</span><span class="ruby-ivar">@vmin</span>) * <span class="ruby-ivar">@division_ratio</span>)
+    <span class="ruby-identifier">y_pos2</span>  = <span class="ruby-identifier">layer_height</span> <span class="ruby-operator">-</span> ((<span class="ruby-identifier">value2</span><span class="ruby-operator">-</span><span class="ruby-ivar">@vmin</span>) * <span class="ruby-ivar">@division_ratio</span>)
+
+    <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">last_x_pos</span> <span class="ruby-operator">!=</span> <span class="ruby-value">-1</span> )
+      <span class="ruby-identifier">points</span>   = []
+      <span class="ruby-identifier">points</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">last_x_pos</span>
+      <span class="ruby-identifier">points</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">last_y_pos1</span>
+      <span class="ruby-identifier">points</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">last_x_pos</span>
+      <span class="ruby-identifier">points</span> <span class="ruby-operator">&lt;&lt;</span>  <span class="ruby-identifier">last_y_pos2</span>
+      <span class="ruby-identifier">points</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">x_pos</span>
+      <span class="ruby-identifier">points</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">y_pos2</span>
+      <span class="ruby-identifier">points</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">x_pos</span>
+      <span class="ruby-identifier">points</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">y_pos1</span>
+      <span class="ruby-identifier">image_filled_polygon</span>(<span class="ruby-ivar">@layers</span>[<span class="ruby-value">0</span>],<span class="ruby-identifier">points</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>,<span class="ruby-value">4</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">last_y_pos1</span> = <span class="ruby-identifier">y_pos1</span>
+    <span class="ruby-identifier">last_y_pos2</span> = <span class="ruby-identifier">y_pos2</span>
+    <span class="ruby-identifier">last_x_pos</span>  = <span class="ruby-identifier">x_pos</span>
+    <span class="ruby-identifier">x_pos</span>= <span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span> <span class="ruby-ivar">@division_width</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">image_copy_merge</span>(<span class="ruby-ivar">@layers</span>[<span class="ruby-value">0</span>],<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@g_area_x1</span>,<span class="ruby-ivar">@g_area_y1</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">layer_width</span>,<span class="ruby-identifier">layer_height</span>,<span class="ruby-identifier">alpha</span>)
+  <span class="ruby-identifier">image_destroy</span>(<span class="ruby-ivar">@layers</span>[<span class="ruby-value">0</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_area-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_area-method -->
+
+    
+      <div id="method-i-draw_graph_area" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_graph_area</span><span
+            class="method-args">(r,g,b,stripe=false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Prepare the graph area</p>
+          
+
+          
+          <div class="method-source-code" id="draw_graph_area-source">
+            <pre><span class="ruby-comment"># File lib/layout.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_graph_area</span>(<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>,<span class="ruby-identifier">stripe</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">draw_filled_rectangle</span>(<span class="ruby-ivar">@g_area_x1</span>,<span class="ruby-ivar">@g_area_y1</span>,<span class="ruby-ivar">@g_area_x2</span>,<span class="ruby-ivar">@g_area_y2</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>,<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">draw_rectangle</span>(<span class="ruby-ivar">@g_area_x1</span>,<span class="ruby-ivar">@g_area_y1</span>,<span class="ruby-ivar">@g_area_x2</span>,<span class="ruby-ivar">@g_area_y2</span>,<span class="ruby-identifier">r</span><span class="ruby-operator">-</span><span class="ruby-value">40</span>,<span class="ruby-identifier">g</span><span class="ruby-operator">-</span><span class="ruby-value">40</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">-</span><span class="ruby-value">40</span>)
+  <span class="ruby-identifier">i</span>=<span class="ruby-value">0</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">stripe</span>
+    <span class="ruby-identifier">r2</span> = <span class="ruby-identifier">r</span><span class="ruby-operator">-</span><span class="ruby-value">15</span>
+    <span class="ruby-identifier">r2</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">r2</span><span class="ruby-operator">&lt;</span><span class="ruby-value">0</span>
+    <span class="ruby-identifier">g2</span> = <span class="ruby-identifier">r</span><span class="ruby-operator">-</span><span class="ruby-value">15</span>
+    <span class="ruby-identifier">g2</span> = <span class="ruby-value">0</span>  <span class="ruby-keyword">if</span> <span class="ruby-identifier">g2</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">b2</span> = <span class="ruby-identifier">r</span><span class="ruby-operator">-</span><span class="ruby-value">15</span>
+    <span class="ruby-identifier">b2</span> = <span class="ruby-value">0</span>  <span class="ruby-keyword">if</span> <span class="ruby-identifier">b2</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">line_color</span> = <span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">r2</span>,<span class="ruby-identifier">g2</span>,<span class="ruby-identifier">b2</span>)
+    <span class="ruby-identifier">skew_width</span> = <span class="ruby-ivar">@g_area_y2</span><span class="ruby-operator">-</span><span class="ruby-ivar">@g_area_y1</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+
+    <span class="ruby-identifier">i</span> = <span class="ruby-ivar">@g_area_x1</span><span class="ruby-operator">-</span><span class="ruby-identifier">skew_width</span>
+
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_f</span><span class="ruby-operator">&lt;=</span><span class="ruby-ivar">@g_area_x2</span>.<span class="ruby-identifier">to_f</span>
+      <span class="ruby-identifier">x1</span> = <span class="ruby-identifier">i</span>
+      <span class="ruby-identifier">y1</span> = <span class="ruby-ivar">@g_area_y2</span>
+      <span class="ruby-identifier">x2</span> = <span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-identifier">skew_width</span>
+      <span class="ruby-identifier">y2</span> = <span class="ruby-ivar">@g_area_y1</span>
+      <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">x1</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@g_area_x1</span> )
+        <span class="ruby-identifier">x1</span> = <span class="ruby-ivar">@g_area_x1</span>
+        <span class="ruby-identifier">y1</span> = <span class="ruby-ivar">@g_area_y1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x2</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@g_area_x1</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">x2</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-ivar">@g_area_x2</span> )
+        <span class="ruby-identifier">y2</span> = <span class="ruby-ivar">@g_area_y1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x2</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@g_area_x2</span> <span class="ruby-operator">+</span><span class="ruby-value">1</span>
+        <span class="ruby-identifier">x2</span> = <span class="ruby-ivar">@g_area_x2</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">image_line</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">x1</span>,<span class="ruby-identifier">y1</span>,<span class="ruby-identifier">x2</span>,<span class="ruby-identifier">y2</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">r2</span>,<span class="ruby-identifier">g2</span>,<span class="ruby-identifier">b2</span>)
+      <span class="ruby-identifier">i</span> = <span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">4</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_graph_area-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_graph_area-method -->
+
+    
+      <div id="method-i-draw_grid" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_grid</span><span
+            class="method-args">(line_width,mosaic=true,r=220,g=220,b=220,alpha=100)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function will draw a grid over the graph area. line_width will be
+passed to the draw_dotted_line function. The r,g,b 3 parameters are used to
+set the grid color. Setting mosaic to true will draw grey area between two
+lines. You can define the transparency factor of the mosaic area playing
+with the alpha parameter.</p>
+          
+
+          
+          <div class="method-source-code" id="draw_grid-source">
+            <pre><span class="ruby-comment"># File lib/layout.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_grid</span>(<span class="ruby-identifier">line_width</span>,<span class="ruby-identifier">mosaic</span>=<span class="ruby-keyword">true</span>,<span class="ruby-identifier">r</span>=<span class="ruby-value">220</span>,<span class="ruby-identifier">g</span>=<span class="ruby-value">220</span>,<span class="ruby-identifier">b</span>=<span class="ruby-value">220</span>,<span class="ruby-identifier">alpha</span>=<span class="ruby-value">100</span>)
+  <span class="ruby-comment"># Draw mosaic */</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">mosaic</span>)
+    <span class="ruby-identifier">layer_width</span>  = <span class="ruby-ivar">@g_area_x2</span><span class="ruby-operator">-</span><span class="ruby-ivar">@g_area_x1</span>
+    <span class="ruby-identifier">layer_height</span> = <span class="ruby-ivar">@g_area_y2</span><span class="ruby-operator">-</span><span class="ruby-ivar">@g_area_y1</span>
+
+    <span class="ruby-ivar">@layers</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">image_create_true_color</span>(<span class="ruby-identifier">layer_width</span>,<span class="ruby-identifier">layer_height</span>)
+    <span class="ruby-comment">#c_white         = allocate_color(@layers[0],255,255,255)</span>
+    <span class="ruby-identifier">image_filled_rectangle</span>(<span class="ruby-ivar">@layers</span>[<span class="ruby-value">0</span>],<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">layer_width</span>,<span class="ruby-identifier">layer_height</span>,<span class="ruby-value">255</span>,<span class="ruby-value">255</span>,<span class="ruby-value">255</span>)
+    <span class="ruby-identifier">image_color_transparent</span>(<span class="ruby-ivar">@layers</span>[<span class="ruby-value">0</span>],<span class="ruby-value">255</span>,<span class="ruby-value">255</span>,<span class="ruby-value">255</span>)
+
+    <span class="ruby-comment">#c_rectangle =allocate_color(@layers[0],250,250,250)</span>
+
+    <span class="ruby-identifier">y_pos</span>  = <span class="ruby-identifier">layer_height</span> <span class="ruby-comment">#@g_area_y2-1</span>
+    <span class="ruby-identifier">last_y</span> = <span class="ruby-identifier">y_pos</span>
+    <span class="ruby-identifier">i</span> =<span class="ruby-value">0</span>
+    <span class="ruby-keyword">while</span>(<span class="ruby-identifier">i</span><span class="ruby-operator">&lt;=</span><span class="ruby-ivar">@division_count</span>)
+      <span class="ruby-identifier">last_y</span>=  <span class="ruby-identifier">y_pos</span>
+      <span class="ruby-identifier">y_pos</span>  =  <span class="ruby-identifier">y_pos</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@division_height</span>
+      <span class="ruby-identifier">y_pos</span> = <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> (  <span class="ruby-identifier">y_pos</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span> )
+      <span class="ruby-identifier">image_filled_rectangle</span>(<span class="ruby-ivar">@layers</span>[<span class="ruby-value">0</span>],<span class="ruby-value">1</span>, <span class="ruby-identifier">y_pos</span>,<span class="ruby-identifier">layer_width</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>,<span class="ruby-identifier">last_y</span>,<span class="ruby-value">250</span>,<span class="ruby-value">250</span>,<span class="ruby-value">250</span>) <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">i</span> <span class="ruby-operator">%</span> <span class="ruby-value">2</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> )
+      <span class="ruby-identifier">i</span> = <span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">image_copy_merge</span>(<span class="ruby-ivar">@layers</span>[<span class="ruby-value">0</span>],<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@g_area_x1</span>,<span class="ruby-ivar">@g_area_y1</span>,<span class="ruby-value">0</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">layer_width</span>,<span class="ruby-identifier">layer_height</span>,<span class="ruby-identifier">alpha</span>)
+    <span class="ruby-comment">#image_destroy(@layers[0])</span>
+
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment">#Horizontal lines</span>
+  <span class="ruby-identifier">y_pos</span> = <span class="ruby-ivar">@g_area_y2</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@division_height</span>
+  <span class="ruby-identifier">i</span>=<span class="ruby-value">1</span>
+  <span class="ruby-keyword">while</span>(<span class="ruby-identifier">i</span><span class="ruby-operator">&lt;=</span><span class="ruby-ivar">@division_count</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">draw_dotted_line</span>(<span class="ruby-ivar">@g_area_x1</span>,<span class="ruby-identifier">y_pos</span>,<span class="ruby-ivar">@g_area_x2</span>,<span class="ruby-identifier">y_pos</span>,<span class="ruby-identifier">line_width</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>) <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">y_pos</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@g_area_y1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">y_pos</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@g_area_y2</span> )
+    <span class="ruby-identifier">y_pos</span> = <span class="ruby-identifier">y_pos</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@division_height</span>
+    <span class="ruby-identifier">i</span> = <span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># Vertical lines</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@g_area_x_offset</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> )
+    <span class="ruby-identifier">x_pos</span> = <span class="ruby-ivar">@g_area_x1</span> <span class="ruby-operator">+</span> (<span class="ruby-ivar">@division_width</span>) <span class="ruby-operator">+</span><span class="ruby-ivar">@g_area_x_offset</span>
+    <span class="ruby-identifier">col_count</span> = (<span class="ruby-ivar">@data_count</span>.<span class="ruby-identifier">to_f</span><span class="ruby-operator">-</span><span class="ruby-value">2</span>).<span class="ruby-identifier">floor</span>
+  <span class="ruby-keyword">else</span>
+
+    <span class="ruby-identifier">x_pos</span> = <span class="ruby-ivar">@g_area_x1</span> <span class="ruby-operator">+</span><span class="ruby-ivar">@g_area_x_offset</span>
+    <span class="ruby-identifier">col_count</span> = ( (<span class="ruby-ivar">@g_area_x2</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@g_area_x1</span>) <span class="ruby-operator">/</span> <span class="ruby-ivar">@division_width</span> )
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">i</span>= <span class="ruby-value">1</span>
+
+  <span class="ruby-keyword">while</span> (<span class="ruby-identifier">i</span><span class="ruby-operator">&lt;=</span><span class="ruby-identifier">col_count</span>)
+    <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">x_pos</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@g_area_x1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">x_pos</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@g_area_x2</span> )
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">draw_dotted_line</span>((<span class="ruby-identifier">x_pos</span>).<span class="ruby-identifier">floor</span>,<span class="ruby-ivar">@g_area_y1</span>,(<span class="ruby-identifier">x_pos</span>).<span class="ruby-identifier">floor</span>,<span class="ruby-ivar">@g_area_y2</span>,<span class="ruby-identifier">line_width</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">x_pos</span> = <span class="ruby-identifier">x_pos</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@division_width</span>
+    <span class="ruby-identifier">i</span>= <span class="ruby-identifier">i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_grid-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_grid-method -->
+
+    
+      <div id="method-i-draw_treshold" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_treshold</span><span
+            class="method-args">(value,r,g,b,show_label=false,show_on_right=false,tick_width=4,free_text=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function will draw an horizontal treshold ( this is an easy way to
+draw the 0 line ). If show_label is set to true, the value of the treshold
+will be written over the graph. If show_on_right is set to true, the value
+will be written on the right side of the graph. r, g and b are used to set
+the line and text color. Use tick_width to set the width of the ticks, if
+set to 0 this will draw a solid line. You can optionnaly provide the
+caption of the treshold (by default the treshold value is used)</p>
+          
+
+          
+          <div class="method-source-code" id="draw_treshold-source">
+            <pre><span class="ruby-comment"># File lib/layout.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_treshold</span>(<span class="ruby-identifier">value</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>,<span class="ruby-identifier">show_label</span>=<span class="ruby-keyword">false</span>,<span class="ruby-identifier">show_on_right</span>=<span class="ruby-keyword">false</span>,<span class="ruby-identifier">tick_width</span>=<span class="ruby-value">4</span>,<span class="ruby-identifier">free_text</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">b</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">r</span> = <span class="ruby-identifier">validate_color</span>(<span class="ruby-identifier">b</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">r</span>)
+
+  <span class="ruby-identifier">c_text_color</span> =<span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-comment"># c_text_color = GD2::Color.new(r,g,b)</span>
+  <span class="ruby-identifier">y</span> = <span class="ruby-ivar">@g_area_y2</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">value</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@vmin</span>.<span class="ruby-identifier">to_f</span>) * <span class="ruby-ivar">@division_ratio</span>.<span class="ruby-identifier">to_f</span>
+
+  <span class="ruby-keyword">return</span>(<span class="ruby-value">-1</span>) <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">y</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-ivar">@g_area_y1</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">y</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-ivar">@g_area_y2</span> )
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">tick_width</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> )
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">draw_line</span>(<span class="ruby-ivar">@g_area_x1</span>,<span class="ruby-identifier">y</span>,<span class="ruby-ivar">@g_area_x2</span>,<span class="ruby-identifier">y</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">draw_dotted_line</span>(<span class="ruby-ivar">@g_area_x1</span>,<span class="ruby-identifier">y</span>,<span class="ruby-ivar">@g_area_x2</span>,<span class="ruby-identifier">y</span>,<span class="ruby-identifier">tick_width</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">show_label</span> )
+    <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">free_text</span>.<span class="ruby-identifier">nil?</span> )
+      <span class="ruby-identifier">label</span> = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">label</span> = <span class="ruby-identifier">free_text</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">show_on_right</span> )
+      <span class="ruby-identifier">image_ttf_text</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@g_area_x2</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>,<span class="ruby-identifier">y</span><span class="ruby-operator">+</span>(<span class="ruby-ivar">@font_size</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>),<span class="ruby-identifier">c_text_color</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">label</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">image_ttf_text</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@g_area_x1</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>,<span class="ruby-identifier">y</span><span class="ruby-operator">-</span>(<span class="ruby-ivar">@font_size</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>),<span class="ruby-identifier">c_text_color</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">label</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_treshold-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_treshold-method -->
+
+    
+      <div id="method-i-report_warnings" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">report_warnings</span><span
+            class="method-args">(interface="cli")</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Use this function to enable error reporting during the chart rendering. By
+default messages are redirected to the console while using the render
+command and using GD while using the stroke command. You can force the
+errors to be redirected to either cli or gd specifying it as parameter.</p>
+          
+
+          
+          <div class="method-source-code" id="report_warnings-source">
+            <pre><span class="ruby-comment"># File lib/layout.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">report_warnings</span>(<span class="ruby-identifier">interface</span>=<span class="ruby-string">&quot;cli&quot;</span>)
+        <span class="ruby-ivar">@error_reporting</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-ivar">@error_interface</span> = <span class="ruby-identifier">interface</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- report_warnings-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- report_warnings-method -->
+
+    
+      <div id="method-i-set_graph_area" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_graph_area</span><span
+            class="method-args">(x1,y1,x2,y2)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A call to this function is mandatory when creating a graph. The upper left
+and bottom right border positions are used as arguments. This area will be
+used to draw graphs, grid, axis &amp; more. Calling this function will not
+draw anything this will only set the graph area boundaries.</p>
+          
+
+          
+          <div class="method-source-code" id="set_graph_area-source">
+            <pre><span class="ruby-comment"># File lib/layout.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_graph_area</span>(<span class="ruby-identifier">x1</span>,<span class="ruby-identifier">y1</span>,<span class="ruby-identifier">x2</span>,<span class="ruby-identifier">y2</span>)
+  <span class="ruby-ivar">@g_area_x1</span> = <span class="ruby-identifier">x1</span>
+  <span class="ruby-ivar">@g_area_y1</span> = <span class="ruby-identifier">y1</span>
+  <span class="ruby-ivar">@g_area_x2</span> = <span class="ruby-identifier">x2</span>
+  <span class="ruby-ivar">@g_area_y2</span> = <span class="ruby-identifier">y2</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_graph_area-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_graph_area-method -->
+
+    
+      <div id="method-i-write_values" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write_values</span><span
+            class="method-args">(data,data_description,series)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>You can use this function to display the values contained in the series on
+top of the charts. It is possible to specify one or multiple series to
+display using and array.</p>
+          
+
+          
+          <div class="method-source-code" id="write_values-source">
+            <pre><span class="ruby-comment"># File lib/layout.rb, line 207</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-identifier">write_values</span>(<span class="ruby-identifier">data</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-identifier">series</span>)
+
+              <span class="ruby-identifier">data_description</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">validate_data_description</span>(<span class="ruby-string">&quot;write_values&quot;</span>,<span class="ruby-identifier">data_description</span>)
+               <span class="ruby-identifier">validate_data</span>(<span class="ruby-string">&quot;write_values&quot;</span>,<span class="ruby-identifier">data</span>)
+              <span class="ruby-identifier">series</span> = [<span class="ruby-identifier">series</span>]    <span class="ruby-keyword">if</span> ( <span class="ruby-operator">!</span><span class="ruby-identifier">series</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>))
+              <span class="ruby-identifier">id</span> = <span class="ruby-value">0</span>
+              <span class="ruby-identifier">color_id</span> =<span class="ruby-value">0</span>
+              <span class="ruby-identifier">series</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">col_name</span><span class="ruby-operator">|</span>
+                      <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;description&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key_i</span>,<span class="ruby-identifier">value_i</span><span class="ruby-operator">|</span>
+                              <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">key_i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">col_name</span> )
+                                      <span class="ruby-identifier">color_id</span> = <span class="ruby-identifier">id</span>
+                                      <span class="ruby-identifier">id</span> = <span class="ruby-identifier">id</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+                              <span class="ruby-keyword">end</span>
+                      <span class="ruby-keyword">end</span>
+                      <span class="ruby-identifier">xpos</span>  = <span class="ruby-ivar">@g_area_x1</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@g_area_x_offset</span>
+                      <span class="ruby-identifier">xlast</span> = <span class="ruby-value">-1</span>
+                      <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+                              <span class="ruby-keyword">if</span> ((<span class="ruby-operator">!</span><span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>].<span class="ruby-identifier">nil?</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>)))
+                                      <span class="ruby-identifier">value</span> = <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>]
+                                      <span class="ruby-identifier">ypos</span> = <span class="ruby-ivar">@g_area_y2</span> <span class="ruby-operator">-</span> ((<span class="ruby-identifier">value</span><span class="ruby-operator">-</span><span class="ruby-ivar">@vmin</span>) * <span class="ruby-ivar">@division_ratio</span>)
+                                      <span class="ruby-identifier">positions</span> = <span class="ruby-identifier">image_ftb_box</span>(<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>)
+                                      <span class="ruby-identifier">width</span>  = <span class="ruby-identifier">positions</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">positions</span>[<span class="ruby-value">6</span>]
+                                      <span class="ruby-identifier">x_offset</span> = <span class="ruby-identifier">xpos</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">width</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)
+                                      <span class="ruby-identifier">height</span> = <span class="ruby-identifier">positions</span>[<span class="ruby-value">3</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">positions</span>[<span class="ruby-value">7</span>]
+                                      <span class="ruby-identifier">y_offset</span> = <span class="ruby-identifier">ypos</span> <span class="ruby-operator">-</span> <span class="ruby-value">4</span>
+
+                                      <span class="ruby-identifier">c_text_color</span> = <span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">color_id</span>][<span class="ruby-string">&quot;r&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">color_id</span>][<span class="ruby-string">&quot;g&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">color_id</span>][<span class="ruby-string">&quot;b&quot;</span>]);
+                                      <span class="ruby-identifier">image_ttf_text</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">x_offset</span>,<span class="ruby-identifier">y_offset</span>,<span class="ruby-identifier">c_text_color</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>)
+                              <span class="ruby-keyword">end</span>
+                              <span class="ruby-identifier">xpos</span> = <span class="ruby-identifier">xpos</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@division_width</span>
+                      <span class="ruby-keyword">end</span>
+              <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- write_values-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- write_values-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

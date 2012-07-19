@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module PieChart - rchart 2.0.4</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/pie_chart.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-draw_basic_pie_graph">#draw_basic_pie_graph</a>
+    
+    <li><a href="#method-i-draw_flat_pie_graph">#draw_flat_pie_graph</a>
+    
+    <li><a href="#method-i-draw_flat_pie_graph_with_shadow">#draw_flat_pie_graph_with_shadow</a>
+    
+    <li><a href="#method-i-draw_pie_graph">#draw_pie_graph</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./BarChart.html">BarChart</a>
+  
+    <li><a href="./ColorPalette.html">ColorPalette</a>
+  
+    <li><a href="./CubicChart.html">CubicChart</a>
+  
+    <li><a href="./GD2.html">GD2</a>
+  
+    <li><a href="./Graph.html">Graph</a>
+  
+    <li><a href="./GraphHelper.html">GraphHelper</a>
+  
+    <li><a href="./Layout.html">Layout</a>
+  
+    <li><a href="./Legend.html">Legend</a>
+  
+    <li><a href="./LineChart.html">LineChart</a>
+  
+    <li><a href="./PieChart.html">PieChart</a>
+  
+    <li><a href="./PlotChart.html">PlotChart</a>
+  
+    <li><a href="./Rchart.html">Rchart</a>
+  
+    <li><a href="./RchartHelper.html">RchartHelper</a>
+  
+    <li><a href="./Rdata.html">Rdata</a>
+  
+    <li><a href="./Scale.html">Scale</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module PieChart</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-draw_basic_pie_graph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_basic_pie_graph</span><span
+            class="method-args">(data,data_description,x_pos,y_pos,radius=100,draw_labels=Rchart::PIE_NOLABEL,r=255,g=255,b=255,decimals=0)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function will draw a classical non-exploded pie chart.</p>
+<ul><li>
+<p>To do so you must specify the data &amp; data_description array.Only one
+serie of data is allowed for pie graph.</p>
+</li><li>
+<p>You can associate a description of each value in another serie by marking
+it using the set_abscise_label_serie function.</p>
+</li><li>
+<p>You must specify the center position of the chart. You can also optionally
+specify the radius of the pie and if the percentage should be printed.</p>
+</li><li>
+<p>r,g,b can be used to set the color of the line that will surround each pie
+slices.</p>
+</li><li>
+<p>You can specify the number of decimals you want to be displayed in the
+labels (default is 0 )</p>
+</li></ul>
+
+<p>By default no labels are written around the pie chart. You can use the
+following modes for the draw_labels parameter</p>
+<ul><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>PIE_NOLABEL No labels displayed</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>PIE_PERCENTAGE Percentages are displayed</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>PIE_LABELS Series labels displayed</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>PIE_PERCENTAGE_LABEL Series labels &amp; percentage displayed</p>
+</dd></dl>
+</li></ul>
+
+<p>This will draw a pie graph centered at (150-150) with a radius of 100, no
+labels</p>
+<ul><li>
+<p>chart.draw_basic_pie_graph(chart_data.get_data,chart_data.get_data_description,150,150)</p>
+</li></ul>
+
+<p>This will draw a pie graph centered at (150-150) with a radius of 50 and
+percentages</p>
+<ul><li>
+<p>chart.draw_basic_pie_graph(chart_data.get_data,chart_data.get_data_description,150,150,50,Rchart::PIE_PERCENTAGE)</p>
+</li></ul>
+
+<p>This will draw a pie graph centered at (150-150) with a radius of 100,
+captions and black borders</p>
+<ul><li>
+<p>chart.draw_basic_pie_graph(chart_data.get_data,chart_data.get_data_description,150,150,100,Rchart::PIE_PERCENTAGE,0,0,0)</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="draw_basic_pie_graph-source">
+            <pre><span class="ruby-comment"># File lib/pie_chart.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_basic_pie_graph</span>(<span class="ruby-identifier">data</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-identifier">x_pos</span>,<span class="ruby-identifier">y_pos</span>,<span class="ruby-identifier">radius</span>=<span class="ruby-value">100</span>,<span class="ruby-identifier">draw_labels</span>=<span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_NOLABEL</span>,<span class="ruby-identifier">r</span>=<span class="ruby-value">255</span>,<span class="ruby-identifier">g</span>=<span class="ruby-value">255</span>,<span class="ruby-identifier">b</span>=<span class="ruby-value">255</span>,<span class="ruby-identifier">decimals</span>=<span class="ruby-value">0</span>)
+  <span class="ruby-identifier">data_description</span> = <span class="ruby-identifier">validate_data_description</span>(<span class="ruby-string">&quot;draw_basic_pie_graph&quot;</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">validate_data</span>(<span class="ruby-string">&quot;drawBasicPieGraph&quot;</span>,<span class="ruby-identifier">data</span>)
+  <span class="ruby-comment"># Determine pie sum</span>
+  <span class="ruby-identifier">series</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">pie_sum</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">i_values</span> = []
+  <span class="ruby-identifier">r_values</span>  = []
+  <span class="ruby-identifier">i_labels</span>  = []
+  <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;values&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span><span class="ruby-operator">|</span><span class="ruby-identifier">col_name</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">col_name</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;position&quot;</span>])
+      <span class="ruby-identifier">series</span> = <span class="ruby-identifier">series</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+      <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>].<span class="ruby-identifier">nil?</span>)
+          <span class="ruby-identifier">pie_sum</span> = <span class="ruby-identifier">pie_sum</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>]
+          <span class="ruby-identifier">i_values</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>]
+          <span class="ruby-identifier">i_labels</span>   <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;position&quot;</span>]]
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+
+  <span class="ruby-comment"># Validate serie</span>
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">series</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span> )
+    <span class="ruby-identifier">raise_fatal</span>(<span class="ruby-string">&quot;Pie chart can only accept one serie of data.&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">splice_ratio</span>         = <span class="ruby-value">360.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">pie_sum</span>
+  <span class="ruby-identifier">splice_percent</span>       = <span class="ruby-value">100.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">pie_sum</span>
+
+  <span class="ruby-comment">#Calculate all polygons</span>
+  <span class="ruby-identifier">angle</span>    = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">top_plots</span> = []
+  <span class="ruby-identifier">i_values</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span>,<span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+
+    <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>]= [<span class="ruby-identifier">x_pos</span>]
+    <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>]<span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">y_pos</span>
+    <span class="ruby-comment"># Process labels position &amp; size</span>
+    <span class="ruby-identifier">caption</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-keyword">if</span> ( <span class="ruby-operator">!</span>(<span class="ruby-identifier">draw_labels</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_NOLABEL</span>) )
+      <span class="ruby-identifier">t_angle</span>  = <span class="ruby-identifier">angle</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">value</span>*<span class="ruby-identifier">splice_ratio</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">draw_labels</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_PERCENTAGE</span>)
+        <span class="ruby-identifier">caption</span>  = ((<span class="ruby-identifier">value</span> * (<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>) * <span class="ruby-identifier">splice_percent</span>)<span class="ruby-operator">/</span>(<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>)).<span class="ruby-identifier">round</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;%&quot;</span>
+      <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">draw_labels</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_LABELS</span>)
+        <span class="ruby-identifier">caption</span>  = <span class="ruby-identifier">i_labels</span>[<span class="ruby-identifier">key</span>]
+      <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">draw_labels</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_PERCENTAGE_LABEL</span>)
+        <span class="ruby-identifier">caption</span>  = <span class="ruby-identifier">i_labels</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;\r\n&quot;</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;.&quot;</span><span class="ruby-operator">+</span>((<span class="ruby-identifier">value</span> * (<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>) * <span class="ruby-identifier">splice_percent</span>)<span class="ruby-operator">/</span>(<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>)).<span class="ruby-identifier">round</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;%&quot;</span>
+      <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">draw_labels</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_PERCENTAGE_LABEL</span>)
+        <span class="ruby-identifier">caption</span>  = <span class="ruby-identifier">i_labels</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;\r\n&quot;</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;.&quot;</span><span class="ruby-operator">+</span>((<span class="ruby-identifier">value</span> * (<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>) * <span class="ruby-identifier">splice_percent</span>)<span class="ruby-operator">/</span>(<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>)).<span class="ruby-identifier">round</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;%&quot;</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">position</span>   = <span class="ruby-identifier">image_ftb_box</span>(<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">caption</span>)
+      <span class="ruby-identifier">text_width</span>  = <span class="ruby-identifier">position</span>[<span class="ruby-value">2</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">0</span>]
+      <span class="ruby-identifier">text_height</span> = (<span class="ruby-identifier">position</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">abs</span>)<span class="ruby-operator">+</span>(<span class="ruby-identifier">position</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">abs</span>)
+
+      <span class="ruby-identifier">tx</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>((<span class="ruby-identifier">t_angle</span>) * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * (<span class="ruby-identifier">radius</span><span class="ruby-operator">+</span><span class="ruby-value">10</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">x_pos</span>
+
+      <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">t_angle</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">t_angle</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">180</span> )
+        <span class="ruby-identifier">ty</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>((<span class="ruby-identifier">t_angle</span>) * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * (<span class="ruby-identifier">radius</span><span class="ruby-operator">+</span><span class="ruby-value">10</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">y_pos</span> <span class="ruby-operator">+</span> <span class="ruby-value">4</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">ty</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>((<span class="ruby-identifier">t_angle</span>) * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * (<span class="ruby-identifier">radius</span><span class="ruby-operator">+</span><span class="ruby-value">4</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">y_pos</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">text_height</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">tx</span> = <span class="ruby-identifier">tx</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">text_width</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">t_angle</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">90</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">t_angle</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">270</span> )
+
+      <span class="ruby-identifier">c_text_color</span> = <span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-value">70</span>,<span class="ruby-value">70</span>,<span class="ruby-value">70</span>)
+      <span class="ruby-identifier">image_ttf_text</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">tx</span>,<span class="ruby-identifier">ty</span>,<span class="ruby-identifier">c_text_color</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">caption</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-comment"># Process pie slices</span>
+    <span class="ruby-identifier">i_angle</span> = <span class="ruby-identifier">angle</span>
+    <span class="ruby-keyword">while</span>(<span class="ruby-identifier">i_angle</span> <span class="ruby-operator">&lt;=</span><span class="ruby-identifier">angle</span><span class="ruby-operator">+</span><span class="ruby-identifier">value</span>*<span class="ruby-identifier">splice_ratio</span>)
+
+      <span class="ruby-identifier">top_x</span> = (<span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">i_angle</span> * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> )) * <span class="ruby-identifier">radius</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x_pos</span>
+      <span class="ruby-identifier">top_y</span> = (<span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">i_angle</span> * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span><span class="ruby-operator">/</span> <span class="ruby-value">180</span> ))  * <span class="ruby-identifier">radius</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y_pos</span>
+      <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">top_x</span>)
+      <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">top_y</span>)
+      <span class="ruby-identifier">i_angle</span> = <span class="ruby-identifier">i_angle</span><span class="ruby-operator">+</span><span class="ruby-value">0.5</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>]<span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">x_pos</span>
+    <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">y_pos</span>
+    <span class="ruby-identifier">angle</span> = <span class="ruby-identifier">i_angle</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">poly_plots</span> = <span class="ruby-identifier">top_plots</span>
+  <span class="ruby-comment"># Draw Top polygons</span>
+  <span class="ruby-identifier">poly_plots</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span>,<span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">image_filled_polygon</span>(<span class="ruby-ivar">@picture</span>, <span class="ruby-identifier">poly_plots</span>[<span class="ruby-identifier">key</span>], <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;r&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;g&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;b&quot;</span>])
+  <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">draw_circle</span>(<span class="ruby-identifier">x_pos</span><span class="ruby-operator">-</span><span class="ruby-value">0.5</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">-</span><span class="ruby-value">0.5</span>,<span class="ruby-identifier">radius</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+      <span class="ruby-identifier">draw_circle</span>(<span class="ruby-identifier">x_pos</span><span class="ruby-operator">-</span><span class="ruby-value">0.5</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">-</span><span class="ruby-value">0.5</span>,<span class="ruby-identifier">radius</span><span class="ruby-operator">+</span><span class="ruby-value">0.5</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-comment"># Draw Top polygons</span>
+  <span class="ruby-identifier">top_plots</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span>  <span class="ruby-operator">|</span><span class="ruby-identifier">value</span>,<span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">j</span> = <span class="ruby-value">0</span>
+    <span class="ruby-keyword">while</span>(<span class="ruby-identifier">j</span><span class="ruby-operator">&lt;=</span><span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">count</span><span class="ruby-operator">-</span><span class="ruby-value">4</span> )
+      <span class="ruby-identifier">draw_line</span>(<span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>][<span class="ruby-identifier">j</span>],<span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>],<span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>],<span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">3</span>],<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>)
+      <span class="ruby-identifier">j</span> =<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_basic_pie_graph-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_basic_pie_graph-method -->
+
+    
+      <div id="method-i-draw_flat_pie_graph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_flat_pie_graph</span><span
+            class="method-args">(data,data_description,x_pos,y_pos,radius=100,draw_labels=Rchart::PIE_NOLABEL,splice_distance=0,decimals=0,all_black=false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function will draw a flat 2D pie graph. To do so you must specify the
+data &amp; data_description array.</p>
+<ul><li>
+<p>Only one serie of data is allowed for pie graph.</p>
+</li><li>
+<p>You can associate a description of each value in another serie by marking
+it using the set_abscise_label_serie function. You must specify the center
+position of the chart.</p>
+</li><li>
+<p>You can also optionally specify the radius of the pie and if the percentage
+should be printed.</p>
+</li><li>
+<p>If splice_distance is greated than 0, the pie will be exploded.</p>
+</li><li>
+<p>You can specify the number of decimals you want to be displayed in the
+labels (default is 0 )</p>
+</li></ul>
+
+<p>By default no labels are written around the pie chart. You can use the
+following modes for the draw_labels parameter:</p>
+<ul><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>PIE_NOLABEL No labels displayed</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>PIE_PERCENTAGE Percentages are displayed</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>PIE_LABELS Series labels displayed</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>PIE_PERCENTAGE_LABEL Series labels &amp; percentage displayed</p>
+</dd></dl>
+</li></ul>
+
+<p>This will draw a pie graph centered at (150-150) with a radius of 100, no
+labels</p>
+<ul><li>
+<p>chart.draw_flat_pie_graph(chart_data.get_data,chart_data.get_data_description,150,150)</p>
+</li></ul>
+
+<p>This will draw a pie graph centered at (150-150) with a radius of 50 and
+percentages</p>
+<ul><li>
+<p>chart.draw_flat_pie_graph(chart_data.get_data,chart_data.get_data_description,150,150,50,Rchart::PIE_PERCENTAGE)</p>
+</li></ul>
+
+<p>This will draw a pie graph centered at (150-150) with a radius of 100,
+captions and slightly exploded</p>
+<ul><li>
+<p>chart.draw_flat_pie_graph(chart_data.get_data,chart_data.get_data_description,150,150,100,Rchart::PIE_PERCENTAGE,4)</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="draw_flat_pie_graph-source">
+            <pre><span class="ruby-comment"># File lib/pie_chart.rb, line 358</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_flat_pie_graph</span>(<span class="ruby-identifier">data</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-identifier">x_pos</span>,<span class="ruby-identifier">y_pos</span>,<span class="ruby-identifier">radius</span>=<span class="ruby-value">100</span>,<span class="ruby-identifier">draw_labels</span>=<span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_NOLABEL</span>,<span class="ruby-identifier">splice_distance</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">decimals</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">all_black</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">data_description</span> = <span class="ruby-identifier">validate_data_description</span>(<span class="ruby-string">&quot;draw_flat_pie_graph&quot;</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">validate_data</span>(<span class="ruby-string">&quot;draw_flat_pie_graph&quot;</span>,<span class="ruby-identifier">data</span>)
+  <span class="ruby-identifier">shadow_status</span> = <span class="ruby-ivar">@shadow_active</span>
+  <span class="ruby-ivar">@shadow_active</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-comment"># Determine pie sum</span>
+  <span class="ruby-identifier">series</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">pie_sum</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">i_values</span> = []
+  <span class="ruby-identifier">r_values</span>  = []
+  <span class="ruby-identifier">i_labels</span>  = []
+  <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;values&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span><span class="ruby-operator">|</span><span class="ruby-identifier">col_name</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">col_name</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;position&quot;</span>])
+      <span class="ruby-identifier">series</span> = <span class="ruby-identifier">series</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+      <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>].<span class="ruby-identifier">nil?</span>)
+          <span class="ruby-identifier">pie_sum</span> = <span class="ruby-identifier">pie_sum</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>]
+          <span class="ruby-identifier">i_values</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>]
+          <span class="ruby-identifier">i_labels</span>   <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;position&quot;</span>]]
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment">#Validate serie</span>
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">series</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span> )
+    <span class="ruby-identifier">raise_fatal</span>(<span class="ruby-string">&quot;Pie chart can only accept one serie of data.&quot;</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-value">-1</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">splice_ratio</span>   = <span class="ruby-value">360.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">pie_sum</span>
+  <span class="ruby-identifier">splice_percent</span> = <span class="ruby-value">100.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">pie_sum</span>
+  <span class="ruby-comment"># Calculate all polygons</span>
+  <span class="ruby-identifier">angle</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">top_plots</span> = []
+  <span class="ruby-identifier">i_values</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span>,<span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">x_offset</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>((<span class="ruby-identifier">angle</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">value</span>*<span class="ruby-value">1.0</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>*<span class="ruby-identifier">splice_ratio</span>)) * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * <span class="ruby-identifier">splice_distance</span>
+    <span class="ruby-identifier">y_offset</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>((<span class="ruby-identifier">angle</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">value</span>*<span class="ruby-value">1.0</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>*<span class="ruby-identifier">splice_ratio</span>)) * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * <span class="ruby-identifier">splice_distance</span>
+
+    <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>] = [(<span class="ruby-identifier">x_pos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x_offset</span>).<span class="ruby-identifier">round</span>]
+    <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">y_pos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y_offset</span>).<span class="ruby-identifier">round</span>
+    <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">all_black</span> )
+      <span class="ruby-identifier">rc</span> = <span class="ruby-ivar">@shadow_r_color</span>
+      <span class="ruby-identifier">gc</span> = <span class="ruby-ivar">@shadow_g_color</span>
+      <span class="ruby-identifier">bc</span> = <span class="ruby-ivar">@shadow_b_color</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">rc</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;r&quot;</span>]
+      <span class="ruby-identifier">gc</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;g&quot;</span>]
+      <span class="ruby-identifier">bc</span> = <span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;b&quot;</span>]
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">x_line_last</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">y_line_last</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-comment">#  Process labels position &amp; size</span>
+    <span class="ruby-identifier">caption</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-keyword">if</span> ( <span class="ruby-operator">!</span>(<span class="ruby-identifier">draw_labels</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_NOLABEL</span>) )
+      <span class="ruby-identifier">t_angle</span>   = <span class="ruby-identifier">angle</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">value</span>*<span class="ruby-identifier">splice_ratio</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">draw_labels</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_PERCENTAGE</span>)
+        <span class="ruby-identifier">caption</span>  = ((<span class="ruby-identifier">value</span> * (<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>) * <span class="ruby-identifier">splice_percent</span>)<span class="ruby-operator">/</span>(<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>)).<span class="ruby-identifier">round</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;%&quot;</span>
+      <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">draw_labels</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_LABELS</span>)
+        <span class="ruby-identifier">caption</span>  = <span class="ruby-identifier">i_labels</span>[<span class="ruby-identifier">key</span>]
+      <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">draw_labels</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_PERCENTAGE_LABEL</span>)
+        <span class="ruby-identifier">caption</span>  = <span class="ruby-identifier">i_labels</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;.\r\n&quot;</span><span class="ruby-operator">+</span>((<span class="ruby-identifier">value</span> * (<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>) * <span class="ruby-identifier">splice_percent</span>)<span class="ruby-operator">/</span>(<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>)).<span class="ruby-identifier">round</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;%&quot;</span>
+      <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">draw_labels</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_PERCENTAGE_LABEL</span>)
+        <span class="ruby-identifier">caption</span>  = <span class="ruby-identifier">i_labels</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;.\r\n&quot;</span><span class="ruby-operator">+</span>((<span class="ruby-identifier">value</span> * (<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>) * <span class="ruby-identifier">splice_percent</span>)<span class="ruby-operator">/</span>(<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>)).<span class="ruby-identifier">round</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;%&quot;</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">position</span>   = <span class="ruby-identifier">image_ftb_box</span>(<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">caption</span>)
+      <span class="ruby-identifier">text_width</span>  = <span class="ruby-identifier">position</span>[<span class="ruby-value">2</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">0</span>]
+      <span class="ruby-identifier">text_height</span> = (<span class="ruby-identifier">position</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">abs</span>)<span class="ruby-operator">+</span>(<span class="ruby-identifier">position</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">abs</span>)
+
+      <span class="ruby-identifier">tx</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>((<span class="ruby-identifier">t_angle</span>) * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * (<span class="ruby-identifier">radius</span><span class="ruby-operator">+</span><span class="ruby-value">10</span><span class="ruby-operator">+</span><span class="ruby-identifier">splice_distance</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">x_pos</span>
+      <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">t_angle</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">t_angle</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">180</span> )
+        <span class="ruby-identifier">ty</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>((<span class="ruby-identifier">t_angle</span>) * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * (<span class="ruby-identifier">radius</span><span class="ruby-operator">+</span><span class="ruby-value">10</span><span class="ruby-operator">+</span><span class="ruby-identifier">splice_distance</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">y_pos</span> <span class="ruby-operator">+</span> <span class="ruby-value">4</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">ty</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>((<span class="ruby-identifier">t_angle</span>) * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * (<span class="ruby-identifier">radius</span><span class="ruby-operator">+</span><span class="ruby-identifier">splice_distance</span><span class="ruby-operator">+</span><span class="ruby-value">4</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">y_pos</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">text_height</span>*<span class="ruby-value">1.0</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">tx</span> = <span class="ruby-identifier">tx</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">text_width</span> <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">t_angle</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">90</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">t_angle</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">270</span> )
+      <span class="ruby-identifier">c_text_color</span> = <span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-value">70</span>,<span class="ruby-value">70</span>,<span class="ruby-value">70</span>)
+      <span class="ruby-identifier">image_ttf_text</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">tx</span>,<span class="ruby-identifier">ty</span>,<span class="ruby-identifier">c_text_color</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">caption</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Process pie slices</span>
+    <span class="ruby-keyword">if</span> ( <span class="ruby-operator">!</span><span class="ruby-identifier">all_black</span> )
+      <span class="ruby-identifier">line_color</span> =<span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">rc</span>,<span class="ruby-identifier">gc</span>,<span class="ruby-identifier">bc</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">line_color</span> = <span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">rc</span>,<span class="ruby-identifier">gc</span>,<span class="ruby-identifier">bc</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">x_line_last</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">y_line_last</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">i_angle</span>=<span class="ruby-identifier">angle</span>
+    <span class="ruby-keyword">while</span>(<span class="ruby-identifier">i_angle</span><span class="ruby-operator">&lt;=</span><span class="ruby-identifier">angle</span><span class="ruby-operator">+</span><span class="ruby-identifier">value</span>*<span class="ruby-identifier">splice_ratio</span>)
+      <span class="ruby-identifier">pos_x</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">i_angle</span> * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * <span class="ruby-identifier">radius</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x_pos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x_offset</span>
+      <span class="ruby-identifier">pos_y</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">i_angle</span> * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * <span class="ruby-identifier">radius</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y_pos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y_offset</span>
+      <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>]<span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">pos_x</span>).<span class="ruby-identifier">round</span>
+      <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">pos_y</span>).<span class="ruby-identifier">round</span>
+      <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">i_angle</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">angle</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">i_angle</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">angle</span><span class="ruby-operator">+</span><span class="ruby-identifier">value</span>*<span class="ruby-identifier">splice_ratio</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">i_angle</span><span class="ruby-operator">+</span><span class="ruby-value">0.5</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">angle</span><span class="ruby-operator">+</span><span class="ruby-identifier">value</span>*<span class="ruby-identifier">splice_ratio</span>)
+        <span class="ruby-identifier">draw_line</span>(<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">x_offset</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-identifier">y_offset</span>,<span class="ruby-identifier">pos_x</span>,<span class="ruby-identifier">pos_y</span>,<span class="ruby-identifier">rc</span>,<span class="ruby-identifier">gc</span>,<span class="ruby-identifier">bc</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">x_line_last</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;&quot;</span> )
+        <span class="ruby-identifier">draw_line</span>(<span class="ruby-identifier">x_line_last</span>,<span class="ruby-identifier">y_line_last</span>,<span class="ruby-identifier">pos_x</span>,<span class="ruby-identifier">pos_y</span>,<span class="ruby-identifier">rc</span>,<span class="ruby-identifier">gc</span>,<span class="ruby-identifier">bc</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">x_line_last</span> = <span class="ruby-identifier">pos_x</span>
+      <span class="ruby-identifier">y_line_last</span> = <span class="ruby-identifier">pos_y</span>
+      <span class="ruby-identifier">i_angle</span>=<span class="ruby-identifier">i_angle</span><span class="ruby-operator">+</span><span class="ruby-value">0.5</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">x_pos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x_offset</span>).<span class="ruby-identifier">round</span>
+    <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>]<span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">y_pos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y_offset</span>).<span class="ruby-identifier">round</span>
+    <span class="ruby-identifier">angle</span> = <span class="ruby-identifier">i_angle</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">poly_plots</span> = <span class="ruby-identifier">top_plots</span>
+  <span class="ruby-comment"># Draw Top polygons</span>
+  <span class="ruby-identifier">poly_plots</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span>  <span class="ruby-operator">|</span><span class="ruby-identifier">value</span>,<span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> ( <span class="ruby-operator">!</span><span class="ruby-identifier">all_black</span> )
+      <span class="ruby-identifier">image_filled_polygon</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">poly_plots</span>[<span class="ruby-identifier">key</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;r&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;g&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;b&quot;</span>])
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">image_filled_polygon</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">poly_plots</span>[<span class="ruby-identifier">key</span>],<span class="ruby-ivar">@shadow_r_color</span>,<span class="ruby-ivar">@shadow_g_color</span>,<span class="ruby-ivar">@shadow_b_color</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@shadow_active</span> = <span class="ruby-identifier">shadow_status</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_flat_pie_graph-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_flat_pie_graph-method -->
+
+    
+      <div id="method-i-draw_flat_pie_graph_with_shadow" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_flat_pie_graph_with_shadow</span><span
+            class="method-args">(data,data_description,x_pos,y_pos,radius=100,draw_labels=Rchart::PIE_NOLABEL,splice_distance=0,decimals=0)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function is an alias of the <a
+href="PieChart.html#method-i-draw_flat_pie_graph">#draw_flat_pie_graph</a>
+function.</p>
+          
+
+          
+          <div class="method-source-code" id="draw_flat_pie_graph_with_shadow-source">
+            <pre><span class="ruby-comment"># File lib/pie_chart.rb, line 334</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_flat_pie_graph_with_shadow</span>(<span class="ruby-identifier">data</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-identifier">x_pos</span>,<span class="ruby-identifier">y_pos</span>,<span class="ruby-identifier">radius</span>=<span class="ruby-value">100</span>,<span class="ruby-identifier">draw_labels</span>=<span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_NOLABEL</span>,<span class="ruby-identifier">splice_distance</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">decimals</span>=<span class="ruby-value">0</span>)
+  <span class="ruby-identifier">draw_flat_pie_graph</span>(<span class="ruby-identifier">data</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-identifier">x_pos</span><span class="ruby-operator">+</span><span class="ruby-ivar">@shadow_x_distance</span>,<span class="ruby-identifier">y_pos</span><span class="ruby-operator">+</span><span class="ruby-ivar">@shadow_y_distance</span>,<span class="ruby-identifier">radius</span>,<span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_NOLABEL</span>,<span class="ruby-identifier">splice_distance</span>,<span class="ruby-identifier">decimals</span>,<span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">draw_flat_pie_graph</span>(<span class="ruby-identifier">data</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-identifier">x_pos</span>,<span class="ruby-identifier">y_pos</span>,<span class="ruby-identifier">radius</span>,<span class="ruby-identifier">draw_labels</span>,<span class="ruby-identifier">splice_distance</span>,<span class="ruby-identifier">decimals</span>,<span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_flat_pie_graph_with_shadow-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_flat_pie_graph_with_shadow-method -->
+
+    
+      <div id="method-i-draw_pie_graph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draw_pie_graph</span><span
+            class="method-args">(data,data_description,x_pos,y_pos,radius=100,draw_labels=Rchart::PIE_NOLABEL,enhance_colors=true,skew=60,splice_height=20,splice_distance=0,decimals=0)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function will draw a 3D pie graph.</p>
+<ul><li>
+<p>To do so you must specify the data &amp; data_description array.</p>
+</li><li>
+<p>Only one serie of data is allowed for pie graph.</p>
+</li><li>
+<p>You can associate a description of each value in another serie by marking
+it using the set_abscise_label_serie function. You must specify the center
+position of the chart.</p>
+</li><li>
+<p>You can also optionally specify the radius of the pie, if the percentage
+should be printed, the 3D skew factor and the height of all splices.</p>
+</li><li>
+<p>If enhance_colors is set to true, pie edges will be enhanced.</p>
+</li><li>
+<p>If splice_distance is greated than 0, the pie will be exploded.</p>
+</li><li>
+<p>You can specify the number of decimals you want to be displayed in the
+labels (default is 0 ).</p>
+</li></ul>
+
+<p>By default no labels are written around the pie chart. You can use the
+following modes for the draw_labels parameter:</p>
+<ul><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>PIE_NOLABEL No labels displayed</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>PIE_PERCENTAGE Percentages are displayed</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>PIE_LABELS Series labels displayed</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt><a href="Rchart.html">Rchart</a>
+<dd>
+<p>PIE_PERCENTAGE_LABEL Series labels &amp; percentage displayed</p>
+</dd></dl>
+
+<pre>This will draw a pie graph centered at (150-150) with a radius of 100, no labels</pre>
+</li><li>
+<p>chart.draw_pie_graph(chart_data.get_data,chart_data.get_data_description,150,150)</p>
+</li></ul>
+
+<p>This will draw a pie graph centered at (150-150) with a radius of 50 and
+percentages</p>
+<ul><li>
+<p>chart.draw_pie_graph(chart_data.get_data,chart_data.get_data_description,150,150,50,Rchart::PIE_PERCENTAGE)</p>
+</li></ul>
+
+<p>This will draw a pie graph centered at (150-150) with a radius of 100,
+captions and a skew factor of 30</p>
+<ul><li>
+<p>chart.draw_pie_graph(chart_data.get_data,chart_data.get_data_description,150,150,100,Rchart::PIE_PERCENTAGE,true,30)</p>
+</li></ul>
+
+<p>This will draw a pie graph (..) exploded</p>
+<ul><li>
+<p>chart.draw_pie_graph(chart_data.get_data,chart_data.get_data_description,150,150,100,Rchart::PIE_PERCENTAGE,true,30,10,10)</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="draw_pie_graph-source">
+            <pre><span class="ruby-comment"># File lib/pie_chart.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">draw_pie_graph</span>(<span class="ruby-identifier">data</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-identifier">x_pos</span>,<span class="ruby-identifier">y_pos</span>,<span class="ruby-identifier">radius</span>=<span class="ruby-value">100</span>,<span class="ruby-identifier">draw_labels</span>=<span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_NOLABEL</span>,<span class="ruby-identifier">enhance_colors</span>=<span class="ruby-keyword">true</span>,<span class="ruby-identifier">skew</span>=<span class="ruby-value">60</span>,<span class="ruby-identifier">splice_height</span>=<span class="ruby-value">20</span>,<span class="ruby-identifier">splice_distance</span>=<span class="ruby-value">0</span>,<span class="ruby-identifier">decimals</span>=<span class="ruby-value">0</span>)
+  <span class="ruby-identifier">data_description</span> = <span class="ruby-identifier">validate_data_description</span>(<span class="ruby-string">&quot;draw_pie_graph&quot;</span>,<span class="ruby-identifier">data_description</span>,<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">validate_data</span>(<span class="ruby-string">&quot;draw_pie_graph&quot;</span>,<span class="ruby-identifier">data</span>)
+
+  <span class="ruby-comment">#Determine pie sum</span>
+  <span class="ruby-identifier">series</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">pie_sum</span>= <span class="ruby-value">0</span>
+  <span class="ruby-identifier">rpie_sum</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">i_values</span> = []
+  <span class="ruby-identifier">r_values</span>  = []
+  <span class="ruby-identifier">i_labels</span>  = []
+  <span class="ruby-identifier">series</span> = <span class="ruby-value">0</span>
+
+  <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;values&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span><span class="ruby-operator">|</span><span class="ruby-identifier">col_name</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">col_name</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;position&quot;</span>])
+      <span class="ruby-identifier">series</span> = <span class="ruby-identifier">series</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+      <span class="ruby-identifier">data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>].<span class="ruby-identifier">nil?</span>)
+          <span class="ruby-keyword">if</span> (<span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>] <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+            <span class="ruby-identifier">i_values</span>  <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">0</span>
+            <span class="ruby-identifier">r_values</span>  <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">0</span>
+            <span class="ruby-identifier">i_labels</span>  <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">0</span>
+            <span class="ruby-identifier">i_labels</span><span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;position&quot;</span>]]
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">pie_sum</span><span class="ruby-operator">+=</span>  <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>]
+            <span class="ruby-identifier">i_values</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>]
+            <span class="ruby-identifier">i_labels</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">data_description</span>[<span class="ruby-string">&quot;position&quot;</span>]]
+            <span class="ruby-identifier">r_values</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>]
+            <span class="ruby-identifier">rpie_sum</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">key</span>[<span class="ruby-identifier">col_name</span>]
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Validate serie</span>
+
+  <span class="ruby-comment">#RaiseFatal(&quot;Pie chart can only accept one serie of data.&quot;)</span>
+  <span class="ruby-comment">#puts &quot;Error Pie chart can only accept one serie of data.&quot; if ( series != 1 )</span>
+  <span class="ruby-identifier">splice_distance_ratio</span> = <span class="ruby-identifier">splice_distance</span>
+  <span class="ruby-identifier">skew_height</span>          = (<span class="ruby-identifier">radius</span> * <span class="ruby-identifier">skew</span>) <span class="ruby-operator">/</span> <span class="ruby-value">100</span>
+  <span class="ruby-identifier">splice_ratio</span>         = ((<span class="ruby-value">360</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">splice_distance_ratio</span> *<span class="ruby-identifier">i_values</span>.<span class="ruby-identifier">count</span>*<span class="ruby-value">1.0</span>)  <span class="ruby-operator">/</span> <span class="ruby-identifier">pie_sum</span>)
+  <span class="ruby-identifier">splice_percent</span>       = <span class="ruby-value">100.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">pie_sum</span>
+  <span class="ruby-identifier">r_splice_percent</span>      = <span class="ruby-value">100.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">rpie_sum</span>
+  <span class="ruby-comment">#Calculate all polygons</span>
+  <span class="ruby-identifier">angle</span>    = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">c_dev</span> = <span class="ruby-value">5</span>
+  <span class="ruby-identifier">top_plots</span> = []
+  <span class="ruby-identifier">bot_plots</span> = []
+  <span class="ruby-identifier">atop_plots</span> = []
+  <span class="ruby-identifier">abot_plots</span> = []
+  <span class="ruby-identifier">i_values</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span>,<span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">x_cent_pos</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>((<span class="ruby-identifier">angle</span><span class="ruby-operator">-</span><span class="ruby-identifier">c_dev</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">value</span>*<span class="ruby-identifier">splice_ratio</span><span class="ruby-operator">+</span><span class="ruby-identifier">splice_distance_ratio</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>) * <span class="ruby-value">3.1418</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * <span class="ruby-identifier">splice_distance</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x_pos</span>
+    <span class="ruby-identifier">y_cent_pos</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>((<span class="ruby-identifier">angle</span><span class="ruby-operator">-</span><span class="ruby-identifier">c_dev</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">value</span>*<span class="ruby-identifier">splice_ratio</span><span class="ruby-operator">+</span><span class="ruby-identifier">splice_distance_ratio</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>) * <span class="ruby-value">3.1418</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * <span class="ruby-identifier">splice_distance</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y_pos</span>
+    <span class="ruby-identifier">x_cent_pos2</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>((<span class="ruby-identifier">angle</span><span class="ruby-operator">+</span><span class="ruby-identifier">c_dev</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">value</span>*<span class="ruby-identifier">splice_ratio</span><span class="ruby-operator">+</span><span class="ruby-identifier">splice_distance_ratio</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>) * <span class="ruby-value">3.1418</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * <span class="ruby-identifier">splice_distance</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x_pos</span>
+    <span class="ruby-identifier">y_cent_pos2</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>((<span class="ruby-identifier">angle</span><span class="ruby-operator">+</span><span class="ruby-identifier">c_dev</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">value</span>*<span class="ruby-identifier">splice_ratio</span><span class="ruby-operator">+</span><span class="ruby-identifier">splice_distance_ratio</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>) * <span class="ruby-value">3.1418</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * <span class="ruby-identifier">splice_distance</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y_pos</span>
+    <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>] = [(<span class="ruby-identifier">x_cent_pos</span>).<span class="ruby-identifier">round</span>]
+    <span class="ruby-identifier">bot_plots</span>[<span class="ruby-identifier">key</span>] = [(<span class="ruby-identifier">x_cent_pos</span>).<span class="ruby-identifier">round</span>]
+    <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">y_cent_pos</span>).<span class="ruby-identifier">round</span>
+    <span class="ruby-identifier">bot_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">y_cent_pos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">splice_height</span>).<span class="ruby-identifier">round</span>
+    <span class="ruby-identifier">atop_plots</span>[<span class="ruby-identifier">key</span>] = [<span class="ruby-identifier">x_cent_pos</span>]
+    <span class="ruby-identifier">abot_plots</span>[<span class="ruby-identifier">key</span>] = [<span class="ruby-identifier">x_cent_pos</span>]
+    <span class="ruby-identifier">atop_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">y_cent_pos</span>
+    <span class="ruby-identifier">abot_plots</span>[<span class="ruby-identifier">key</span>]   <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">y_cent_pos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">splice_height</span>
+    <span class="ruby-comment"># Process labels position &amp; size</span>
+    <span class="ruby-identifier">caption</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-keyword">if</span> ( <span class="ruby-operator">!</span>(<span class="ruby-identifier">draw_labels</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_NOLABEL</span>) )
+
+      <span class="ruby-identifier">t_angle</span>   = <span class="ruby-identifier">angle</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">value</span>*<span class="ruby-identifier">splice_ratio</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">draw_labels</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_PERCENTAGE</span>)
+        <span class="ruby-identifier">caption</span>  = ((<span class="ruby-identifier">r_values</span>[<span class="ruby-identifier">key</span>] * (<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>) * <span class="ruby-identifier">r_splice_percent</span>)<span class="ruby-operator">/</span>(<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>)).<span class="ruby-identifier">round</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;%&quot;</span>
+      <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">draw_labels</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_LABELS</span>)
+        <span class="ruby-identifier">caption</span>  = <span class="ruby-identifier">i_labels</span>[<span class="ruby-identifier">key</span>]
+      <span class="ruby-keyword">elsif</span> (<span class="ruby-identifier">draw_labels</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Rchart</span><span class="ruby-operator">::</span><span class="ruby-constant">PIE_PERCENTAGE_LABEL</span>)
+        <span class="ruby-identifier">caption</span>  = <span class="ruby-identifier">i_labels</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;\r\n&quot;</span><span class="ruby-operator">+</span>(((<span class="ruby-identifier">value</span> * <span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>) * <span class="ruby-identifier">splice_percent</span>)<span class="ruby-operator">/</span>(<span class="ruby-value">10</span><span class="ruby-operator">**</span><span class="ruby-identifier">decimals</span>)).<span class="ruby-identifier">round</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;%&quot;</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">position</span>   = <span class="ruby-identifier">image_ftb_box</span>(<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">caption</span>)
+      <span class="ruby-identifier">text_width</span>  =<span class="ruby-identifier">position</span>[<span class="ruby-value">2</span>]<span class="ruby-operator">-</span><span class="ruby-identifier">position</span>[<span class="ruby-value">0</span>]
+      <span class="ruby-identifier">text_height</span> = ( <span class="ruby-identifier">position</span>[<span class="ruby-value">1</span>]).<span class="ruby-identifier">abs</span><span class="ruby-operator">+</span>(<span class="ruby-identifier">position</span>[<span class="ruby-value">3</span>]).<span class="ruby-identifier">abs</span>
+
+      <span class="ruby-identifier">tx</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>((<span class="ruby-identifier">t_angle</span>) * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * (<span class="ruby-identifier">radius</span> <span class="ruby-operator">+</span> <span class="ruby-value">10</span>)<span class="ruby-operator">+</span> <span class="ruby-identifier">x_pos</span>
+
+      <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">t_angle</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">t_angle</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">180</span> )
+        <span class="ruby-identifier">ty</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>((<span class="ruby-identifier">t_angle</span>) * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * (<span class="ruby-identifier">skew_height</span> <span class="ruby-operator">+</span> <span class="ruby-value">10</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">y_pos</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">splice_height</span> <span class="ruby-operator">+</span> <span class="ruby-value">4</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">ty</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>((<span class="ruby-identifier">t_angle</span>) * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> ) * (<span class="ruby-identifier">skew_height</span> <span class="ruby-operator">+</span> <span class="ruby-value">4</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">y_pos</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">text_height</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">t_angle</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">90</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">t_angle</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">270</span> )
+        <span class="ruby-identifier">tx</span> = <span class="ruby-identifier">tx</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">text_width</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment">#c_text_color = $this-&gt;AllocateColor(@picture,70,70,70)</span>
+      <span class="ruby-identifier">c_text_color</span> = <span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-value">70</span>,<span class="ruby-value">70</span>,<span class="ruby-value">70</span>)
+      <span class="ruby-identifier">image_ttf_text</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@font_size</span>,<span class="ruby-value">0</span>,<span class="ruby-identifier">tx</span>,<span class="ruby-identifier">ty</span>,<span class="ruby-identifier">c_text_color</span>,<span class="ruby-ivar">@font_name</span>,<span class="ruby-identifier">caption</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Process pie slices</span>
+
+    <span class="ruby-identifier">i_angle</span> = <span class="ruby-identifier">angle</span>
+    <span class="ruby-identifier">i_angle</span> = <span class="ruby-identifier">i_angle</span>.<span class="ruby-identifier">to_f</span>
+
+    <span class="ruby-keyword">while</span>(<span class="ruby-identifier">i_angle</span> <span class="ruby-operator">&lt;=</span><span class="ruby-identifier">angle</span><span class="ruby-operator">+</span><span class="ruby-identifier">value</span>*<span class="ruby-identifier">splice_ratio</span>)
+
+      <span class="ruby-identifier">top_x</span> = (<span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">i_angle</span> * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span> <span class="ruby-operator">/</span> <span class="ruby-value">180</span> )) * <span class="ruby-identifier">radius</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x_pos</span>
+      <span class="ruby-identifier">top_y</span> = (<span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">i_angle</span> * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span><span class="ruby-operator">/</span> <span class="ruby-value">180</span> )) * <span class="ruby-identifier">skew_height</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y_pos</span>
+
+      <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">top_x</span>).<span class="ruby-identifier">round</span>
+      <span class="ruby-identifier">bot_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">top_x</span>).<span class="ruby-identifier">round</span>
+      <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-identifier">top_y</span>).<span class="ruby-identifier">round</span>
+      <span class="ruby-identifier">bot_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">top_y</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">splice_height</span>).<span class="ruby-identifier">round</span>
+      <span class="ruby-identifier">atop_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">top_x</span>
+      <span class="ruby-identifier">abot_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">top_x</span>
+      <span class="ruby-identifier">atop_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">top_y</span>
+      <span class="ruby-identifier">abot_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">top_y</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">splice_height</span>
+      <span class="ruby-identifier">i_angle</span>=<span class="ruby-identifier">i_angle</span><span class="ruby-operator">+</span><span class="ruby-value">0.5</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">x_cent_pos2</span>).<span class="ruby-identifier">round</span>
+    <span class="ruby-identifier">bot_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">x_cent_pos2</span>).<span class="ruby-identifier">round</span>
+    <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">y_cent_pos2</span>).<span class="ruby-identifier">round</span>
+    <span class="ruby-identifier">bot_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">y_cent_pos2</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">splice_height</span>).<span class="ruby-identifier">round</span>
+    <span class="ruby-identifier">atop_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">x_cent_pos2</span>
+    <span class="ruby-identifier">abot_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">x_cent_pos2</span>
+    <span class="ruby-identifier">atop_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">y_cent_pos2</span>
+    <span class="ruby-identifier">abot_plots</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">y_cent_pos2</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">splice_height</span>
+    <span class="ruby-identifier">angle</span> = <span class="ruby-identifier">i_angle</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">splice_distance_ratio</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Draw Bottom polygons</span>
+  <span class="ruby-identifier">i_values</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">val</span>,<span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">c_graph_lo</span> = <span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;r&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">20</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;g&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">20</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;b&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">20</span>)
+    <span class="ruby-identifier">image_filled_polygon</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">bot_plots</span>[<span class="ruby-identifier">key</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;r&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">20</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;g&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">20</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;b&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">20</span>)
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">enhance_colors</span>)
+      <span class="ruby-identifier">en</span> = <span class="ruby-value">-10</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">en</span> = <span class="ruby-value">0</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">j</span> =<span class="ruby-value">0</span>
+    <span class="ruby-keyword">while</span>(<span class="ruby-identifier">j</span><span class="ruby-operator">&lt;=</span>(<span class="ruby-identifier">abot_plots</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">length</span>)<span class="ruby-operator">-</span><span class="ruby-value">4</span>)
+      <span class="ruby-identifier">draw_line</span>(<span class="ruby-identifier">abot_plots</span>[<span class="ruby-identifier">key</span>][<span class="ruby-identifier">j</span>],<span class="ruby-identifier">abot_plots</span>[<span class="ruby-identifier">key</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>],<span class="ruby-identifier">abot_plots</span>[<span class="ruby-identifier">key</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>],<span class="ruby-identifier">abot_plots</span>[<span class="ruby-identifier">key</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">3</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;r&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">en</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;g&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">en</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;b&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">en</span>)
+      <span class="ruby-identifier">j</span>= <span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Draw pie layers</span>
+  <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">enhance_colors</span> )
+    <span class="ruby-identifier">color_ratio</span> = <span class="ruby-value">30</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">splice_height</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">color_ratio</span> = <span class="ruby-value">25</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">splice_height</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">i</span> = <span class="ruby-identifier">splice_height</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">while</span>(<span class="ruby-identifier">i</span><span class="ruby-operator">&gt;=</span><span class="ruby-value">1</span>)
+    <span class="ruby-identifier">i_values</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">val</span>,<span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">c_graph_lo</span> = <span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;r&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">10</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;g&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">10</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;b&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">10</span>)
+      <span class="ruby-identifier">plots</span> =[]
+      <span class="ruby-identifier">plot</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value2</span>,<span class="ruby-identifier">key2</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">plot</span> = <span class="ruby-identifier">plot</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+        <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">plot</span> <span class="ruby-operator">%</span> <span class="ruby-value">2</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> )
+          <span class="ruby-identifier">plots</span> <span class="ruby-operator">&lt;&lt;</span>  <span class="ruby-identifier">value2</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">plots</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">value2</span><span class="ruby-operator">+</span><span class="ruby-identifier">i</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">image_filled_polygon</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">plots</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;r&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">10</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;g&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">10</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;b&quot;</span>]<span class="ruby-operator">-</span><span class="ruby-value">10</span>)
+      <span class="ruby-identifier">index</span>       = (<span class="ruby-identifier">plots</span>).<span class="ruby-identifier">count</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">enhance_colors</span> )
+        <span class="ruby-identifier">color_factor</span> = <span class="ruby-value">-20</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">splice_height</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">$i</span>) * <span class="ruby-identifier">color_ratio</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">color_factor</span> = <span class="ruby-value">0</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">draw_antialias_pixel</span>(<span class="ruby-identifier">plots</span>[<span class="ruby-value">0</span>],<span class="ruby-identifier">plots</span>[<span class="ruby-value">1</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;r&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">color_factor</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;g&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">color_factor</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;b&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">color_factor</span>)
+      <span class="ruby-identifier">draw_antialias_pixel</span>(<span class="ruby-identifier">plots</span>[<span class="ruby-value">2</span>],<span class="ruby-identifier">plots</span>[<span class="ruby-value">3</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;r&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">color_factor</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;g&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">color_factor</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;b&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">color_factor</span>)
+      <span class="ruby-identifier">draw_antialias_pixel</span>(<span class="ruby-identifier">plots</span>[<span class="ruby-identifier">index</span><span class="ruby-operator">-</span><span class="ruby-value">4</span>],<span class="ruby-identifier">plots</span>[<span class="ruby-identifier">index</span><span class="ruby-operator">-</span><span class="ruby-value">3</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;r&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">color_factor</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;g&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">color_factor</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;b&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">color_factor</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">i</span> = <span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment">#Draw Top polygons</span>
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">i_values</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">while</span>(<span class="ruby-identifier">key</span><span class="ruby-operator">&gt;=</span><span class="ruby-value">0</span>)
+    <span class="ruby-identifier">c_graph_lo</span> = <span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;r&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;g&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;b&quot;</span>])
+    <span class="ruby-identifier">image_filled_polygon</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-identifier">top_plots</span>[<span class="ruby-identifier">key</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;r&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;g&quot;</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;b&quot;</span>])
+
+    <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">enhance_colors</span> )
+      <span class="ruby-identifier">en</span> = <span class="ruby-value">10</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">en</span> = <span class="ruby-value">0</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">j</span> = <span class="ruby-value">0</span>
+
+    <span class="ruby-keyword">while</span>(<span class="ruby-identifier">j</span><span class="ruby-operator">&lt;=</span>(<span class="ruby-identifier">atop_plots</span>[<span class="ruby-identifier">key</span>]).<span class="ruby-identifier">length</span><span class="ruby-operator">-</span><span class="ruby-value">4</span>)
+      <span class="ruby-identifier">draw_line</span>(<span class="ruby-identifier">atop_plots</span>[<span class="ruby-identifier">key</span>][<span class="ruby-identifier">j</span>],<span class="ruby-identifier">atop_plots</span>[<span class="ruby-identifier">key</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>],<span class="ruby-identifier">atop_plots</span>[<span class="ruby-identifier">key</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>],<span class="ruby-identifier">atop_plots</span>[<span class="ruby-identifier">key</span>][<span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">3</span>],<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;r&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">en</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;g&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">en</span>,<span class="ruby-ivar">@palette</span>[<span class="ruby-identifier">key</span>][<span class="ruby-string">&quot;b&quot;</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">en</span>)
+      <span class="ruby-identifier">j</span> = <span class="ruby-identifier">j</span><span class="ruby-operator">+</span><span class="ruby-value">2</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">key</span> = <span class="ruby-identifier">key</span> <span class="ruby-value">-1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- draw_pie_graph-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- draw_pie_graph-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

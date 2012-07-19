@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Rchart - rchart 2.0.4</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rchart.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="GD2.html">GD2</a>
+  
+  
+  
+    <li><a class="include" href="Graph.html">Graph</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./BarChart.html">BarChart</a>
+  
+    <li><a href="./ColorPalette.html">ColorPalette</a>
+  
+    <li><a href="./CubicChart.html">CubicChart</a>
+  
+    <li><a href="./GD2.html">GD2</a>
+  
+    <li><a href="./Graph.html">Graph</a>
+  
+    <li><a href="./GraphHelper.html">GraphHelper</a>
+  
+    <li><a href="./Layout.html">Layout</a>
+  
+    <li><a href="./Legend.html">Legend</a>
+  
+    <li><a href="./LineChart.html">LineChart</a>
+  
+    <li><a href="./PieChart.html">PieChart</a>
+  
+    <li><a href="./PlotChart.html">PlotChart</a>
+  
+    <li><a href="./Rchart.html">Rchart</a>
+  
+    <li><a href="./RchartHelper.html">RchartHelper</a>
+  
+    <li><a href="./Rdata.html">Rdata</a>
+  
+    <li><a href="./Scale.html">Scale</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Rchart</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="ALIGN_BOTTOM_CENTER">ALIGN_BOTTOM_CENTER
+        
+        <dd class="description">
+        
+      
+        <dt id="ALIGN_BOTTOM_LEFT">ALIGN_BOTTOM_LEFT
+        
+        <dd class="description">
+        
+      
+        <dt id="ALIGN_BOTTOM_RIGHT">ALIGN_BOTTOM_RIGHT
+        
+        <dd class="description">
+        
+      
+        <dt id="ALIGN_CENTER">ALIGN_CENTER
+        
+        <dd class="description">
+        
+      
+        <dt id="ALIGN_LEFT">ALIGN_LEFT
+        
+        <dd class="description">
+        
+      
+        <dt id="ALIGN_RIGHT">ALIGN_RIGHT
+        
+        <dd class="description">
+        
+      
+        <dt id="ALIGN_TOP_CENTER">ALIGN_TOP_CENTER
+        
+        <dd class="description">
+        
+      
+        <dt id="ALIGN_TOP_LEFT">ALIGN_TOP_LEFT
+        
+        <dd class="description">
+        
+      
+        <dt id="ALIGN_TOP_RIGHT">ALIGN_TOP_RIGHT
+        
+        <dd class="description">
+        
+      
+        <dt id="FONT_PATH">FONT_PATH
+        
+        <dd class="description">
+        
+      
+        <dt id="PIE_LABELS">PIE_LABELS
+        
+        <dd class="description">
+        
+      
+        <dt id="PIE_NOLABEL">PIE_NOLABEL
+        
+        <dd class="description">
+        
+      
+        <dt id="PIE_PERCENTAGE">PIE_PERCENTAGE
+        
+        <dd class="description">
+        
+      
+        <dt id="PIE_PERCENTAGE_LABEL">PIE_PERCENTAGE_LABEL
+        
+        <dd class="description">
+        
+      
+        <dt id="SCALE_ADDALL">SCALE_ADDALL
+        
+        <dd class="description">
+        
+      
+        <dt id="SCALE_ADDALLSTART0">SCALE_ADDALLSTART0
+        
+        <dd class="description">
+        
+      
+        <dt id="SCALE_NORMAL">SCALE_NORMAL
+        
+        <dd class="description">
+        
+      
+        <dt id="SCALE_START0">SCALE_START0
+        
+        <dd class="description">
+        
+      
+        <dt id="TARGET_BACKGROUND">TARGET_BACKGROUND
+        
+        <dd class="description">
+        
+      
+        <dt id="TARGET_GRAPHAREA">TARGET_GRAPHAREA
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-antialias_quality" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">antialias_quality</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-picture" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">picture</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(x_size,y_size,options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This function create a new chart object. This object will be used during
+all the steps of the graph creation. This object will embed all the pChart
+functions</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/rchart.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">x_size</span>,<span class="ruby-identifier">y_size</span>,<span class="ruby-identifier">options</span>={})
+              <span class="ruby-comment"># Initialize variables</span>
+              <span class="ruby-comment"># q    raise ArgumentError if (options[:x_size].nil? &amp;&amp; options[:y_size].nil?)</span>
+              <span class="ruby-comment"># Error management</span>
+              <span class="ruby-ivar">@error_reporting</span> = <span class="ruby-keyword">false</span>
+              <span class="ruby-ivar">@error_interface</span> = <span class="ruby-string">&quot;cli&quot;</span>
+              <span class="ruby-ivar">@errors</span>         = []
+              <span class="ruby-ivar">@error_font_name</span>  = <span class="ruby-node">&quot;#{FONT_PATH}/pf_arma_five.ttf&quot;</span>
+              <span class="ruby-ivar">@error_font_size</span>  = <span class="ruby-value">6</span>
+              <span class="ruby-ivar">@x_size</span> = <span class="ruby-identifier">x_size</span>
+              <span class="ruby-ivar">@antialias_quality</span>=<span class="ruby-value">0</span>
+              <span class="ruby-ivar">@y_size</span> = <span class="ruby-identifier">y_size</span>
+              <span class="ruby-ivar">@error_reporting</span> = <span class="ruby-keyword">false</span>
+              <span class="ruby-ivar">@error_font_name</span> =  <span class="ruby-node">&quot;#{FONT_PATH}/pf_arma_five.ttf&quot;</span>
+              <span class="ruby-ivar">@error_font_size</span> = <span class="ruby-value">6</span>
+              <span class="ruby-ivar">@currency</span> = <span class="ruby-string">&quot;Rs.&quot;</span>
+              <span class="ruby-ivar">@date_format</span> = <span class="ruby-string">&quot;%d/%m/%Y&quot;</span>
+              <span class="ruby-ivar">@line_width</span> = <span class="ruby-value">1</span>
+              <span class="ruby-ivar">@line_dot_size</span> = <span class="ruby-value">0</span>
+              <span class="ruby-ivar">@anti_alias_quality</span> = <span class="ruby-value">0</span>
+              <span class="ruby-ivar">@shadow_active</span> = <span class="ruby-keyword">false</span>
+              <span class="ruby-ivar">@shadow_x_distance</span> = <span class="ruby-value">1</span>
+              <span class="ruby-ivar">@shadow_y_distance</span> = <span class="ruby-value">1</span>
+              <span class="ruby-ivar">@shadow_r_color</span> = <span class="ruby-value">60</span>
+              <span class="ruby-ivar">@shadow_g_color</span> = <span class="ruby-value">60</span>
+              <span class="ruby-ivar">@shadow_b_color</span> = <span class="ruby-value">60</span>
+              <span class="ruby-ivar">@shadow_alpha</span> = <span class="ruby-value">50</span>
+              <span class="ruby-ivar">@shadow_blur</span> = <span class="ruby-value">0</span>
+              <span class="ruby-ivar">@tmp_dir</span> = <span class="ruby-string">'/tmp'</span>
+              <span class="ruby-ivar">@font_size</span> =<span class="ruby-value">8</span>
+              <span class="ruby-ivar">@font_name</span> = <span class="ruby-node">&quot;#{FONT_PATH}/tahoma.ttf&quot;</span>
+              <span class="ruby-ivar">@divisions</span>= <span class="ruby-value">0</span>
+
+              <span class="ruby-ivar">@division_count</span> = <span class="ruby-value">0</span>
+              <span class="ruby-ivar">@division_height</span> = <span class="ruby-value">0</span>
+              <span class="ruby-ivar">@x_division_ratio</span> =<span class="ruby-value">0</span>
+              <span class="ruby-ivar">@x_division_count</span> = <span class="ruby-value">0</span>
+              <span class="ruby-ivar">@x_division_height</span> = <span class="ruby-value">0</span>
+              <span class="ruby-ivar">@x_division_ratio</span> = <span class="ruby-value">0</span>
+              <span class="ruby-ivar">@palette</span> = []
+              <span class="ruby-ivar">@layers</span> = []
+              <span class="ruby-ivar">@g_area_x_offset</span> =<span class="ruby-value">0</span>
+              <span class="ruby-ivar">@division_width</span> = <span class="ruby-value">0</span>
+              <span class="ruby-ivar">@vmin</span> = <span class="ruby-keyword">nil</span>
+              <span class="ruby-ivar">@vmax</span> = <span class="ruby-keyword">nil</span>
+              <span class="ruby-ivar">@v_x_min</span> =<span class="ruby-keyword">nil</span>
+              <span class="ruby-ivar">@v_x_max</span>=<span class="ruby-keyword">nil</span>
+
+              <span class="ruby-ivar">@x_divisions</span>=<span class="ruby-value">0</span>
+              <span class="ruby-ivar">@data_count</span>=<span class="ruby-keyword">nil</span>
+              <span class="ruby-ivar">@g_area_x1</span> = <span class="ruby-value">0</span>
+              <span class="ruby-ivar">@g_area_y1</span> = <span class="ruby-value">0</span>
+              <span class="ruby-ivar">@g_area_x2</span> = <span class="ruby-value">0</span>
+              <span class="ruby-ivar">@g_area_y2</span> = <span class="ruby-value">0</span>
+              <span class="ruby-ivar">@image_map</span> = []
+              <span class="ruby-comment"># /* Image Map settings */</span>
+              <span class="ruby-ivar">@build_map</span>=<span class="ruby-keyword">false</span>
+              <span class="ruby-ivar">@map_function</span>      = <span class="ruby-keyword">nil</span>
+              <span class="ruby-ivar">@tmp_folder</span>        = <span class="ruby-string">&quot;tmp/&quot;</span>
+              <span class="ruby-ivar">@map_id</span>            = <span class="ruby-keyword">nil</span>
+
+              <span class="ruby-ivar">@palette</span> =[{<span class="ruby-string">&quot;r&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">188</span>,<span class="ruby-string">&quot;g&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">224</span>,<span class="ruby-string">&quot;b&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">46</span>},
+                         {<span class="ruby-string">&quot;r&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">224</span>,<span class="ruby-string">&quot;g&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">100</span>,<span class="ruby-string">&quot;b&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">46</span>},
+                         {<span class="ruby-string">&quot;r&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">224</span>,<span class="ruby-string">&quot;g&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">214</span>,<span class="ruby-string">&quot;b&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">46</span>},
+                         {<span class="ruby-string">&quot;r&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">46</span>,<span class="ruby-string">&quot;g&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">151</span>,<span class="ruby-string">&quot;b&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">224</span>},
+                         {<span class="ruby-string">&quot;r&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">176</span>,<span class="ruby-string">&quot;g&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">46</span>,<span class="ruby-string">&quot;b&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">224</span>},
+                         {<span class="ruby-string">&quot;r&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">224</span>,<span class="ruby-string">&quot;g&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">46</span>,<span class="ruby-string">&quot;b&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">117</span>},
+                         {<span class="ruby-string">&quot;r&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">92</span>,<span class="ruby-string">&quot;g&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">224</span>,<span class="ruby-string">&quot;b&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">46</span>},
+                         {<span class="ruby-string">&quot;r&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">224</span>,<span class="ruby-string">&quot;g&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">176</span>,<span class="ruby-string">&quot;b&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value">46</span>}]
+  
+              <span class="ruby-ivar">@picture</span> =  <span class="ruby-identifier">image_create_true_color</span>(<span class="ruby-ivar">@x_size</span>, <span class="ruby-ivar">@y_size</span>)
+              <span class="ruby-ivar">@c_white</span> =  <span class="ruby-identifier">allocate_color</span>(<span class="ruby-ivar">@picture</span>,<span class="ruby-value">255</span>,<span class="ruby-value">255</span>,<span class="ruby-value">255</span>)
+              <span class="ruby-identifier">image_filled_rectangle</span>(<span class="ruby-ivar">@picture</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-ivar">@x_size</span>, <span class="ruby-ivar">@y_size</span>, <span class="ruby-value">255</span>,<span class="ruby-value">255</span>,<span class="ruby-value">255</span>)
+              <span class="ruby-comment">#image_color_transparent(@picture, 255,255,255)</span>
+              <span class="ruby-identifier">set_font_properties</span>(<span class="ruby-string">&quot;tahoma.ttf&quot;</span>,<span class="ruby-value">8</span>)
+      <span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
