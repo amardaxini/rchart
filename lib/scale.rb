@@ -161,7 +161,7 @@ module Scale
       end
       divisions = 2 if ( divisions.nil? )
 
-      divisions = divisions-1 if (scale == 1 && divisions%2 == 1)
+      # divisions = divisions-1 if (scale == 1 && divisions%2 == 1)
 
     else
       divisions = @divisions
