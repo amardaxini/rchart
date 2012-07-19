@@ -10,11 +10,13 @@ This gem requires ruby-gd 0.8.0 dependency.
 * sudo apt-get install libgd-ruby
 * sudo apt-get install libpng-dev
 * sudo apt-get install libgd2-xpm-dev
-
+== Example
+ https://github.com/amardaxini/rchart_examples
+ Rails example
+ https://github.com/amardaxini/rails-rchart-demo
 
 == TODO
 * Refactor code
-* Use gd2 library instead of gd
 == Copyright
 
 Copyright (c) 2010 amardaxini. See LICENSE for details.
