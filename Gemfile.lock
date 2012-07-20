@@ -3,8 +3,10 @@ GEM
   remote: http://gems.github.com/
   specs:
     ffi (1.0.11)
-    gd2-ffij (0.0.4)
+    gd2-ffij (0.0.5)
       ffi (~> 1.0.0)
+      rake (~> 0.9)
+      rdoc
     git (1.2.5)
     jeweler (1.8.3)
       bundler (~> 1.0)
@@ -20,5 +22,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  gd2-ffij
+  gd2-ffij (>= 0.0.5)
   jeweler
