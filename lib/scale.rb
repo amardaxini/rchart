@@ -114,7 +114,7 @@ module Scale
 
       #Compute automatic scaling */
       scale_ok = false
-      factor = 1
+      factor = 1.0
       min_div_height = 25
       max_divs = (@g_area_y2 - @g_area_y1)*1.0 / min_div_height
 
@@ -197,7 +197,7 @@ module Scale
       else
         self.draw_line(@g_area_x1,ypos,@g_area_x1-5,ypos,r,g,b)
       end
-      value     = @vmin*1.0 + (i-1) * (( @vmax - @vmin ) / divisions)
+      value     = @vmin*1.0 + (i-1) * (( @vmax - @vmin )*1.0 / divisions)
       value     = (round_of(value * (10**decimals),2)) / (10**decimals)
       value= value.round if value.floor == value.ceil
       value = "#{value} #{data_description['unit']['y']}"  if ( data_description["format"]["y"]== "number")
