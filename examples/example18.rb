@@ -1,6 +1,6 @@
-#Playing with background and stacked Bar Chart
-
+# encoding: UTF-8
 require 'rubygems'
+require 'rchart'
 require 'rchart'
 p = Rdata.new
 p.add_point([9,9,9,10,10,11,12,14,16,17,18,18,19,19,18,15,12,10,9],"Serie1");
@@ -12,7 +12,7 @@ p.set_abscise_label_serie("Serie3")
 p.set_serie_name("January","Serie1");
 p.set_serie_name("February","Serie2");
 p.set_y_axis_name("Temperature");
-p.set_y_axis_unit("°C");
+p.set_y_axis_unit("°C")
 p.set_x_axis_unit("h");
 
 ch = Rchart.new(700,230)
