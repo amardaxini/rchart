@@ -73,7 +73,7 @@ module GD2
   end
 
   def image_destroy(image)
-    GD2FFI.gdImageDestroy(image.image_ptr)
+    # GD2FFI.gdImageDestroy(image.image_ptr)
   end
 
   def image_create_from_png(file_name)

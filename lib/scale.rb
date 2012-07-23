@@ -252,7 +252,7 @@ module Scale
         else
           ypos = @g_area_y2+10+text_height
           if ( angle <= 90 )
-            image_ttf_text(@picture,@font_size,angle,(xpos).floor-text_width+5,ypos,c_text_color,@font_name,value.to_s)
+            image_ttf_text(@picture,@font_size,angle,(xpos).floor-text_width+8,ypos,c_text_color,@font_name,value.to_s)
           else
             image_ttf_text(@picture,@font_size,angle,(xpos).floor+text_width+5,ypos,c_text_color,@font_name,value.to_s)
           end
