@@ -416,9 +416,7 @@ module PieChart
         elsif (draw_labels == Rchart::PIE_LABELS)
           caption  = i_labels[key]
         elsif (draw_labels == Rchart::PIE_PERCENTAGE_LABEL)
-          caption  = i_labels[key].to_s+".\r\n"+((value * (10**decimals) * splice_percent)/(10**decimals)).round.to_s+"%"
-        elsif (draw_labels == Rchart::PIE_PERCENTAGE_LABEL)
-          caption  = i_labels[key].to_s+".\r\n"+((value * (10**decimals) * splice_percent)/(10**decimals)).round.to_s+"%"
+          caption  = i_labels[key].to_s+"\r\n"+((value * (10**decimals) * splice_percent)/(10**decimals)).round.to_s+"%"
         end
         position   = image_ftb_box(@font_size,0,@font_name,caption)
         text_width  = position[2]-position[0]
